@@ -6731,6 +6731,23 @@ let dahlia = new Queen("Dahlia Sin", 7, 8, 4, 4, 10, 15, 4, 12, 15, 1, 4, "Dahli
 
 let US12 = shuffle([jaida, crystalm, gigi, jackie, heidi, widow, jan, brita, aiden, nicky, rock, dahlia]);
 
+let ginger = new Queen("Ginger Minj", 14, 12, 8, 9, 15, 7, 12, 11, 9, 4, 1, "Ginger", "Ginger", "US7", false);
+let jaidynn = new Queen("Jaidynn Diore Fierce", 9, 7, 8, 6, 6, 7, 11, 8, 10, 4, 1, "Jaidynn", "Jaidynn", "US7", false);
+let jasmine = new Queen("Jasmine Masters", 3, 4, 6, 5, 2, 7, 6, 12, 9, 3, 3, "Jasmine", "Jasmine", "US7", false);
+let kandyH = new Queen("Kandy Ho", 4, 4, 7, 5, 4, 7, 10, 6, 6, 3, 2, "KandyH", "KandyH", "US7", false);
+let katya = new Queen("Katya", 9, 12, 9, 7, 12, 10, 10, 13, 13, 4, 1, "Katya", "Katya", "US7", false);
+let kennedy = new Queen("Kennedy Davenport", 9, 8, 10, 8, 11, 10, 14, 12, 11, 3, 3, "Kennedy", "Kennedy", "US7", false);
+let max = new Queen("Max", 10, 7, 5, 8, 4, 8, 5, 10, 6, 4, 0, "Max", "Max", "US7", false);
+let fame = new Queen("Miss Fame", 8, 4, 5, 11, 3, 10, 5, 7, 4, 4, 1, "MissFame", "MissFame", "US7", false);
+let kasha = new Queen("Mrs. Kasha Davis", 11, 8, 9, 8, 6, 8, 7, 9, 9, 4, 1, "Kasha", "Kasha", "US7", false);
+let pearl = new Queen("Pearl", 7, 10, 8, 9, 10, 9, 5, 6, 3, 4, 3, "Pearl", "Pearl", "US7", false);
+let sashab = new Queen("Sasha Belle", 6, 6, 4, 4, 6, 6, 4, 4, 5, 4, 1, "SashaB", "SashaB", "US7", false);
+let tempest = new Queen("Tempest DuJour", 6, 6, 5, 3, 6, 7, 4, 7, 8, 4, 2, "Tempest", "Tempest", "US7", false);
+let trixie = new Queen("Trixie Mattel", 13, 10, 6, 10, 11, 10, 5, 15, 10, 3, 1, "Trixie", "Trixie", "US7", false);
+let violet = new Queen("Violet Chachki", 6, 7, 8, 15, 8, 13, 8, 10, 7, 2, 4, "Violet", "Violet", "US7", false);
+
+let US7 = shuffle([ginger, jaidynn, jasmine, kandyH, katya, kennedy, max, fame, kasha, pearl, sashab, tempest, trixie, violet])
+
 let bob = new Queen("Bob The Drag Queen", 12, 13, 15, 11, 6, 9, 12, 15, 15, 3, 2, "Bob", "Bob", "US8", false);
 let kimchi = new Queen("Kim Chi", 9, 10, 10, 3, 10, 10, 4, 10, 10, 3, 2, "Kim", "Kim", "US8", false);
 let naomi = new Queen("Naomi Smalls", 10, 9, 10, 9, 13, 12, 13, 10, 8, 3, 1, "Naomi", "Naomi", "US8", false);
