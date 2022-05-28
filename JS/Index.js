@@ -703,7 +703,7 @@ class Screen {
             break;
           
           case "SAFE":
-            trtr.setAttribute("style","background: #F5EBF5;");
+            trtr.setAttribute("style","background: #FFFFFF;");
             break;
 
           case "LOW":
@@ -837,7 +837,7 @@ class Screen {
             break;
           
           case "SAFE":
-            trtr.setAttribute("style","background: #F5EBF5;");
+            trtr.setAttribute("style","background: #FFFFFF;");
             break;
 
           case "LOW":
