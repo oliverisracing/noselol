@@ -8982,7 +8982,7 @@ function RankQueens(){
       case "LIFE":
       if(CurrentSeason.currentCast.length>=12)
       {
-        for(let i = 0; i<4; i++)
+        for(let i = 0; i<3; i++)
         {
           Tops.push(CurrentSeason.currentCast[i]);
           Bottoms.push(CurrentSeason.currentCast[CurrentSeason.currentCast.length-1-i]);
