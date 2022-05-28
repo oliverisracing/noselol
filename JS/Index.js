@@ -6762,6 +6762,22 @@ let dax = new Queen("Dax Exclamationpoint", 5, 6, 6, 5, 6, 5, 4, 6, 5, 4, 2, "Da
 let laila = new Queen("Laila McQueen", 7, 6, 4, 7, 6, 8, 7, 8, 8, 4, 1, "Laila", "Laila", "US8", false);
 
 let US8 = shuffle([bob, kimchi, naomi, chichi, derrick, thorgy, robbie, acid, naysha, cynthia, dax, laila])
+//branding charisma kindness shadyness
+let aja = new Queen("Aja", 4, 8, 12, 11, 9, 10, 11, 12, 7, 2, 5, "Aja", "Aja", "US9", false);
+let alexism = new Queen("Alexis Michelle", 8, 7, 9, 7, 13, 6, 10, 8, 5, 3, 3, "Alexis", "Alexis", "US9", false);
+let charlie = new Queen("Charlie Hides", 10, 6, 5, 7, 4, 9, 2, 8, 5, 4, 1, "Charlie", "Charlie", "US9", false);
+let eureka = new Queen("Eureka!", 9, 11, 8, 10, 13, 10, 12, 13, 10, 4, 1, "Eureka", "Eureka", "US9", false);
+let farrah = new Queen("Farrah Moan", 9, 4, 7, 3, 6, 8, 7, 9, 8, 4, 1, "Farrah", "Farrah", "US9", false);
+let jaymes = new Queen("Jaymes Mansfield", 6, 6, 3, 6, 5, 7, 6, 13, 11, 5, 1, "Jaymes", "Jaymes", "US9", false);
+let kimora = new Queen("Kimora Blac", 5, 5, 4, 6, 5, 8, 7, 8, 7, 4, 2, "Kimora", "Kimora", "US9", false);
+let ninab = new Queen("Nina Bo'Nina Brown", 4, 8, 10, 9, 10, 10, 11, 12, 9, 3, 3, "Nina", "Nina", "US9", false);
+let peppermint = new Queen("Peppermint", 11, 9, 10, 9, 4, 7, 13, 12, 13, 5, 1, "Peppermint", "Peppermint", "US9", false);
+let sasha = new Queen("Sasha Velour", 9, 10, 8, 10, 11, 13, 11, 11, 11, 4, 1, "Sasha", "Sasha", "US9", false);
+let shea = new Queen("Shea Couleé", 12, 12, 14, 12, 13, 12, 13, 13, 14, 4, 1, "Shea", "Shea", "US9", false);
+let trinity = new Queen("Trinity The Tuck", 13, 10, 8, 10, 8, 9, 12, 10, 9, 4, 1, "Trinity", "Trinity", "US9", false);
+let valentina = new Queen("Valentina", 11, 7, 10, 9, 9, 9, 10, 13, 13, 3, 3, "Valentina", "Valentina", "US9", false);
+
+let US9 = shuffle([aja, alexism, charlie, cynthia, eureka, farrah, jaymes, kimora, ninab, peppermint, sasha, shea, trinity, valentina])
 
 let denali = new Queen("Denali Foxx", 5, 10, 9, 14, 8, 10, 15, 11, 6, 4, 1, "Denali", "Denali", "US13", false);
 let eliott = new Queen("Eliott with 2 Ts", 8, 9, 5, 14, 10, 8, 12, 8, 7, 0, 2, "Eliott", "Eliott", "US13", false);
