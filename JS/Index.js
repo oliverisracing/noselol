@@ -7780,7 +7780,7 @@ function Placements() {
     for (let i = 0; i < Tops.length; i++) {
       if(Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "WIN" || Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "DOUBLEWIN")
       {
-        Tops[i].finalscore += 7;
+        Tops[i].finalscore += 9;
       }
       else if(Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "BOTTOM")
       {
