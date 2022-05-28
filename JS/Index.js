@@ -6949,8 +6949,17 @@ let DragRaceQueens = [
   jaida, crystalm, gigi, jackie, heidi, widow, jan, brita, aiden, nicky, rock, dahlia,
   denali, eliott, gottmik, joey, kahmora, kandy, lalari, liv, rose, symone, tamisha, tina, utica,
   alyssah, angeria, bosco, daya, deja, jasminek, jorgeous, junej, kerri, kornbread, camden, maddym, orion, willow,
+  bob, kimchi, naomi, chichi, derrick, thorgy, robbie, acid, naysha, cynthia, dax, laila,
+  bianca, adore, courtney, darienne, bendela, joslyn, trinityk, laganja, milk, gia, april, vivacious, magnolia, kelly,
+  alaska, alyssa, coco, detox, honey, ivy, jadejolie, jinkx, lineysha, monica, penny, roxxxy, serena, vivienne, 
+  alisa, chad, dida, jiggly, kenya, lashauwn, latrice, madame, milan, phiphi, princess, willam,
+  raja, manila, alexis, yara, carmen, shangelas3, delta, stacy, mariah, india, mimi, phoenix, venus,
 
   jaidaas7, jinkxas7, monetas7, rajaas7, sheaas7, vivas7, trinityas7, yvieas7,
+
+  baga, blu, cheryl, crystal, divina, gothy, scaredy, sumting, viv, vinegar,
+  awhora, asttina, bimini, cherry, ellie, ginny, joe, lawrence, sister, tayce, tia, veronica,
+  anubis, charity, choriza, elektraf, ella, kitty, krystal, river, scarlett, vanity, veronicas3, victoriaS,
 
   anastarzia,boa,ilona,jimbo,juice,kiara,kyne,lemon,priyanka,rita,scarlettbobo,tynomi,
   icesis, kendall, eve, giam, pythia, adriana, kimoraa, synthia, suki, oceane, beth, stephanie,
