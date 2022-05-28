@@ -6776,8 +6776,9 @@ let sasha = new Queen("Sasha Velour", 9, 10, 8, 10, 11, 13, 11, 11, 11, 4, 1, "S
 let shea = new Queen("Shea Couleé", 12, 12, 14, 12, 13, 12, 13, 13, 14, 4, 1, "Shea", "Shea", "US9", false);
 let trinity = new Queen("Trinity The Tuck", 13, 10, 8, 10, 8, 9, 12, 10, 9, 4, 1, "Trinity", "Trinity", "US9", false);
 let valentina = new Queen("Valentina", 11, 7, 10, 9, 9, 9, 10, 13, 13, 3, 3, "Valentina", "Valentina", "US9", false);
+let cynthia2 = new Queen("Cynthia Lee Fontaine", 4, 4, 7, 6, 4, 7, 6, 10, 12, 5, 0, "Cynthia", "Cynthia", "US9", false);
 
-let US9 = shuffle([aja, alexism, charlie, cynthia, eureka, farrah, jaymes, kimora, ninab, peppermint, sasha, shea, trinity, valentina])
+let US9 = shuffle([aja, alexism, charlie, cynthia2, eureka, farrah, jaymes, kimora, ninab, peppermint, sasha, shea, trinity, valentina])
 
 let denali = new Queen("Denali Foxx", 5, 10, 9, 14, 8, 10, 15, 11, 6, 4, 1, "Denali", "Denali", "US13", false);
 let eliott = new Queen("Eliott with 2 Ts", 8, 9, 5, 14, 10, 8, 12, 8, 7, 0, 2, "Eliott", "Eliott", "US13", false);
