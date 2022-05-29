@@ -6795,7 +6795,6 @@ let scarletenvys11 = new Queen("Scarlet Envy", 13, 7, 6, 13, 8, 10, 7, 8, 10, 1,
 let shuga = new Queen("Shuga Cain", 10, 7, 7, 6, 7, 10, 7, 6, 7, 1, 1, "Shuga", "Shuga", "US11", false);
 let silkys11 = new Queen("Silky Nutmeg Ganache", 10, 11, 11, 6, 9, 8, 11, 10, 9, 3, 4, "Silky", "SilkyS11", "US11", false);
 let soju = new Queen("Soju", 3, 1, 2, 1, 1, 3, 3, 1, 1, 1, 1, "Soju", "Soju", "US11", false);
-let vanessa = new Queen("Vanessa 'Vanjie' Mateo", 9, 6, 8, 6, 9, 7, 11, 10, 10, 1, 1, "Vanjie", "Vanjie", "US11", false);
 let yvie = new Queen("Yvie Oddly", 12, 6, 12, 11, 6, 10, 15, 12, 8, 1, 1, "Yvie", "Yvie", "US11", false);
 
 let US11 = shuffle([akeria, ariel, brooke, honeyd, kahanna, mercedes, ninaw, plastique, rajahs11, scarletenvys11, shuga, silkys11, soju, vanessa, yvie]);
