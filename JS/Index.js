@@ -6995,6 +6995,19 @@ let tormai = new Queen("Tormai", 7, 7, 7, 7, 7, 7, 7, 7, 7, 0, 0, "Tormai", "Tor
 let vanda = new Queen("Vanda Miss Joaquim", 7, 7, 7, 7, 7, 7, 7, 7, 7, 0, 0, "Vanda", "Vanda", "TH2",false);
 
 let TH2 = shuffle([angele, bandit, genie, gimhuay, kana, kandyz, katy, mstranger, maya, mocha, silvers, srimala, tormai, vanda]);
+//acting, improv, comedy, dance, design, runway, lipsync, branding, charisma, kindness, shadyness
+let chelsea = new Queen("Chelsea Boy", 9, 10, 7, 7, 10, 12, 6, 7, 7, 3, 0, "Chelsea", "Chelsea", "HO1", false);
+let envy = new Queen("Envy Peru", 11, 11, 11, 8, 11, 13, 11, 7, 7, 3, 0, "Envy", "Envy", "HO1", false);
+let janey = new Queen("Janey Jacké", 7, 6, 13, 11, 6, 11, 12, 7, 7, 3, 0, "Janey", "Janey", "HO1", false);
+let madamem = new Queen("Madame Madness", 8, 6, 5, 6, 5, 8, 7, 7, 7, 3, 0, "Madame", "Madame", "HO1", false);
+let mama = new Queen("Ma'Ma Queen", 9, 6, 5, 6, 6, 10, 7, 7, 7, 3, 0, "Mama", "Mama", "HO1", false);
+let megan = new Queen("Megan Schoonbrood", 7, 6, 6, 5, 6, 9, 8, 7, 7, 3, 0, "Megan", "Megan", "HO1", false);
+let abby = new Queen("Miss Abby OMG", 5, 6, 11, 6, 5, 8, 10, 7, 7, 3, 0, "Abby", "Abby", "HO1", false);
+let patty = new Queen("Patty Pam-Pam", 5, 6, 6, 6, 5, 9, 7, 7, 7, 3, 0, "Patty", "Patty", "HO1", false);
+let roem = new Queen("Roem", 6, 6, 5, 5, 5, 6, 5, 7, 7, 3, 0, "Roem", "Roem", "HO1", false);
+let sederginne = new Queen("Sederginne", 7, 6, 6, 7, 5, 13, 5, 7, 7, 3, 0, "Sederginne", "Sederginne", "HO1", false);
+
+let HO1 = shuffle([chelsea, envy, janey, madamem, mama, megan, abby, patty, roem, sederginne])
 
 let anita = new Queen("Anita Wigl'It", 9, 11, 15, 9, 8, 10, 6, 12, 13, 4, 1, "Anita", "Anita", "DU1",false);
 let arts = new Queen("Art Simone", 10, 8, 7, 10, 14, 15, 6, 10, 8, 4, 1, "Art", "Art", "DU1",false);
@@ -7035,6 +7048,8 @@ let DragRaceQueens = [
 
   anastarzia,boa,ilona,jimbo,juice,kiara,kyne,lemon,priyanka,rita,scarlettbobo,tynomi,
   icesis, kendall, eve, giam, pythia, adriana, kimoraa, synthia, suki, oceane, beth, stephanie,
+
+  chelsea, envy, janey, madamem, mama, megan, abby, patty, roem, sederginne,
 
   carmenf, killer, sagi, pupi, dovima, hug, arantxa, inti, dragv, macarena,
   marina, estrella, venedita, juriji, sethlas, diamante, onyx, jota, samantha, arielr, marisa,
