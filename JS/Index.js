@@ -6750,7 +6750,7 @@ let US8 = shuffle([bob, kimchi, naomi, chichi, derrick, thorgy, robbie, acid, na
 //branding charisma kindness shadyness
 let aja = new Queen("Aja", 4, 8, 12, 11, 9, 10, 11, 12, 7, 2, 5, "Aja", "Aja", "US9", false);
 let alexism = new Queen("Alexis Michelle", 8, 7, 9, 7, 13, 6, 10, 8, 5, 3, 3, "Alexis", "Alexis", "US9", false);
-let charlie = new Queen("Charlie Hides", 10, 6, 5, 7, 4, 9, 2, 8, 5, 4, 1, "Charlie", "Charlie", "US9", false);
+let charlie = new Queen("Charlie Hides", 10, 6, 5, 7, 4, 9, 1, 8, 5, 4, 1, "Charlie", "Charlie", "US9", false);
 let eureka = new Queen("Eureka!", 9, 11, 8, 10, 13, 10, 12, 13, 10, 4, 1, "Eureka", "Eureka", "US9", false);
 let farrah = new Queen("Farrah Moan", 9, 4, 7, 3, 6, 8, 7, 9, 8, 4, 1, "Farrah", "Farrah", "US9", false);
 let jaymes = new Queen("Jaymes Mansfield", 6, 6, 3, 6, 5, 7, 6, 13, 11, 5, 1, "Jaymes", "Jaymes", "US9", false);
@@ -6805,11 +6805,11 @@ let gigi = new Queen("Gigi Goode", 11, 12, 13, 6, 12, 10, 5, 10, 11, 3, 1, "Gigi
 let jackie = new Queen("Jackie Cox", 12, 10, 11, 8, 7, 10, 11, 10, 7, 4, 1, "Jackie", "Jackie", "US12", false);
 let heidi = new Queen("Heidi N Closet", 9, 10, 10, 9, 8, 8, 14, 12, 15, 5, 0, "Heidi", "Heidi", "US12", false);
 let widow = new Queen("Widow Von'Du", 10, 12, 12, 14, 10, 12, 15, 5, 12, 4, 1, "Widow", "Widow", "US12", false);
-let jan = new Queen("Jan", 9, 10, 10, 7, 11, 10, 1, 8, 7, 4, 2, "Jan", "Jan", "US12", false);
+let jan = new Queen("Jan", 9, 10, 10, 7, 11, 10, 6, 8, 7, 4, 2, "Jan", "Jan", "US12", false);
 let brita = new Queen("Brita", 7, 6, 9, 10, 6, 15, 15, 14, 13, 2, 3, "Brita", "Brita", "US12", false);
 let aiden = new Queen("Aiden Zhane", 8, 7, 9, 7, 6, 7, 6, 10, 9, 2, 2, "Aiden", "Aiden", "US12", false);
-let nicky = new Queen("Nicky Doll", 7, 6, 6, 6, 15, 15, 6, 7, 10, 4, 1, "Nicky", "Nicky", "US12", false);
-let rock = new Queen("Rock M. Sakura", 10, 8, 9, 10, 5, 8, 10, 12, 8, 3, 1, "Rock", "Rock", "US12", false);
+let nicky = new Queen("Nicky Doll", 7, 6, 6, 6, 15, 15, 7, 7, 10, 4, 1, "Nicky", "Nicky", "US12", false);
+let rock = new Queen("Rock M. Sakura", 10, 8, 9, 10, 5, 6, 10, 12, 8, 3, 1, "Rock", "Rock", "US12", false);
 let dahlia = new Queen("Dahlia Sin", 7, 8, 4, 4, 10, 15, 4, 12, 15, 1, 4, "Dahlia", "Dahlia", "US12", false);
 
 let US12 = shuffle([jaida, crystalm, gigi, jackie, heidi, widow, jan, brita, aiden, nicky, rock, dahlia]);
