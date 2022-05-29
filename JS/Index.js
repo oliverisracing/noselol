@@ -7054,7 +7054,7 @@ let DragRaceQueens = [
 
   jaidaas7, jinkxas7, monetas7, rajaas7, sheaas7, vivas7, trinityas7, yvieas7,
 
-  cherylw, bluw, mow, bagaw, jujubeew, janeyw, panginaw, jimbow, cherylw, lemonw,
+  cherylw, bluw, mow, bagaw, jujubeew, janeyw, panginaw, jimbow, lemonw,
 
   baga, blu, cheryl, crystal, divina, gothy, scaredy, sumting, viv, vinegar,
   awhora, asttina, bimini, cherry, ellie, ginny, joe, lawrence, sister, tayce, tia, veronica,
