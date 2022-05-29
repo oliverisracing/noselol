@@ -2000,6 +2000,431 @@ class Ball{
     {
       
       let Btm = [
+        ", you came here to slay, but tonight your outfit slayed you.",
+        ", on the runway, you ran out of gas.",
+        ", tonight the judges did not say yes to the dress.",
+        ", your outfit had a story. A very confusing one.",
+        ", simplicity is sometimes the way to go. Unfortunately, not tonight.",
+        ", your outfit made our heads turn, and made us dizzy.",
+        ", you need to focus. Or else it's going to cost you.",
+        ];
+        return(Btm[getRandomInt(0,Btm.length-1)]);
+      }
+    
+      rankPerfomances()
+      {
+          for(let i = 0; i < CurrentSeason.currentCast.length;i++)
+          {
+            CurrentSeason.currentCast[i].getBall();
+          }
+    
+          CurrentSeason.currentCast.sort((a, b) => a.perfomancescore - b.perfomancescore);
+    
+          for(let i = 0; i<CurrentSeason.currentCast.length; i++)
+          {
+            if(CurrentSeason.currentCast[i].perfomancescore<=8)
+            {
+              SlayedChallenge.push(CurrentSeason.currentCast[i]);
+            }
+            else if(CurrentSeason.currentCast[i].perfomancescore>6 && CurrentSeason.currentCast[i].perfomancescore<=16)
+            {
+              GreatChallenge.push(CurrentSeason.currentCast[i]);
+            }
+            else if(CurrentSeason.currentCast[i].perfomancescore>16 && CurrentSeason.currentCast[i].perfomancescore<=26)
+            {
+              GoodChallenge.push(CurrentSeason.currentCast[i]);
+            }
+            else if(CurrentSeason.currentCast[i].perfomancescore>26 && CurrentSeason.currentCast[i].perfomancescore<=32)
+            {
+              BadChallenge.push(CurrentSeason.currentCast[i]);
+            }
+            else if(CurrentSeason.currentCast[i].perfomancescore>32)
+            {
+              FloppedChallenge.push(CurrentSeason.currentCast[i]);
+            }
+          }
+    
+      }
+    
+        createPerformances()
+        {
+          let slayedtext = "";
+          let greattext = "";
+          let goodtext = "";
+          let badtext = "";
+          let floptext = "";
+          
+      
+          if(SlayedChallenge.length!=0)
+          {
+            for(let i = 0; i < SlayedChallenge.length; i++)
+            {
+              Main.createImage(SlayedChallenge[i].image,"#6eadff");
+              if(i!=SlayedChallenge.length-1)
+              {
+                slayedtext += SlayedChallenge[i].GetName()+", ";
+              }
+              else
+              {
+                if(SlayedChallenge.length!=1)
+                {
+                  slayedtext += " and "+SlayedChallenge[i].GetName();
+                }
+                else
+                {
+                  slayedtext += SlayedChallenge[i].GetName();
+                }
+              }
+            }
+            Main.createText(slayedtext+" slayed the challenge.", "Bold");
+          }
+      
+          if(GreatChallenge.length!=0)
+          {
+            for(let i = 0; i < GreatChallenge.length; i++)
+            {
+              Main.createImage(GreatChallenge[i].image,"#6effe4");
+              if(i!=GreatChallenge.length-1)
+              {
+                greattext += GreatChallenge[i].GetName()+", ";
+              }
+              else
+              {
+                if(GreatChallenge.length!=1)
+                {
+                  greattext += " and "+GreatChallenge[i].GetName();
+                }
+                else
+                {
+                  greattext += GreatChallenge[i].GetName();
+                }
+              }
+            }
+            Main.createText(greattext+" had a great performance.", "Bold");
+          }
+      
+          if(GoodChallenge.length!=0)
+          {
+            for(let i = 0; i < GoodChallenge.length; i++)
+            {
+              Main.createImage(GoodChallenge[i].image,"#6eff72");
+              if(i!=GoodChallenge.length-1)
+              {
+                goodtext += GoodChallenge[i].GetName()+", ";
+              }
+              else
+              {
+                if(GoodChallenge.length!=1)
+                {
+                  goodtext += " and "+GoodChallenge[i].GetName();
+                }
+                else
+                {
+                  goodtext += GoodChallenge[i].GetName();
+                }
+              }
+            }
+            Main.createText(goodtext+" had a good performance.", "Bold");
+          }
+      
+          if(BadChallenge.length!=0)
+          {
+            for(let i = 0; i < BadChallenge.length; i++)
+            {
+              Main.createImage(BadChallenge[i].image,"#ffe96e");
+              if(i!=BadChallenge.length-1)
+              {
+                badtext += BadChallenge[i].GetName()+", ";
+              }
+              else
+              {
+                if(BadChallenge.length!=1)
+                {
+                  badtext += " and "+BadChallenge[i].GetName();
+                }
+                else
+                {
+                  badtext += BadChallenge[i].GetName();
+                }
+              }
+            }
+            Main.createText(badtext+" had a bad performance.", "Bold");
+          }
+      
+          if(FloppedChallenge.length!=0)
+          {
+            for(let i = 0; i < FloppedChallenge.length; i++)
+            {
+              Main.createImage(FloppedChallenge[i].image,"#ff6e6e");
+              if(i!=FloppedChallenge.length-1)
+              {
+                floptext += FloppedChallenge[i].GetName()+", ";
+              }
+              else
+              {
+                if(FloppedChallenge.length!=1)
+                {
+                  floptext += " and "+FloppedChallenge[i].GetName();
+                }
+                else
+                {
+                  floptext += FloppedChallenge[i].GetName();
+                }
+              }
+            }
+            Main.createText(floptext+" flopped the challenge.", "Bold");
+          }
+        }
+    
+        rankRunways()
+        {
+          for(let i = 0; i < CurrentSeason.currentCast.length;i++)
+          {
+            CurrentSeason.currentCast[i].getRunway();
+            CurrentSeason.currentCast[i].finalscore = CurrentSeason.currentCast[i].perfomancescore - CurrentSeason.currentCast[i].runway;
+          }
+    
+          for(let i = 0; i<CurrentSeason.currentCast.length; i++)
+          {
+            if(CurrentSeason.currentCast[i].runwayscore<=2)
+            {
+              FloppedRunway.push(CurrentSeason.currentCast[i]);
+            }
+            else if(CurrentSeason.currentCast[i].runwayscore>2 && CurrentSeason.currentCast[i].runwayscore<=4)
+            {
+              BadRunway.push(CurrentSeason.currentCast[i]);
+            }
+            else if(CurrentSeason.currentCast[i].runwayscore>4 && CurrentSeason.currentCast[i].runwayscore<=10)
+            {
+              GoodRunway.push(CurrentSeason.currentCast[i]);
+            }
+            else if(CurrentSeason.currentCast[i].runwayscore>10 && CurrentSeason.currentCast[i].runwayscore<=13)
+            {
+              GreatRunway.push(CurrentSeason.currentCast[i]);
+            }
+            else if(CurrentSeason.currentCast[i].runwayscore>13)
+            {
+              SlayedRunway.push(CurrentSeason.currentCast[i]);
+            }
+          }
+        }
+    
+        createRunways()
+        {
+          let slayedtext = "";
+          let greattext = "";
+          let goodtext = "";
+          let badtext = "";
+          let floptext = "";
+          
+      
+          if(SlayedRunway.length!=0)
+          {
+            for(let i = 0; i < SlayedRunway.length; i++)
+            {
+              Main.createImage(SlayedRunway[i].image,"#6eadff");
+              if(i!=SlayedRunway.length-1)
+              {
+                slayedtext += SlayedRunway[i].GetName()+", ";
+              }
+              else
+              {
+                if(SlayedRunway.length!=1)
+                {
+                  slayedtext += " and "+SlayedRunway[i].GetName();
+                }
+                else
+                {
+                  slayedtext += SlayedRunway[i].GetName();
+                }
+              }
+            }
+            Main.createText(slayedtext+" slayed the runway.", "Bold");
+          }
+      
+          if(GreatRunway.length!=0)
+          {
+            for(let i = 0; i < GreatRunway.length; i++)
+            {
+              Main.createImage(GreatRunway[i].image,"#6effe4");
+              if(i!=GreatRunway.length-1)
+              {
+                greattext += GreatRunway[i].GetName()+", ";
+              }
+              else
+              {
+                if(GreatRunway.length!=1)
+                {
+                  greattext += " and "+GreatRunway[i].GetName();
+                }
+                else
+                {
+                  greattext += GreatRunway[i].GetName();
+                }
+              }
+            }
+            Main.createText(greattext+" had a great runway.", "Bold");
+          }
+      
+          if(GoodRunway.length!=0)
+          {
+            for(let i = 0; i < GoodRunway.length; i++)
+            {
+              Main.createImage(GoodRunway[i].image,"#6eff72");
+              if(i!=GoodRunway.length-1)
+              {
+                goodtext += GoodRunway[i].GetName()+", ";
+              }
+              else
+              {
+                if(GoodRunway.length!=1)
+                {
+                  goodtext += " and "+GoodRunway[i].GetName();
+                }
+                else
+                {
+                  goodtext += GoodRunway[i].GetName();
+                }
+              }
+            }
+            Main.createText(goodtext+" had a good runway.", "Bold");
+          }
+      
+          if(BadRunway.length!=0)
+          {
+            for(let i = 0; i < BadRunway.length; i++)
+            {
+              Main.createImage(BadRunway[i].image,"#ffe96e");
+              if(i!=BadRunway.length-1)
+              {
+                badtext += BadRunway[i].GetName()+", ";
+              }
+              else
+              {
+                if(BadRunway.length!=1)
+                {
+                  badtext += " and "+BadRunway[i].GetName();
+                }
+                else
+                {
+                  badtext += BadRunway[i].GetName();
+                }
+              }
+            }
+            Main.createText(badtext+" had a bad runway.", "Bold");
+          }
+      
+          if(FloppedRunway.length!=0)
+          {
+            for(let i = 0; i < FloppedRunway.length; i++)
+            {
+              Main.createImage(FloppedRunway[i].image,"#ff6e6e");
+              if(i!=FloppedRunway.length-1)
+              {
+                floptext += FloppedRunway[i].GetName()+", ";
+              }
+              else
+              {
+                if(FloppedRunway.length!=1)
+                {
+                  floptext += " and "+FloppedRunway[i].GetName();
+                }
+                else
+                {
+                  floptext += FloppedRunway[i].GetName();
+                }
+              }
+            }
+            Main.createText(floptext+" flopped the runway.", "Bold");
+          }
+        }
+      }
+  
+  class ActingChallenge{
+  
+    constructor(){
+      this.type = "ACTING";
+      this.hasrunway = true;
+      this.winner = false;
+      this.plays = [
+        "Country Queens",
+        "Queens In Spaces",
+        "Queens Behind Bars",
+        "Lip Sync Eleganza Extravaganza",
+        "Drama Queens",
+        "Scream Queens",
+        "ShakesQueer",
+        "Ru Hollywood Stories",
+        "RuCo's Empire",
+        "9021-HO",
+        "Breastworld",
+        "Good Girl, Get Out",
+        "Gay's Anatomy",
+        "RuPaulmark Channel",
+        "Henny, I Shrunk The Drag Queens!",
+        "She's A Super Tease",
+        "The Daytona Winds",
+        "Drag Movie Shequels",
+        "My Best Squirrelfriend's Dragsmaids Wedding Trip",
+        "Sex and the Kitty, Girl 3",
+        "RuMerican Horror Story: Coven Girls",
+        "Downton Draggy",
+        "BeastEnders",
+        "Bra Wars",
+        "Her-Itage Moments",
+        "Screech"
+      ];
+  
+      this.chosen = getRandomInt(0,this.plays.length-1);
+    }
+  
+    createMessage()
+    {
+      switch(getRandomInt(0,1))
+      {
+        case 0:
+          Announcement.createRupaulAnnouncement("Hello queens!");
+          Announcement.createRupaulAnnouncement("I'm sorry to say but you have all been eliminated...");
+          Announcement.createRupaulAnnouncement("HA! Got you all!");
+          Announcement.createRupaulAnnouncement("Will you be able to do it like me ? Or you will fail ?");
+          Announcement.createRupaulAnnouncement("Play the game to find out...");
+          break;
+        case 1:
+          Announcement.createRupaulAnnouncement("Hello queens!");
+          Announcement.createRupaulAnnouncement("Tonight, you will have to use your actings chops.");
+          Announcement.createRupaulAnnouncement("Do you have what it takes ?");
+          break;
+      }
+    }
+  
+    createBrief()
+    {
+      Main.createText("This week, the queens will have to act in : "+this.plays[this.chosen]+".");
+    }
+  
+    TopPlacement()
+    {
+      
+      let Top = [
+      "Tonight, you knew how to work it OUT!",
+      "Tonight, you shined all over this runway.",
+      "You ruled over this runway.",
+      "You made gold out of randomness.",
+      "Your haute couture, made you rise to the top.",
+      "You have creativity beyond limits.",
+      "Tonight, you have made yourself stunning.",
+      "Your couture made us gag.",
+      "The cream always rises to the top.",
+      "You have a great perception of design.",
+      "Your outfit kept us begging for more."
+      ];
+      return(Top[getRandomInt(0,Top.length-1)]);
+    }
+  
+    BtmPlacement()
+    {
+      
+      let Btm = [
       ", you came here to slay, but tonight your outfit slayed you.",
       ", on the runway, you ran out of gas.",
       ", tonight the judges did not say yes to the dress.",
@@ -2015,7 +2440,7 @@ class Ball{
     {
         for(let i = 0; i < CurrentSeason.currentCast.length;i++)
         {
-          CurrentSeason.currentCast[i].getBall();
+          CurrentSeason.currentCast[i].GetActing();
         }
   
         CurrentSeason.currentCast.sort((a, b) => a.perfomancescore - b.perfomancescore);
@@ -2339,1222 +2764,797 @@ class Ball{
         }
       }
     }
-
-class ActingChallenge{
-
-  constructor(){
-    this.type = "ACTING";
-    this.hasrunway = true;
-    this.winner = false;
-    this.plays = [
-      "Country Queens",
-      "Queens In Spaces",
-      "Queens Behind Bars",
-      "Lip Sync Eleganza Extravaganza",
-      "Drama Queens",
-      "Scream Queens",
-      "ShakesQueer",
-      "Ru Hollywood Stories",
-      "RuCo's Empire",
-      "9021-HO",
-      "Breastworld",
-      "Good Girl, Get Out",
-      "Gay's Anatomy",
-      "RuPaulmark Channel",
-      "Henny, I Shrunk The Drag Queens!",
-      "She's A Super Tease",
-      "The Daytona Winds",
-      "Drag Movie Shequels",
-      "My Best Squirrelfriend's Dragsmaids Wedding Trip",
-      "Sex and the Kitty, Girl 3",
-      "RuMerican Horror Story: Coven Girls",
-      "Downton Draggy",
-      "BeastEnders",
-      "Bra Wars",
-      "Her-Itage Moments",
-      "Screech"
-    ];
-
-    this.chosen = getRandomInt(0,this.plays.length-1);
-  }
-
-  createMessage()
-  {
-    switch(getRandomInt(0,1))
-    {
-      case 0:
-        Announcement.createRupaulAnnouncement("Hello queens!");
-        Announcement.createRupaulAnnouncement("I'm sorry to say but you have all been eliminated...");
-        Announcement.createRupaulAnnouncement("HA! Got you all!");
-        Announcement.createRupaulAnnouncement("Will you be able to do it like me ? Or you will fail ?");
-        Announcement.createRupaulAnnouncement("Play the game to find out...");
-        break;
-      case 1:
-        Announcement.createRupaulAnnouncement("Hello queens!");
-        Announcement.createRupaulAnnouncement("Tonight, you will have to use your actings chops.");
-        Announcement.createRupaulAnnouncement("Do you have what it takes ?");
-        break;
+  
+  class ImprovChallenge{
+  
+    constructor(){
+      this.type = "IMPROV";
+      this.hasrunway = true;
+      this.winner = false;
+      this.improv = [
+        " in an interview with a celebrity.",
+        " in a news program named : \"QNN News\".",
+        " in a news program named : \"Morning Glory\".",
+        " in a news program named : \"Good Morning Bitches\".",
+        " in a political debate.",
+        " in a talk show named : \"Pink Table Talk\".",
+        " in a talk show talking about celebrities.",
+        " in drag cons panels!",
+        " in a brand new kids TV show.",
+        " in a brand new program : \"World's Worst\".",
+        " in a brand new program : \"The Bossy Rossy Show\".",
+        " in a brand new program : \"The Bitchelor\".",
+        " in a brand new program : \"Los Angeles Drag Patrol\".",
+        " in a brand new report : \"SheMZ\".",
+        " in a brand new program : \"Jersey Justice\".",
+      ];
+  
+      this.as7=[
+        " in a brand new program : \"Fairytale Justice \".",
+        " in a public speaking involved challenge."
+      ]
+  
+      this.interviews = [
+        "Queens Of All Medias",
+        "Drag Queen Of Talk"
+      ];
+  
+      this.debate = [
+        "Choices 2020",
+        "Frock The Votel"
+      ];
+  
+      this.chosen = getRandomInt(0,this.improv.length-1);
+      this.episodename = "";
+      switch(this.chosen)
+      {
+        case 0:
+          this.episodename = this.interviews[getRandomInt(0,this.interviews.length-1)];
+          break;
+        case 1:
+          this.episodename = "QQN News";
+          break;
+        case 2:
+          this.episodename = "Morning Glory";
+          break;
+        case 3:
+          this.episodename = "Good Morning Bitches";
+          break;
+        case 4:
+          this.episodename = this.debate[getRandomInt(0,this.debate.length-1)];
+          break;
+        case 5:
+          this.episodename = "Pink Table Talk";
+          break;
+        case 6:
+          this.episodename = "Diva Worships";
+          break;
+        case 7:
+          this.episodename = "Menzeses";
+          break;
+        case 8:
+          this.episodename = "Draggle Rock";
+          break;
+        case 9:
+          this.episodename = "World's Worst";
+          break;
+        case 10:
+          this.episodename = "The Bossy Rossy Show";
+          break;
+        case 11:
+          this.episodename = "The Bitchelor";
+          break;
+        case 12:
+          this.episodename = "L.A.D.P.";
+          break;
+        case 13:
+          this.episodename = "SheMZ";
+          break;
+        case 14:
+          this.episodename = "Jersey Justice";
+          break;
+      }
+  
+      if(CurrentSeason.lipsyncformat=="AS7" && CurrentSeason.episodes.length==3)
+      {
+        this.chosen = this.as7[0];
+        this.episodename = "Fairy Tale Justice";
+      }
+  
+      if(CurrentSeason.lipsyncformat=="AS7" && CurrentSeason.episodes.length==7)
+      {
+        this.chosen = this.as7[1];
+        this.episodename = "Public Speaking";
+      }
+  
     }
-  }
-
-  createBrief()
-  {
-    Main.createText("This week, the queens will have to act in : "+this.plays[this.chosen]+".");
-  }
-
-  TopPlacement()
-  {
     
-    let Top = [
-    "Tonight, you knew how to work it OUT!",
-    "Tonight, you shined all over this runway.",
-    "You ruled over this runway.",
-    "You made gold out of randomness.",
-    "Your haute couture, made you rise to the top.",
-    "You have creativity beyond limits.",
-    "Tonight, you have made yourself stunning.",
-    "Your couture made us gag.",
-    "The cream always rises to the top.",
-    "You have a great perception of design.",
-    "Your outfit kept us begging for more."
-    ];
-    return(Top[getRandomInt(0,Top.length-1)]);
-  }
-
-  BtmPlacement()
-  {
-    
-    let Btm = [
-    ", you came here to slay, but tonight your outfit slayed you.",
-    ", on the runway, you ran out of gas.",
-    ", tonight the judges did not say yes to the dress.",
-    ", your outfit had a story. A very confusing one.",
-    ", simplicity is sometimes the way to go. Unfortunately, not tonight.",
-    ", your outfit made our heads turn, and made us dizzy.",
-    ", you need to focus. Or else it's going to cost you.",
-    ];
-    return(Btm[getRandomInt(0,Btm.length-1)]);
-  }
-
-  rankPerfomances()
-  {
-      for(let i = 0; i < CurrentSeason.currentCast.length;i++)
-      {
-        CurrentSeason.currentCast[i].GetActing();
-      }
-
-      CurrentSeason.currentCast.sort((a, b) => a.perfomancescore - b.perfomancescore);
-
-      for(let i = 0; i<CurrentSeason.currentCast.length; i++)
-      {
-        if(CurrentSeason.currentCast[i].perfomancescore<=8)
-        {
-          SlayedChallenge.push(CurrentSeason.currentCast[i]);
-        }
-        else if(CurrentSeason.currentCast[i].perfomancescore>6 && CurrentSeason.currentCast[i].perfomancescore<=16)
-        {
-          GreatChallenge.push(CurrentSeason.currentCast[i]);
-        }
-        else if(CurrentSeason.currentCast[i].perfomancescore>16 && CurrentSeason.currentCast[i].perfomancescore<=26)
-        {
-          GoodChallenge.push(CurrentSeason.currentCast[i]);
-        }
-        else if(CurrentSeason.currentCast[i].perfomancescore>26 && CurrentSeason.currentCast[i].perfomancescore<=32)
-        {
-          BadChallenge.push(CurrentSeason.currentCast[i]);
-        }
-        else if(CurrentSeason.currentCast[i].perfomancescore>32)
-        {
-          FloppedChallenge.push(CurrentSeason.currentCast[i]);
-        }
-      }
-
-  }
-
-    createPerformances()
+  
+    createMessage()
     {
-      let slayedtext = "";
-      let greattext = "";
-      let goodtext = "";
-      let badtext = "";
-      let floptext = "";
+      switch(getRandomInt(0,1))
+      {
+        case 0:
+          Announcement.createRupaulAnnouncement("Hello queens!");
+          Announcement.createRupaulAnnouncement("Do you know how to lie on the spot ?");
+          Announcement.createRupaulAnnouncement("Well if you do you're gonna need it!");
+          break;
+        case 1:
+          Announcement.createRupaulAnnouncement("Hello queens!");
+          Announcement.createRupaulAnnouncement("Tonight, I have a favor to ask of you all.");
+          Announcement.createRupaulAnnouncement("Prepare yourself for what's gonna come, because you're going to need a lot of preparings to do well!");
+          break;
+      }
+    }
+  
+    createBrief()
+    {
+      if(CurrentSeason.lipsyncformat == "AS7")
+      {
+        Main.createText("This week, the queens will have to improvise "+this.chosen);
+      }
+      else
+      {
+        Main.createText("This week, the queens will have to improvise "+this.improv[this.chosen]);
+      }
+    }
+  
+    TopPlacement()
+    {
       
-  
-      if(SlayedChallenge.length!=0)
-      {
-        for(let i = 0; i < SlayedChallenge.length; i++)
-        {
-          Main.createImage(SlayedChallenge[i].image,"#6eadff");
-          if(i!=SlayedChallenge.length-1)
-          {
-            slayedtext += SlayedChallenge[i].GetName()+", ";
-          }
-          else
-          {
-            if(SlayedChallenge.length!=1)
-            {
-              slayedtext += " and "+SlayedChallenge[i].GetName();
-            }
-            else
-            {
-              slayedtext += SlayedChallenge[i].GetName();
-            }
-          }
-        }
-        Main.createText(slayedtext+" slayed the challenge.", "Bold");
-      }
-  
-      if(GreatChallenge.length!=0)
-      {
-        for(let i = 0; i < GreatChallenge.length; i++)
-        {
-          Main.createImage(GreatChallenge[i].image,"#6effe4");
-          if(i!=GreatChallenge.length-1)
-          {
-            greattext += GreatChallenge[i].GetName()+", ";
-          }
-          else
-          {
-            if(GreatChallenge.length!=1)
-            {
-              greattext += " and "+GreatChallenge[i].GetName();
-            }
-            else
-            {
-              greattext += GreatChallenge[i].GetName();
-            }
-          }
-        }
-        Main.createText(greattext+" had a great performance.", "Bold");
-      }
-  
-      if(GoodChallenge.length!=0)
-      {
-        for(let i = 0; i < GoodChallenge.length; i++)
-        {
-          Main.createImage(GoodChallenge[i].image,"#6eff72");
-          if(i!=GoodChallenge.length-1)
-          {
-            goodtext += GoodChallenge[i].GetName()+", ";
-          }
-          else
-          {
-            if(GoodChallenge.length!=1)
-            {
-              goodtext += " and "+GoodChallenge[i].GetName();
-            }
-            else
-            {
-              goodtext += GoodChallenge[i].GetName();
-            }
-          }
-        }
-        Main.createText(goodtext+" had a good performance.", "Bold");
-      }
-  
-      if(BadChallenge.length!=0)
-      {
-        for(let i = 0; i < BadChallenge.length; i++)
-        {
-          Main.createImage(BadChallenge[i].image,"#ffe96e");
-          if(i!=BadChallenge.length-1)
-          {
-            badtext += BadChallenge[i].GetName()+", ";
-          }
-          else
-          {
-            if(BadChallenge.length!=1)
-            {
-              badtext += " and "+BadChallenge[i].GetName();
-            }
-            else
-            {
-              badtext += BadChallenge[i].GetName();
-            }
-          }
-        }
-        Main.createText(badtext+" had a bad performance.", "Bold");
-      }
-  
-      if(FloppedChallenge.length!=0)
-      {
-        for(let i = 0; i < FloppedChallenge.length; i++)
-        {
-          Main.createImage(FloppedChallenge[i].image,"#ff6e6e");
-          if(i!=FloppedChallenge.length-1)
-          {
-            floptext += FloppedChallenge[i].GetName()+", ";
-          }
-          else
-          {
-            if(FloppedChallenge.length!=1)
-            {
-              floptext += " and "+FloppedChallenge[i].GetName();
-            }
-            else
-            {
-              floptext += FloppedChallenge[i].GetName();
-            }
-          }
-        }
-        Main.createText(floptext+" flopped the challenge.", "Bold");
-      }
+      let Top = [
+      "Tonight, you knew how to work it OUT!",
+      "Tonight, you shined all over this runway.",
+      "You ruled over this runway.",
+      "You made gold out of randomness.",
+      "Your haute couture, made you rise to the top.",
+      "You have creativity beyond limits.",
+      "Tonight, you have made yourself stunning.",
+      "Your couture made us gag.",
+      "The cream always rises to the top.",
+      "You have a great perception of design.",
+      "Your outfit kept us begging for more."
+      ];
+      return(Top[getRandomInt(0,Top.length-1)]);
     }
-
-    rankRunways()
+  
+    BtmPlacement()
     {
-      for(let i = 0; i < CurrentSeason.currentCast.length;i++)
-      {
-        CurrentSeason.currentCast[i].getRunway();
-        CurrentSeason.currentCast[i].finalscore = CurrentSeason.currentCast[i].perfomancescore - CurrentSeason.currentCast[i].runway;
-      }
-
-      for(let i = 0; i<CurrentSeason.currentCast.length; i++)
-      {
-        if(CurrentSeason.currentCast[i].runwayscore<=2)
-        {
-          FloppedRunway.push(CurrentSeason.currentCast[i]);
-        }
-        else if(CurrentSeason.currentCast[i].runwayscore>2 && CurrentSeason.currentCast[i].runwayscore<=4)
-        {
-          BadRunway.push(CurrentSeason.currentCast[i]);
-        }
-        else if(CurrentSeason.currentCast[i].runwayscore>4 && CurrentSeason.currentCast[i].runwayscore<=10)
-        {
-          GoodRunway.push(CurrentSeason.currentCast[i]);
-        }
-        else if(CurrentSeason.currentCast[i].runwayscore>10 && CurrentSeason.currentCast[i].runwayscore<=13)
-        {
-          GreatRunway.push(CurrentSeason.currentCast[i]);
-        }
-        else if(CurrentSeason.currentCast[i].runwayscore>13)
-        {
-          SlayedRunway.push(CurrentSeason.currentCast[i]);
-        }
-      }
-    }
-
-    createRunways()
-    {
-      let slayedtext = "";
-      let greattext = "";
-      let goodtext = "";
-      let badtext = "";
-      let floptext = "";
       
+      let Btm = [
+      ", you came here to slay, but tonight your outfit slayed you.",
+      ", on the runway, you ran out of gas.",
+      ", tonight the judges did not say yes to the dress.",
+      ", your outfit had a story. A very confusing one.",
+      ", simplicity is sometimes the way to go. Unfortunately, not tonight.",
+      ", your outfit made our heads turn, and made us dizzy.",
+      ", you need to focus. Or else it's going to cost you.",
+      ];
+      return(Btm[getRandomInt(0,Btm.length-1)]);
+    }
   
-      if(SlayedRunway.length!=0)
-      {
-        for(let i = 0; i < SlayedRunway.length; i++)
+    rankPerfomances()
+    {
+        for(let i = 0; i < CurrentSeason.currentCast.length;i++)
         {
-          Main.createImage(SlayedRunway[i].image,"#6eadff");
-          if(i!=SlayedRunway.length-1)
+          CurrentSeason.currentCast[i].GetImprov();
+        }
+  
+        CurrentSeason.currentCast.sort((a, b) => a.perfomancescore - b.perfomancescore);
+  
+        for(let i = 0; i<CurrentSeason.currentCast.length; i++)
+        {
+          if(CurrentSeason.currentCast[i].perfomancescore<=8)
           {
-            slayedtext += SlayedRunway[i].GetName()+", ";
+            SlayedChallenge.push(CurrentSeason.currentCast[i]);
           }
-          else
+          else if(CurrentSeason.currentCast[i].perfomancescore>6 && CurrentSeason.currentCast[i].perfomancescore<=16)
           {
-            if(SlayedRunway.length!=1)
-            {
-              slayedtext += " and "+SlayedRunway[i].GetName();
-            }
-            else
-            {
-              slayedtext += SlayedRunway[i].GetName();
-            }
+            GreatChallenge.push(CurrentSeason.currentCast[i]);
+          }
+          else if(CurrentSeason.currentCast[i].perfomancescore>16 && CurrentSeason.currentCast[i].perfomancescore<=26)
+          {
+            GoodChallenge.push(CurrentSeason.currentCast[i]);
+          }
+          else if(CurrentSeason.currentCast[i].perfomancescore>26 && CurrentSeason.currentCast[i].perfomancescore<=32)
+          {
+            BadChallenge.push(CurrentSeason.currentCast[i]);
+          }
+          else if(CurrentSeason.currentCast[i].perfomancescore>32)
+          {
+            FloppedChallenge.push(CurrentSeason.currentCast[i]);
           }
         }
-        Main.createText(slayedtext+" slayed the runway.", "Bold");
-      }
   
-      if(GreatRunway.length!=0)
+    }
+  
+      createPerformances()
       {
-        for(let i = 0; i < GreatRunway.length; i++)
-        {
-          Main.createImage(GreatRunway[i].image,"#6effe4");
-          if(i!=GreatRunway.length-1)
-          {
-            greattext += GreatRunway[i].GetName()+", ";
-          }
-          else
-          {
-            if(GreatRunway.length!=1)
-            {
-              greattext += " and "+GreatRunway[i].GetName();
-            }
-            else
-            {
-              greattext += GreatRunway[i].GetName();
-            }
-          }
-        }
-        Main.createText(greattext+" had a great runway.", "Bold");
-      }
-  
-      if(GoodRunway.length!=0)
-      {
-        for(let i = 0; i < GoodRunway.length; i++)
-        {
-          Main.createImage(GoodRunway[i].image,"#6eff72");
-          if(i!=GoodRunway.length-1)
-          {
-            goodtext += GoodRunway[i].GetName()+", ";
-          }
-          else
-          {
-            if(GoodRunway.length!=1)
-            {
-              goodtext += " and "+GoodRunway[i].GetName();
-            }
-            else
-            {
-              goodtext += GoodRunway[i].GetName();
-            }
-          }
-        }
-        Main.createText(goodtext+" had a good runway.", "Bold");
-      }
-  
-      if(BadRunway.length!=0)
-      {
-        for(let i = 0; i < BadRunway.length; i++)
-        {
-          Main.createImage(BadRunway[i].image,"#ffe96e");
-          if(i!=BadRunway.length-1)
-          {
-            badtext += BadRunway[i].GetName()+", ";
-          }
-          else
-          {
-            if(BadRunway.length!=1)
-            {
-              badtext += " and "+BadRunway[i].GetName();
-            }
-            else
-            {
-              badtext += BadRunway[i].GetName();
-            }
-          }
-        }
-        Main.createText(badtext+" had a bad runway.", "Bold");
-      }
-  
-      if(FloppedRunway.length!=0)
-      {
-        for(let i = 0; i < FloppedRunway.length; i++)
-        {
-          Main.createImage(FloppedRunway[i].image,"#ff6e6e");
-          if(i!=FloppedRunway.length-1)
-          {
-            floptext += FloppedRunway[i].GetName()+", ";
-          }
-          else
-          {
-            if(FloppedRunway.length!=1)
-            {
-              floptext += " and "+FloppedRunway[i].GetName();
-            }
-            else
-            {
-              floptext += FloppedRunway[i].GetName();
-            }
-          }
-        }
-        Main.createText(floptext+" flopped the runway.", "Bold");
-      }
-    }
-  }
-
-class ImprovChallenge{
-
-  constructor(){
-    this.type = "IMPROV";
-    this.hasrunway = true;
-    this.winner = false;
-    this.improv = [
-      " in an interview with a celebrity.",
-      " in a news program named : \"QNN News\".",
-      " in a news program named : \"Morning Glory\".",
-      " in a news program named : \"Good Morning Bitches\".",
-      " in a political debate.",
-      " in a talk show named : \"Pink Table Talk\".",
-      " in a talk show talking about celebrities.",
-      " in drag cons panels!",
-      " in a brand new kids TV show.",
-      " in a brand new program : \"World's Worst\".",
-      " in a brand new program : \"The Bossy Rossy Show\".",
-      " in a brand new program : \"The Bitchelor\".",
-      " in a brand new program : \"Los Angeles Drag Patrol\".",
-      " in a brand new report : \"SheMZ\".",
-      " in a brand new program : \"Jersey Justice\".",
-    ];
-
-    this.as7=[
-      " in a brand new program : \"Fairytale Justice \".",
-      " in a public speaking involved challenge."
-    ]
-
-    this.interviews = [
-      "Queens Of All Medias",
-      "Drag Queen Of Talk"
-    ];
-
-    this.debate = [
-      "Choices 2020",
-      "Frock The Votel"
-    ];
-
-    this.chosen = getRandomInt(0,this.improv.length-1);
-    this.episodename = "";
-    switch(this.chosen)
-    {
-      case 0:
-        this.episodename = this.interviews[getRandomInt(0,this.interviews.length-1)];
-        break;
-      case 1:
-        this.episodename = "QQN News";
-        break;
-      case 2:
-        this.episodename = "Morning Glory";
-        break;
-      case 3:
-        this.episodename = "Good Morning Bitches";
-        break;
-      case 4:
-        this.episodename = this.debate[getRandomInt(0,this.debate.length-1)];
-        break;
-      case 5:
-        this.episodename = "Pink Table Talk";
-        break;
-      case 6:
-        this.episodename = "Diva Worships";
-        break;
-      case 7:
-        this.episodename = "Menzeses";
-        break;
-      case 8:
-        this.episodename = "Draggle Rock";
-        break;
-      case 9:
-        this.episodename = "World's Worst";
-        break;
-      case 10:
-        this.episodename = "The Bossy Rossy Show";
-        break;
-      case 11:
-        this.episodename = "The Bitchelor";
-        break;
-      case 12:
-        this.episodename = "L.A.D.P.";
-        break;
-      case 13:
-        this.episodename = "SheMZ";
-        break;
-      case 14:
-        this.episodename = "Jersey Justice";
-        break;
-    }
-
-    if(CurrentSeason.lipsyncformat=="AS7" && CurrentSeason.episodes.length==3)
-    {
-      this.chosen = this.as7[0];
-      this.episodename = "Fairy Tale Justice";
-    }
-
-    if(CurrentSeason.lipsyncformat=="AS7" && CurrentSeason.episodes.length==7)
-    {
-      this.chosen = this.as7[1];
-      this.episodename = "Public Speaking";
-    }
-
-  }
-  
-
-  createMessage()
-  {
-    switch(getRandomInt(0,1))
-    {
-      case 0:
-        Announcement.createRupaulAnnouncement("Hello queens!");
-        Announcement.createRupaulAnnouncement("Do you know how to lie on the spot ?");
-        Announcement.createRupaulAnnouncement("Well if you do you're gonna need it!");
-        break;
-      case 1:
-        Announcement.createRupaulAnnouncement("Hello queens!");
-        Announcement.createRupaulAnnouncement("Tonight, I have a favor to ask of you all.");
-        Announcement.createRupaulAnnouncement("Prepare yourself for what's gonna come, because you're going to need a lot of preparings to do well!");
-        break;
-    }
-  }
-
-  createBrief()
-  {
-    if(CurrentSeason.lipsyncformat == "AS7")
-    {
-      Main.createText("This week, the queens will have to improvise "+this.chosen);
-    }
-    else
-    {
-      Main.createText("This week, the queens will have to improvise "+this.improv[this.chosen]);
-    }
-  }
-
-  TopPlacement()
-  {
+        let slayedtext = "";
+        let greattext = "";
+        let goodtext = "";
+        let badtext = "";
+        let floptext = "";
+        
     
-    let Top = [
-    "Tonight, you knew how to work it OUT!",
-    "Tonight, you shined all over this runway.",
-    "You ruled over this runway.",
-    "You made gold out of randomness.",
-    "Your haute couture, made you rise to the top.",
-    "You have creativity beyond limits.",
-    "Tonight, you have made yourself stunning.",
-    "Your couture made us gag.",
-    "The cream always rises to the top.",
-    "You have a great perception of design.",
-    "Your outfit kept us begging for more."
-    ];
-    return(Top[getRandomInt(0,Top.length-1)]);
-  }
-
-  BtmPlacement()
-  {
+        if(SlayedChallenge.length!=0)
+        {
+          for(let i = 0; i < SlayedChallenge.length; i++)
+          {
+            Main.createImage(SlayedChallenge[i].image,"#6eadff");
+            if(i!=SlayedChallenge.length-1)
+            {
+              slayedtext += SlayedChallenge[i].GetName()+", ";
+            }
+            else
+            {
+              if(SlayedChallenge.length!=1)
+              {
+                slayedtext += " and "+SlayedChallenge[i].GetName();
+              }
+              else
+              {
+                slayedtext += SlayedChallenge[i].GetName();
+              }
+            }
+          }
+          Main.createText(slayedtext+" slayed the challenge.", "Bold");
+        }
     
-    let Btm = [
-    ", you came here to slay, but tonight your outfit slayed you.",
-    ", on the runway, you ran out of gas.",
-    ", tonight the judges did not say yes to the dress.",
-    ", your outfit had a story. A very confusing one.",
-    ", simplicity is sometimes the way to go. Unfortunately, not tonight.",
-    ", your outfit made our heads turn, and made us dizzy.",
-    ", you need to focus. Or else it's going to cost you.",
-    ];
-    return(Btm[getRandomInt(0,Btm.length-1)]);
-  }
-
-  rankPerfomances()
-  {
-      for(let i = 0; i < CurrentSeason.currentCast.length;i++)
-      {
-        CurrentSeason.currentCast[i].GetImprov();
+        if(GreatChallenge.length!=0)
+        {
+          for(let i = 0; i < GreatChallenge.length; i++)
+          {
+            Main.createImage(GreatChallenge[i].image,"#6effe4");
+            if(i!=GreatChallenge.length-1)
+            {
+              greattext += GreatChallenge[i].GetName()+", ";
+            }
+            else
+            {
+              if(GreatChallenge.length!=1)
+              {
+                greattext += " and "+GreatChallenge[i].GetName();
+              }
+              else
+              {
+                greattext += GreatChallenge[i].GetName();
+              }
+            }
+          }
+          Main.createText(greattext+" had a great performance.", "Bold");
+        }
+    
+        if(GoodChallenge.length!=0)
+        {
+          for(let i = 0; i < GoodChallenge.length; i++)
+          {
+            Main.createImage(GoodChallenge[i].image,"#6eff72");
+            if(i!=GoodChallenge.length-1)
+            {
+              goodtext += GoodChallenge[i].GetName()+", ";
+            }
+            else
+            {
+              if(GoodChallenge.length!=1)
+              {
+                goodtext += " and "+GoodChallenge[i].GetName();
+              }
+              else
+              {
+                goodtext += GoodChallenge[i].GetName();
+              }
+            }
+          }
+          Main.createText(goodtext+" had a good performance.", "Bold");
+        }
+    
+        if(BadChallenge.length!=0)
+        {
+          for(let i = 0; i < BadChallenge.length; i++)
+          {
+            Main.createImage(BadChallenge[i].image,"#ffe96e");
+            if(i!=BadChallenge.length-1)
+            {
+              badtext += BadChallenge[i].GetName()+", ";
+            }
+            else
+            {
+              if(BadChallenge.length!=1)
+              {
+                badtext += " and "+BadChallenge[i].GetName();
+              }
+              else
+              {
+                badtext += BadChallenge[i].GetName();
+              }
+            }
+          }
+          Main.createText(badtext+" had a bad performance.", "Bold");
+        }
+    
+        if(FloppedChallenge.length!=0)
+        {
+          for(let i = 0; i < FloppedChallenge.length; i++)
+          {
+            Main.createImage(FloppedChallenge[i].image,"#ff6e6e");
+            if(i!=FloppedChallenge.length-1)
+            {
+              floptext += FloppedChallenge[i].GetName()+", ";
+            }
+            else
+            {
+              if(FloppedChallenge.length!=1)
+              {
+                floptext += " and "+FloppedChallenge[i].GetName();
+              }
+              else
+              {
+                floptext += FloppedChallenge[i].GetName();
+              }
+            }
+          }
+          Main.createText(floptext+" flopped the challenge.", "Bold");
+        }
       }
-
-      CurrentSeason.currentCast.sort((a, b) => a.perfomancescore - b.perfomancescore);
-
-      for(let i = 0; i<CurrentSeason.currentCast.length; i++)
+  
+      rankRunways()
       {
-        if(CurrentSeason.currentCast[i].perfomancescore<=8)
+        for(let i = 0; i < CurrentSeason.currentCast.length;i++)
         {
-          SlayedChallenge.push(CurrentSeason.currentCast[i]);
+          CurrentSeason.currentCast[i].getRunway();
+          CurrentSeason.currentCast[i].finalscore = CurrentSeason.currentCast[i].perfomancescore - CurrentSeason.currentCast[i].runway;
         }
-        else if(CurrentSeason.currentCast[i].perfomancescore>6 && CurrentSeason.currentCast[i].perfomancescore<=16)
+  
+        for(let i = 0; i<CurrentSeason.currentCast.length; i++)
         {
-          GreatChallenge.push(CurrentSeason.currentCast[i]);
-        }
-        else if(CurrentSeason.currentCast[i].perfomancescore>16 && CurrentSeason.currentCast[i].perfomancescore<=26)
-        {
-          GoodChallenge.push(CurrentSeason.currentCast[i]);
-        }
-        else if(CurrentSeason.currentCast[i].perfomancescore>26 && CurrentSeason.currentCast[i].perfomancescore<=32)
-        {
-          BadChallenge.push(CurrentSeason.currentCast[i]);
-        }
-        else if(CurrentSeason.currentCast[i].perfomancescore>32)
-        {
-          FloppedChallenge.push(CurrentSeason.currentCast[i]);
+          if(CurrentSeason.currentCast[i].runwayscore<=2)
+          {
+            FloppedRunway.push(CurrentSeason.currentCast[i]);
+          }
+          else if(CurrentSeason.currentCast[i].runwayscore>2 && CurrentSeason.currentCast[i].runwayscore<=4)
+          {
+            BadRunway.push(CurrentSeason.currentCast[i]);
+          }
+          else if(CurrentSeason.currentCast[i].runwayscore>4 && CurrentSeason.currentCast[i].runwayscore<=10)
+          {
+            GoodRunway.push(CurrentSeason.currentCast[i]);
+          }
+          else if(CurrentSeason.currentCast[i].runwayscore>10 && CurrentSeason.currentCast[i].runwayscore<=13)
+          {
+            GreatRunway.push(CurrentSeason.currentCast[i]);
+          }
+          else if(CurrentSeason.currentCast[i].runwayscore>13)
+          {
+            SlayedRunway.push(CurrentSeason.currentCast[i]);
+          }
         }
       }
-
-  }
-
-    createPerformances()
+  
+      createRunways()
+      {
+        let slayedtext = "";
+        let greattext = "";
+        let goodtext = "";
+        let badtext = "";
+        let floptext = "";
+        
+    
+        if(SlayedRunway.length!=0)
+        {
+          for(let i = 0; i < SlayedRunway.length; i++)
+          {
+            Main.createImage(SlayedRunway[i].image,"#6eadff");
+            if(i!=SlayedRunway.length-1)
+            {
+              slayedtext += SlayedRunway[i].GetName()+", ";
+            }
+            else
+            {
+              if(SlayedRunway.length!=1)
+              {
+                slayedtext += " and "+SlayedRunway[i].GetName();
+              }
+              else
+              {
+                slayedtext += SlayedRunway[i].GetName();
+              }
+            }
+          }
+          Main.createText(slayedtext+" slayed the runway.", "Bold");
+        }
+    
+        if(GreatRunway.length!=0)
+        {
+          for(let i = 0; i < GreatRunway.length; i++)
+          {
+            Main.createImage(GreatRunway[i].image,"#6effe4");
+            if(i!=GreatRunway.length-1)
+            {
+              greattext += GreatRunway[i].GetName()+", ";
+            }
+            else
+            {
+              if(GreatRunway.length!=1)
+              {
+                greattext += " and "+GreatRunway[i].GetName();
+              }
+              else
+              {
+                greattext += GreatRunway[i].GetName();
+              }
+            }
+          }
+          Main.createText(greattext+" had a great runway.", "Bold");
+        }
+    
+        if(GoodRunway.length!=0)
+        {
+          for(let i = 0; i < GoodRunway.length; i++)
+          {
+            Main.createImage(GoodRunway[i].image,"#6eff72");
+            if(i!=GoodRunway.length-1)
+            {
+              goodtext += GoodRunway[i].GetName()+", ";
+            }
+            else
+            {
+              if(GoodRunway.length!=1)
+              {
+                goodtext += " and "+GoodRunway[i].GetName();
+              }
+              else
+              {
+                goodtext += GoodRunway[i].GetName();
+              }
+            }
+          }
+          Main.createText(goodtext+" had a good runway.", "Bold");
+        }
+    
+        if(BadRunway.length!=0)
+        {
+          for(let i = 0; i < BadRunway.length; i++)
+          {
+            Main.createImage(BadRunway[i].image,"#ffe96e");
+            if(i!=BadRunway.length-1)
+            {
+              badtext += BadRunway[i].GetName()+", ";
+            }
+            else
+            {
+              if(BadRunway.length!=1)
+              {
+                badtext += " and "+BadRunway[i].GetName();
+              }
+              else
+              {
+                badtext += BadRunway[i].GetName();
+              }
+            }
+          }
+          Main.createText(badtext+" had a bad runway.", "Bold");
+        }
+    
+        if(FloppedRunway.length!=0)
+        {
+          for(let i = 0; i < FloppedRunway.length; i++)
+          {
+            Main.createImage(FloppedRunway[i].image,"#ff6e6e");
+            if(i!=FloppedRunway.length-1)
+            {
+              floptext += FloppedRunway[i].GetName()+", ";
+            }
+            else
+            {
+              if(FloppedRunway.length!=1)
+              {
+                floptext += " and "+FloppedRunway[i].GetName();
+              }
+              else
+              {
+                floptext += FloppedRunway[i].GetName();
+              }
+            }
+          }
+          Main.createText(floptext+" flopped the runway.", "Bold");
+        }
+      }
+    }
+  
+    class ChoreographyChallenge{
+  
+    constructor(){
+      this.type = "CHOREO";
+      this.hasrunway = true;
+      this.winner = false;
+      this.choreo = [
+        "WTF!: Wrestling's Trashiest Fighters",
+        "Black Swan: Why It Gotta Be Black?",
+        "Prancing Queens",
+        "She Done Already Done Brought It On",
+        "The Draglympics",
+        "Disco-Mentary",
+        "Dragoton"
+      ];
+  
+      this.chosen = getRandomInt(0,this.choreo.length-1);
+  
+      this.episodename = "";
+      switch(this.chosen)
+      {
+        case 0:
+          this.episodename = "WTF!";
+          break;
+        case 1:
+          this.episodename = "Black Swan";
+          break;
+        case 2:
+          this.episodename = "Prancing Queens";
+          break;
+        case 3:
+          this.episodename = "She Done Already Done Brought It On";
+          break;
+        case 4:
+          this.episodename = "The Draglympics";
+          break;
+        case 5:
+          this.episodename = "Disco-Mentary";
+          break;
+        case 6:
+          this.episodename = "Dragoton";
+          break;
+      }
+    }
+  
+    createMessage()
     {
-      let slayedtext = "";
-      let greattext = "";
-      let goodtext = "";
-      let badtext = "";
-      let floptext = "";
+      switch(getRandomInt(0,1))
+      {
+        case 0:
+          Announcement.createRupaulAnnouncement("Hello queens!");
+          Announcement.createRupaulAnnouncement("Does dancing ring a bell ?");
+          Announcement.createRupaulAnnouncement("Because, tonight, you'll have to choreograph your way to the top!");
+          break;
+        case 1:
+          Announcement.createRupaulAnnouncement("Hello queens!");
+          Announcement.createRupaulAnnouncement("Are you prepared ?");
+          Announcement.createRupaulAnnouncement("Tonight it's dancing time!");
+          break;
+      }
+    }
+  
+    createBrief()
+    {
+      Main.createText("This week, the queens will have to choreograph themselves in : \""+this.choreo[this.chosen]+"\".");
+    }
+  
+    TopPlacement()
+    {
       
-  
-      if(SlayedChallenge.length!=0)
-      {
-        for(let i = 0; i < SlayedChallenge.length; i++)
-        {
-          Main.createImage(SlayedChallenge[i].image,"#6eadff");
-          if(i!=SlayedChallenge.length-1)
-          {
-            slayedtext += SlayedChallenge[i].GetName()+", ";
-          }
-          else
-          {
-            if(SlayedChallenge.length!=1)
-            {
-              slayedtext += " and "+SlayedChallenge[i].GetName();
-            }
-            else
-            {
-              slayedtext += SlayedChallenge[i].GetName();
-            }
-          }
-        }
-        Main.createText(slayedtext+" slayed the challenge.", "Bold");
-      }
-  
-      if(GreatChallenge.length!=0)
-      {
-        for(let i = 0; i < GreatChallenge.length; i++)
-        {
-          Main.createImage(GreatChallenge[i].image,"#6effe4");
-          if(i!=GreatChallenge.length-1)
-          {
-            greattext += GreatChallenge[i].GetName()+", ";
-          }
-          else
-          {
-            if(GreatChallenge.length!=1)
-            {
-              greattext += " and "+GreatChallenge[i].GetName();
-            }
-            else
-            {
-              greattext += GreatChallenge[i].GetName();
-            }
-          }
-        }
-        Main.createText(greattext+" had a great performance.", "Bold");
-      }
-  
-      if(GoodChallenge.length!=0)
-      {
-        for(let i = 0; i < GoodChallenge.length; i++)
-        {
-          Main.createImage(GoodChallenge[i].image,"#6eff72");
-          if(i!=GoodChallenge.length-1)
-          {
-            goodtext += GoodChallenge[i].GetName()+", ";
-          }
-          else
-          {
-            if(GoodChallenge.length!=1)
-            {
-              goodtext += " and "+GoodChallenge[i].GetName();
-            }
-            else
-            {
-              goodtext += GoodChallenge[i].GetName();
-            }
-          }
-        }
-        Main.createText(goodtext+" had a good performance.", "Bold");
-      }
-  
-      if(BadChallenge.length!=0)
-      {
-        for(let i = 0; i < BadChallenge.length; i++)
-        {
-          Main.createImage(BadChallenge[i].image,"#ffe96e");
-          if(i!=BadChallenge.length-1)
-          {
-            badtext += BadChallenge[i].GetName()+", ";
-          }
-          else
-          {
-            if(BadChallenge.length!=1)
-            {
-              badtext += " and "+BadChallenge[i].GetName();
-            }
-            else
-            {
-              badtext += BadChallenge[i].GetName();
-            }
-          }
-        }
-        Main.createText(badtext+" had a bad performance.", "Bold");
-      }
-  
-      if(FloppedChallenge.length!=0)
-      {
-        for(let i = 0; i < FloppedChallenge.length; i++)
-        {
-          Main.createImage(FloppedChallenge[i].image,"#ff6e6e");
-          if(i!=FloppedChallenge.length-1)
-          {
-            floptext += FloppedChallenge[i].GetName()+", ";
-          }
-          else
-          {
-            if(FloppedChallenge.length!=1)
-            {
-              floptext += " and "+FloppedChallenge[i].GetName();
-            }
-            else
-            {
-              floptext += FloppedChallenge[i].GetName();
-            }
-          }
-        }
-        Main.createText(floptext+" flopped the challenge.", "Bold");
-      }
+      let Top = [
+      "Tonight, your choreography blew us away.",
+      "Tonight, we saw how bright you shine.",
+      "You have dancing running throught your veins.",
+      "Tonight, you showed up and showed out.",
+      "You truly showed us what you are capable of.",
+      "Tonight, you proved yourself.",
+      ];
+      return(Top[getRandomInt(0,Top.length-1)]);
     }
-
-    rankRunways()
+  
+    BtmPlacement()
     {
-      for(let i = 0; i < CurrentSeason.currentCast.length;i++)
-      {
-        CurrentSeason.currentCast[i].getRunway();
-        CurrentSeason.currentCast[i].finalscore = CurrentSeason.currentCast[i].perfomancescore - CurrentSeason.currentCast[i].runway;
-      }
-
-      for(let i = 0; i<CurrentSeason.currentCast.length; i++)
-      {
-        if(CurrentSeason.currentCast[i].runwayscore<=2)
-        {
-          FloppedRunway.push(CurrentSeason.currentCast[i]);
-        }
-        else if(CurrentSeason.currentCast[i].runwayscore>2 && CurrentSeason.currentCast[i].runwayscore<=4)
-        {
-          BadRunway.push(CurrentSeason.currentCast[i]);
-        }
-        else if(CurrentSeason.currentCast[i].runwayscore>4 && CurrentSeason.currentCast[i].runwayscore<=10)
-        {
-          GoodRunway.push(CurrentSeason.currentCast[i]);
-        }
-        else if(CurrentSeason.currentCast[i].runwayscore>10 && CurrentSeason.currentCast[i].runwayscore<=13)
-        {
-          GreatRunway.push(CurrentSeason.currentCast[i]);
-        }
-        else if(CurrentSeason.currentCast[i].runwayscore>13)
-        {
-          SlayedRunway.push(CurrentSeason.currentCast[i]);
-        }
-      }
-    }
-
-    createRunways()
-    {
-      let slayedtext = "";
-      let greattext = "";
-      let goodtext = "";
-      let badtext = "";
-      let floptext = "";
       
-  
-      if(SlayedRunway.length!=0)
-      {
-        for(let i = 0; i < SlayedRunway.length; i++)
-        {
-          Main.createImage(SlayedRunway[i].image,"#6eadff");
-          if(i!=SlayedRunway.length-1)
-          {
-            slayedtext += SlayedRunway[i].GetName()+", ";
-          }
-          else
-          {
-            if(SlayedRunway.length!=1)
-            {
-              slayedtext += " and "+SlayedRunway[i].GetName();
-            }
-            else
-            {
-              slayedtext += SlayedRunway[i].GetName();
-            }
-          }
-        }
-        Main.createText(slayedtext+" slayed the runway.", "Bold");
-      }
-  
-      if(GreatRunway.length!=0)
-      {
-        for(let i = 0; i < GreatRunway.length; i++)
-        {
-          Main.createImage(GreatRunway[i].image,"#6effe4");
-          if(i!=GreatRunway.length-1)
-          {
-            greattext += GreatRunway[i].GetName()+", ";
-          }
-          else
-          {
-            if(GreatRunway.length!=1)
-            {
-              greattext += " and "+GreatRunway[i].GetName();
-            }
-            else
-            {
-              greattext += GreatRunway[i].GetName();
-            }
-          }
-        }
-        Main.createText(greattext+" had a great runway.", "Bold");
-      }
-  
-      if(GoodRunway.length!=0)
-      {
-        for(let i = 0; i < GoodRunway.length; i++)
-        {
-          Main.createImage(GoodRunway[i].image,"#6eff72");
-          if(i!=GoodRunway.length-1)
-          {
-            goodtext += GoodRunway[i].GetName()+", ";
-          }
-          else
-          {
-            if(GoodRunway.length!=1)
-            {
-              goodtext += " and "+GoodRunway[i].GetName();
-            }
-            else
-            {
-              goodtext += GoodRunway[i].GetName();
-            }
-          }
-        }
-        Main.createText(goodtext+" had a good runway.", "Bold");
-      }
-  
-      if(BadRunway.length!=0)
-      {
-        for(let i = 0; i < BadRunway.length; i++)
-        {
-          Main.createImage(BadRunway[i].image,"#ffe96e");
-          if(i!=BadRunway.length-1)
-          {
-            badtext += BadRunway[i].GetName()+", ";
-          }
-          else
-          {
-            if(BadRunway.length!=1)
-            {
-              badtext += " and "+BadRunway[i].GetName();
-            }
-            else
-            {
-              badtext += BadRunway[i].GetName();
-            }
-          }
-        }
-        Main.createText(badtext+" had a bad runway.", "Bold");
-      }
-  
-      if(FloppedRunway.length!=0)
-      {
-        for(let i = 0; i < FloppedRunway.length; i++)
-        {
-          Main.createImage(FloppedRunway[i].image,"#ff6e6e");
-          if(i!=FloppedRunway.length-1)
-          {
-            floptext += FloppedRunway[i].GetName()+", ";
-          }
-          else
-          {
-            if(FloppedRunway.length!=1)
-            {
-              floptext += " and "+FloppedRunway[i].GetName();
-            }
-            else
-            {
-              floptext += FloppedRunway[i].GetName();
-            }
-          }
-        }
-        Main.createText(floptext+" flopped the runway.", "Bold");
-      }
+      let Btm = [
+      ", your comedy could have used a few laugh.",
+      ", on the runway, you ran out of gas.",
+      ", tonight the judges did not say yes to the dress.",
+      ", your outfit had a story. A very confusing one.",
+      ", simplicity is sometimes the way to go. Unfortunately, not tonight.",
+      ", your outfit made our heads turn, and made us dizzy.",
+      ", you need to focus. Or else it's going to cost you.",
+      ];
+      return(Btm[getRandomInt(0,Btm.length-1)]);
     }
-  }
-
-  class ChoreographyChallenge{
-
-  constructor(){
-    this.type = "CHOREO";
-    this.hasrunway = true;
-    this.winner = false;
-    this.choreo = [
-      "WTF!: Wrestling's Trashiest Fighters",
-      "Black Swan: Why It Gotta Be Black?",
-      "Prancing Queens",
-      "She Done Already Done Brought It On",
-      "The Draglympics",
-      "Disco-Mentary",
-      "Dragoton"
-    ];
-
-    this.chosen = getRandomInt(0,this.choreo.length-1);
-
-    this.episodename = "";
-    switch(this.chosen)
+  
+    rankPerfomances()
     {
-      case 0:
-        this.episodename = "WTF!";
-        break;
-      case 1:
-        this.episodename = "Black Swan";
-        break;
-      case 2:
-        this.episodename = "Prancing Queens";
-        break;
-      case 3:
-        this.episodename = "She Done Already Done Brought It On";
-        break;
-      case 4:
-        this.episodename = "The Draglympics";
-        break;
-      case 5:
-        this.episodename = "Disco-Mentary";
-        break;
-      case 6:
-        this.episodename = "Dragoton";
-        break;
+        for(let i = 0; i < CurrentSeason.currentCast.length;i++)
+        {
+          CurrentSeason.currentCast[i].GetDancing();
+        }
+  
+        CurrentSeason.currentCast.sort((a, b) => a.perfomancescore - b.perfomancescore);
+  
+        for(let i = 0; i<CurrentSeason.currentCast.length; i++)
+        {
+          if(CurrentSeason.currentCast[i].perfomancescore<=8)
+          {
+            SlayedChallenge.push(CurrentSeason.currentCast[i]);
+          }
+          else if(CurrentSeason.currentCast[i].perfomancescore>6 && CurrentSeason.currentCast[i].perfomancescore<=16)
+          {
+            GreatChallenge.push(CurrentSeason.currentCast[i]);
+          }
+          else if(CurrentSeason.currentCast[i].perfomancescore>16 && CurrentSeason.currentCast[i].perfomancescore<=26)
+          {
+            GoodChallenge.push(CurrentSeason.currentCast[i]);
+          }
+          else if(CurrentSeason.currentCast[i].perfomancescore>26 && CurrentSeason.currentCast[i].perfomancescore<=32)
+          {
+            BadChallenge.push(CurrentSeason.currentCast[i]);
+          }
+          else if(CurrentSeason.currentCast[i].perfomancescore>32)
+          {
+            FloppedChallenge.push(CurrentSeason.currentCast[i]);
+          }
+        }
+  
     }
-  }
-
-  createMessage()
-  {
-    switch(getRandomInt(0,1))
-    {
-      case 0:
-        Announcement.createRupaulAnnouncement("Hello queens!");
-        Announcement.createRupaulAnnouncement("Does dancing ring a bell ?");
-        Announcement.createRupaulAnnouncement("Because, tonight, you'll have to choreograph your way to the top!");
-        break;
-      case 1:
-        Announcement.createRupaulAnnouncement("Hello queens!");
-        Announcement.createRupaulAnnouncement("Are you prepared ?");
-        Announcement.createRupaulAnnouncement("Tonight it's dancing time!");
-        break;
-    }
-  }
-
-  createBrief()
-  {
-    Main.createText("This week, the queens will have to choreograph themselves in : \""+this.choreo[this.chosen]+"\".");
-  }
-
-  TopPlacement()
-  {
+  
+      createPerformances()
+      {
+        let slayedtext = "";
+        let greattext = "";
+        let goodtext = "";
+        let badtext = "";
+        let floptext = "";
+        
     
-    let Top = [
-    "Tonight, your choreography blew us away.",
-    "Tonight, we saw how bright you shine.",
-    "You have dancing running throught your veins.",
-    "Tonight, you showed up and showed out.",
-    "You truly showed us what you are capable of.",
-    "Tonight, you proved yourself.",
-    ];
-    return(Top[getRandomInt(0,Top.length-1)]);
-  }
-
-  BtmPlacement()
-  {
+        if(SlayedChallenge.length!=0)
+        {
+          for(let i = 0; i < SlayedChallenge.length; i++)
+          {
+            Main.createImage(SlayedChallenge[i].image,"#6eadff");
+            if(i!=SlayedChallenge.length-1)
+            {
+              slayedtext += SlayedChallenge[i].GetName()+", ";
+            }
+            else
+            {
+              if(SlayedChallenge.length!=1)
+              {
+                slayedtext += " and "+SlayedChallenge[i].GetName();
+              }
+              else
+              {
+                slayedtext += SlayedChallenge[i].GetName();
+              }
+            }
+          }
+          Main.createText(slayedtext+" slayed the challenge.", "Bold");
+        }
     
-    let Btm = [
-    ", your comedy could have used a few laugh.",
-    ", on the runway, you ran out of gas.",
-    ", tonight the judges did not say yes to the dress.",
-    ", your outfit had a story. A very confusing one.",
-    ", simplicity is sometimes the way to go. Unfortunately, not tonight.",
-    ", your outfit made our heads turn, and made us dizzy.",
-    ", you need to focus. Or else it's going to cost you.",
-    ];
-    return(Btm[getRandomInt(0,Btm.length-1)]);
-  }
-
-  rankPerfomances()
-  {
-      for(let i = 0; i < CurrentSeason.currentCast.length;i++)
-      {
-        CurrentSeason.currentCast[i].GetDancing();
-      }
-
-      CurrentSeason.currentCast.sort((a, b) => a.perfomancescore - b.perfomancescore);
-
-      for(let i = 0; i<CurrentSeason.currentCast.length; i++)
-      {
-        if(CurrentSeason.currentCast[i].perfomancescore<=8)
+        if(GreatChallenge.length!=0)
         {
-          SlayedChallenge.push(CurrentSeason.currentCast[i]);
-        }
-        else if(CurrentSeason.currentCast[i].perfomancescore>6 && CurrentSeason.currentCast[i].perfomancescore<=16)
-        {
-          GreatChallenge.push(CurrentSeason.currentCast[i]);
-        }
-        else if(CurrentSeason.currentCast[i].perfomancescore>16 && CurrentSeason.currentCast[i].perfomancescore<=26)
-        {
-          GoodChallenge.push(CurrentSeason.currentCast[i]);
-        }
-        else if(CurrentSeason.currentCast[i].perfomancescore>26 && CurrentSeason.currentCast[i].perfomancescore<=32)
-        {
-          BadChallenge.push(CurrentSeason.currentCast[i]);
-        }
-        else if(CurrentSeason.currentCast[i].perfomancescore>32)
-        {
-          FloppedChallenge.push(CurrentSeason.currentCast[i]);
-        }
-      }
-
-  }
-
-    createPerformances()
-    {
-      let slayedtext = "";
-      let greattext = "";
-      let goodtext = "";
-      let badtext = "";
-      let floptext = "";
-      
-  
-      if(SlayedChallenge.length!=0)
-      {
-        for(let i = 0; i < SlayedChallenge.length; i++)
-        {
-          Main.createImage(SlayedChallenge[i].image,"#6eadff");
-          if(i!=SlayedChallenge.length-1)
+          for(let i = 0; i < GreatChallenge.length; i++)
           {
-            slayedtext += SlayedChallenge[i].GetName()+", ";
-          }
-          else
-          {
-            if(SlayedChallenge.length!=1)
+            Main.createImage(GreatChallenge[i].image,"#6effe4");
+            if(i!=GreatChallenge.length-1)
             {
-              slayedtext += " and "+SlayedChallenge[i].GetName();
+              greattext += GreatChallenge[i].GetName()+", ";
             }
             else
             {
-              slayedtext += SlayedChallenge[i].GetName();
+              if(GreatChallenge.length!=1)
+              {
+                greattext += " and "+GreatChallenge[i].GetName();
+              }
+              else
+              {
+                greattext += GreatChallenge[i].GetName();
+              }
             }
           }
+          Main.createText(greattext+" had a great performance.", "Bold");
         }
-        Main.createText(slayedtext+" slayed the challenge.", "Bold");
-      }
-  
-      if(GreatChallenge.length!=0)
-      {
-        for(let i = 0; i < GreatChallenge.length; i++)
+    
+        if(GoodChallenge.length!=0)
         {
-          Main.createImage(GreatChallenge[i].image,"#6effe4");
-          if(i!=GreatChallenge.length-1)
+          for(let i = 0; i < GoodChallenge.length; i++)
           {
-            greattext += GreatChallenge[i].GetName()+", ";
-          }
-          else
-          {
-            if(GreatChallenge.length!=1)
+            Main.createImage(GoodChallenge[i].image,"#6eff72");
+            if(i!=GoodChallenge.length-1)
             {
-              greattext += " and "+GreatChallenge[i].GetName();
+              goodtext += GoodChallenge[i].GetName()+", ";
             }
             else
             {
-              greattext += GreatChallenge[i].GetName();
+              if(GoodChallenge.length!=1)
+              {
+                goodtext += " and "+GoodChallenge[i].GetName();
+              }
+              else
+              {
+                goodtext += GoodChallenge[i].GetName();
+              }
             }
           }
+          Main.createText(goodtext+" had a good performance.", "Bold");
         }
-        Main.createText(greattext+" had a great performance.", "Bold");
-      }
-  
-      if(GoodChallenge.length!=0)
-      {
-        for(let i = 0; i < GoodChallenge.length; i++)
+    
+        if(BadChallenge.length!=0)
         {
-          Main.createImage(GoodChallenge[i].image,"#6eff72");
-          if(i!=GoodChallenge.length-1)
+          for(let i = 0; i < BadChallenge.length; i++)
           {
-            goodtext += GoodChallenge[i].GetName()+", ";
-          }
-          else
-          {
-            if(GoodChallenge.length!=1)
+            Main.createImage(BadChallenge[i].image,"#ffe96e");
+            if(i!=BadChallenge.length-1)
             {
-              goodtext += " and "+GoodChallenge[i].GetName();
+              badtext += BadChallenge[i].GetName()+", ";
             }
             else
             {
-              goodtext += GoodChallenge[i].GetName();
+              if(BadChallenge.length!=1)
+              {
+                badtext += " and "+BadChallenge[i].GetName();
+              }
+              else
+              {
+                badtext += BadChallenge[i].GetName();
+              }
             }
           }
+          Main.createText(badtext+" had a bad performance.", "Bold");
         }
-        Main.createText(goodtext+" had a good performance.", "Bold");
-      }
-  
-      if(BadChallenge.length!=0)
-      {
-        for(let i = 0; i < BadChallenge.length; i++)
+    
+        if(FloppedChallenge.length!=0)
         {
-          Main.createImage(BadChallenge[i].image,"#ffe96e");
-          if(i!=BadChallenge.length-1)
+          for(let i = 0; i < FloppedChallenge.length; i++)
           {
-            badtext += BadChallenge[i].GetName()+", ";
-          }
-          else
-          {
-            if(BadChallenge.length!=1)
+            Main.createImage(FloppedChallenge[i].image,"#ff6e6e");
+            if(i!=FloppedChallenge.length-1)
             {
-              badtext += " and "+BadChallenge[i].GetName();
+              floptext += FloppedChallenge[i].GetName()+", ";
             }
             else
             {
-              badtext += BadChallenge[i].GetName();
+              if(FloppedChallenge.length!=1)
+              {
+                floptext += " and "+FloppedChallenge[i].GetName();
+              }
+              else
+              {
+                floptext += FloppedChallenge[i].GetName();
+              }
             }
           }
+          Main.createText(floptext+" flopped the challenge.", "Bold");
         }
-        Main.createText(badtext+" had a bad performance.", "Bold");
       }
   
-      if(FloppedChallenge.length!=0)
+      rankRunways()
       {
-        for(let i = 0; i < FloppedChallenge.length; i++)
+        for(let i = 0; i < CurrentSeason.currentCast.length;i++)
         {
-          Main.createImage(FloppedChallenge[i].image,"#ff6e6e");
-          if(i!=FloppedChallenge.length-1)
+          CurrentSeason.currentCast[i].getRunway();
+          CurrentSeason.currentCast[i].finalscore = CurrentSeason.currentCast[i].perfomancescore - CurrentSeason.currentCast[i].runway;
+        }
+  
+        for(let i = 0; i<CurrentSeason.currentCast.length; i++)
+        {
+          if(CurrentSeason.currentCast[i].runwayscore<=2)
           {
-            floptext += FloppedChallenge[i].GetName()+", ";
+            FloppedRunway.push(CurrentSeason.currentCast[i]);
           }
-          else
+          else if(CurrentSeason.currentCast[i].runwayscore>2 && CurrentSeason.currentCast[i].runwayscore<=4)
           {
-            if(FloppedChallenge.length!=1)
-            {
-              floptext += " and "+FloppedChallenge[i].GetName();
-            }
-            else
-            {
-              floptext += FloppedChallenge[i].GetName();
-            }
+            BadRunway.push(CurrentSeason.currentCast[i]);
+          }
+          else if(CurrentSeason.currentCast[i].runwayscore>4 && CurrentSeason.currentCast[i].runwayscore<=10)
+          {
+            GoodRunway.push(CurrentSeason.currentCast[i]);
+          }
+          else if(CurrentSeason.currentCast[i].runwayscore>10 && CurrentSeason.currentCast[i].runwayscore<=13)
+          {
+            GreatRunway.push(CurrentSeason.currentCast[i]);
+          }
+          else if(CurrentSeason.currentCast[i].runwayscore>13)
+          {
+            SlayedRunway.push(CurrentSeason.currentCast[i]);
           }
         }
-        Main.createText(floptext+" flopped the challenge.", "Bold");
       }
-    }
-
-    rankRunways()
-    {
-      for(let i = 0; i < CurrentSeason.currentCast.length;i++)
-      {
-        CurrentSeason.currentCast[i].getRunway();
-        CurrentSeason.currentCast[i].finalscore = CurrentSeason.currentCast[i].perfomancescore - CurrentSeason.currentCast[i].runway;
-      }
-
-      for(let i = 0; i<CurrentSeason.currentCast.length; i++)
-      {
-        if(CurrentSeason.currentCast[i].runwayscore<=2)
-        {
-          FloppedRunway.push(CurrentSeason.currentCast[i]);
-        }
-        else if(CurrentSeason.currentCast[i].runwayscore>2 && CurrentSeason.currentCast[i].runwayscore<=4)
-        {
-          BadRunway.push(CurrentSeason.currentCast[i]);
-        }
-        else if(CurrentSeason.currentCast[i].runwayscore>4 && CurrentSeason.currentCast[i].runwayscore<=10)
-        {
-          GoodRunway.push(CurrentSeason.currentCast[i]);
-        }
-        else if(CurrentSeason.currentCast[i].runwayscore>10 && CurrentSeason.currentCast[i].runwayscore<=13)
-        {
-          GreatRunway.push(CurrentSeason.currentCast[i]);
-        }
-        else if(CurrentSeason.currentCast[i].runwayscore>13)
-        {
-          SlayedRunway.push(CurrentSeason.currentCast[i]);
-        }
-      }
-    }
 
     createRunways()
     {
