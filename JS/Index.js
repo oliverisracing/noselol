@@ -6732,8 +6732,8 @@ let trixie = new Queen("Trixie Mattel", 13, 10, 6, 10, 11, 10, 5, 15, 10, 3, 1, 
 let violet = new Queen("Violet Chachki", 6, 7, 8, 15, 8, 13, 8, 10, 7, 2, 4, "Violet", "Violet", "US7", false);
 
 let US7 = shuffle([ginger, jaidynn, jasmine, kandyH, katya, kennedy, max, fame, kasha, pearl, sashab, tempest, trixie, violet])
-
-let bob = new Queen("Bob The Drag Queen", 12, 13, 15, 11, 6, 9, 12, 15, 15, 3, 2, "Bob", "Bob", "US8", false);
+//acting, improv, comedy, dance, design, runway, lipsync, branding, charisma, kindness, shadyness
+let bob = new Queen("Bob The Drag Queen", 12, 13, 15, 11, 6, 11, 13, 15, 15, 3, 2, "Bob", "Bob", "US8", false);
 let kimchi = new Queen("Kim Chi", 9, 10, 10, 3, 10, 10, 4, 10, 10, 3, 2, "Kim", "Kim", "US8", false);
 let naomi = new Queen("Naomi Smalls", 10, 9, 10, 9, 13, 12, 13, 10, 8, 3, 1, "Naomi", "Naomi", "US8", false);
 let chichi = new Queen("Chi Chi DeVayne", 7, 7, 7, 13, 7, 6, 13, 9, 9, 4, 1, "ChiChi", "ChiChi", "US8", false);
