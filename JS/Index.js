@@ -6859,6 +6859,18 @@ let yvieas7 = new Queen("Yvie Oddly", 12, 11, 10, 15, 12, 12, 14, 15, 13, 4, 2, 
 let AS7 = shuffle([jaidaas7, jinkxas7, monetas7, rajaas7, sheaas7, vivas7, trinityas7, yvieas7]);
 
 let rupaulhost = new Host("Rupaul","RuIn","RuOut");
+//acting, improv, comedy, dance, design, runway, lipsync, branding, charisma, kindness, shadyness
+let cherylw = new Queen("Cheryl Hole", 8, 8, 10, 10, 6, 6, 11, 10, 10, 4, 1, "Cheryl", "Cheryl", "TW1", false)
+let bluw = new Queen("Blu Hydrangea", 11, 12, 10, 9, 11, 11, 10, 10, 11, 4, 2, "Blu", "Blu", "TW1", false);
+let mow = new Queen("Mo Heart", 12, 9, 9, 11, 15, 14, 9, 12, 11, 4, 1, "Mo", "Mo", "TW1", false);
+let bagaw = new Queen("Baga Chipz", 12, 12, 12, 6, 6, 5, 5, 13, 13, 4, 2, "Baga", "Baga", "TW1", false);
+let jujubeew = new Queen("Jujubee", 10, 10, 10, 7, 6, 7, 9, 9, 9, 4, 1, "Jujubee", "Jujubee", "TW1", false)
+let janeyw = new Queen("Janey Jacké", 9, 7, 12, 12, 9, 11, 12, 7, 7, 4, 0, "Janey", "Janey", "TW1", false);
+let panginaw = new Queen("Pangina Heals", 11, 10, 10, 13, 13, 13, 14, 12, 12, 4, 2, "Pangina", "Pangina", "TW1", false)
+let jimbow = new Queen("Jimbo", 11, 12, 13, 6, 11, 13, 4, 12, 15, 3, 3, "Jimbo", "Jimbo", "TW1", false)
+let lemonw = new Queen("Lemon", 10, 11, 12, 13, 7, 8, 10, 10, 10, 4, 1, "Lemon", "Lemon", "TW1", false)
+
+let TW1 = shuffle([cherylw, bluw, mow, bagaw, jujubeew, janeyw, panginaw, jimbow, cherylw, lemonw])
 
 let baga = new Queen("Baga Chipz", 12, 12, 12, 6, 6, 5, 5, 13, 13, 4, 2, "Baga", "Baga", "UK1", false);
 let blu = new Queen("Blu Hydrangea", 11, 10, 13, 9, 10, 12, 9, 10, 15, 4, 3, "Blu", "Blu", "UK1", false);
@@ -7041,6 +7053,8 @@ let DragRaceQueens = [
   alyssah, angeria, bosco, daya, deja, jasminek, jorgeous, junej, kerri, kornbread, camden, maddym, orion, willow,
 
   jaidaas7, jinkxas7, monetas7, rajaas7, sheaas7, vivas7, trinityas7, yvieas7,
+
+  cherylw, bluw, mow, bagaw, jujubeew, janeyw, panginaw, jimbow, cherylw, lemonw,
 
   baga, blu, cheryl, crystal, divina, gothy, scaredy, sumting, viv, vinegar,
   awhora, asttina, bimini, cherry, ellie, ginny, joe, lawrence, sister, tayce, tia, veronica,
