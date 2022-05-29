@@ -694,7 +694,7 @@ class Screen {
           
           case "HIGH+BLOCK":
             trtr.innerHTML = "HIGH <br> + <br> <b>BLOCK</b>";
-            trtr.setAttribute("style","background: #D66D73");
+            trtr.setAttribute("style","background: tomato");
             break;
 
           case "BLOCK":
@@ -828,7 +828,7 @@ class Screen {
           
           case "HIGH+BLOCK":
             trtr.innerHTML = "HIGH <br> + <br> <b>BLOCK</b>";
-            trtr.setAttribute("style","background: #D66D73");
+            trtr.setAttribute("style","background: tomato");
             break;
 
           case "BLOCK":
