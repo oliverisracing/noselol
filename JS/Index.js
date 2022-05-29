@@ -6870,7 +6870,7 @@ let panginaw = new Queen("Pangina Heals", 11, 10, 10, 13, 13, 13, 14, 12, 12, 4,
 let jimbow = new Queen("Jimbo", 11, 12, 13, 6, 11, 13, 4, 12, 15, 3, 3, "Jimbo", "Jimbo", "TW1", false)
 let lemonw = new Queen("Lemon", 10, 11, 12, 13, 7, 8, 10, 10, 10, 4, 1, "Lemon", "Lemon", "TW1", false)
 
-let TW1 = shuffle([cherylw, bluw, mow, bagaw, jujubeew, janeyw, panginaw, jimbow, cherylw, lemonw])
+let TW1 = shuffle([cherylw, bluw, mow, bagaw, jujubeew, janeyw, panginaw, jimbow, lemonw])
 
 let baga = new Queen("Baga Chipz", 12, 12, 12, 6, 6, 5, 5, 13, 13, 4, 2, "Baga", "Baga", "UK1", false);
 let blu = new Queen("Blu Hydrangea", 11, 10, 13, 9, 10, 12, 9, 10, 15, 4, 3, "Blu", "Blu", "UK1", false);
