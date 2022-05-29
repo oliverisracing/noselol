@@ -557,7 +557,6 @@ class Screen {
           thq.innerHTML = DragRaceQueens[q].runway;
           break;
         case 7:
-          thq.innerHTML = DragRaceQueens[q].lipsync;
           break;
         case 8:
           thq.innerHTML = DragRaceQueens[q].branding;
@@ -640,17 +639,17 @@ class Screen {
         {
           case "L3RD":
             trtr.innerHTML = "LOST <br> 3RD ROUND";
-            trtr.setAttribute("style","background: #FFD100; font-weight: bold; color: white;");
+            trtr.setAttribute("style","background: #FFD100; font-weight: bold;");
             break;
           
           case "L2RD":
-            trtr.innerHTML = "LOST <br> 2RND ROUND";
-            trtr.setAttribute("style","background: #FFAE00; font-weight: bold; color: white;");
+            trtr.innerHTML = "LOST <br> 2ND ROUND";
+            trtr.setAttribute("style","background: #FFAE00; font-weight: bold;");
             break;
           
           case "L1RD":
             trtr.innerHTML = "LOST <br> 1ST ROUND";
-            trtr.setAttribute("style","background: #FF7C00; font-weight: bold; color: white;");
+            trtr.setAttribute("style","background: #FF7C00; font-weight: bold;");
             break;
 
           case "ELIM ":
@@ -694,7 +693,7 @@ class Screen {
           
           case "HIGH+BLOCK":
             trtr.innerHTML = "HIGH <br> + <br> <b>BLOCK</b>";
-            trtr.setAttribute("style","background: tomato");
+            trtr.setAttribute("style","background: #D66D73");
             break;
 
           case "BLOCK":
@@ -703,7 +702,7 @@ class Screen {
             break;
           
           case "SAFE":
-            trtr.setAttribute("style","background: #FFFFFF;");
+            trtr.setAttribute("style","background: #F5EBF5;");
             break;
 
           case "LOW":
@@ -774,17 +773,17 @@ class Screen {
         {
           case "L3RD":
             trtr.innerHTML = "LOST <br> 3RD ROUND";
-            trtr.setAttribute("style","background: #FFD100; font-weight: bold; color: white;");
+            trtr.setAttribute("style","background: #FFD100; font-weight: bold; ");
             break;
           
           case "L2RD":
-            trtr.innerHTML = "LOST <br> 2RND ROUND";
-            trtr.setAttribute("style","background: #FFAE00; font-weight: bold; color: white;");
+            trtr.innerHTML = "LOST <br> 2ND ROUND";
+            trtr.setAttribute("style","background: #FFAE00; font-weight: bold; ");
             break;
           
           case "L1RD":
             trtr.innerHTML = "LOST <br> 1ST ROUND";
-            trtr.setAttribute("style","background: #FF7C00; font-weight: bold; color: white;");
+            trtr.setAttribute("style","background: #FF7C00; font-weight: bold; ");
             break;
 
           case "ELIM ":
@@ -812,6 +811,7 @@ class Screen {
             trtr.innerHTML = "WIN";
             trtr.setAttribute("style","background: deepskyblue; font-weight: bold;");
             break;
+            break;
 
           case "TOP 3":
             
@@ -828,7 +828,7 @@ class Screen {
           
           case "HIGH+BLOCK":
             trtr.innerHTML = "HIGH <br> + <br> <b>BLOCK</b>";
-            trtr.setAttribute("style","background: tomato");
+            trtr.setAttribute("style","background: #D66D73");
             break;
 
           case "BLOCK":
@@ -837,7 +837,7 @@ class Screen {
             break;
           
           case "SAFE":
-            trtr.setAttribute("style","background: #FFFFFF;");
+            trtr.setAttribute("style","background: #F5EBF5;");
             break;
 
           case "LOW":
@@ -1098,7 +1098,7 @@ class SnatchGame{
 
   BtmPlacement()
   {
-    
+
     let Btm = [
     ", your comedy could have used a few laugh.",
     ", on the runway, you ran out of gas.",
