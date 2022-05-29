@@ -6765,6 +6765,23 @@ let cynthia2 = new Queen("Cynthia Lee Fontaine", 4, 4, 7, 6, 4, 7, 6, 10, 12, 5,
 
 let US9 = shuffle([aja, alexism, charlie, cynthia2, eureka, farrah, jaymes, kimora, ninab, peppermint, sasha, shea, trinity, valentina])
 
+let aquaria = new Queen("Aquaria", 7, 11, 8, 15, 12, 14, 11, 11, 9, 4, 2, "Aquaria", "Aquaria", "US10", false);
+let asia = new Queen("Asia O'Hara", 11, 9, 6, 6, 7, 9, 9, 8, 9, 5, 1, "Asia", "Asia", "US10", false);
+let blair = new Queen("Blair St. Clair", 9, 8, 6, 10, 8, 8, 7, 8, 8, 4, 0, "Blair", "Blair", "US10", false);
+let dusty = new Queen("Dusty Ray Bottoms", 8, 8, 6, 7, 6, 7, 6, 9, 8, 4, 0, "Dusty", "Dusty", "US10", false);
+let kalorie = new Queen("Kalorie K. Williams", 6, 6, 6, 5, 7, 7, 8, 6, 6, 4, 1, "Kalorie", "Kalorie", "US10", false);
+let kameron = new Queen("Kameron Michaels", 5, 8, 14, 10, 8, 8, 15, 7, 6, 4, 2, "Kameron", "Kameron", "US10", false);
+let mayhem = new Queen("Mayhem Miller", 4, 8, 9, 13, 7, 9, 10, 8, 7, 4, 1, "Mayhem", "Mayhem", "US10", false);
+let miz = new Queen("Miz Cracker", 13, 11, 5, 12, 15, 9, 5, 10, 9, 4, 2, "Miz", "Miz", "US10", false);
+let monet1 = new Queen("Monét X Change", 9, 11, 13, 6, 10, 9, 14, 10, 10, 5, 1, "Monet", "Monet", "US10", false);
+let monique = new Queen("Mo Heart", 12, 9, 8, 11, 15, 13, 10, 9, 11, 4, 1, "Mo", "Mo", "US10", false);
+let vanessa = new Queen("Vanessa 'Vanjie' Mateo", 9, 6, 8, 6, 9, 7, 11, 8, 8, 4, 1, "Vanessa", "Vanessa", "US10", false);
+let vixen = new Queen("The Vixen", 5, 4, 12, 9, 3, 8, 12, 9, 5, 3, 4, "Vixen", "Vixen", "US10", false);
+let yuhua = new Queen("Yuhua Hamasaki", 4, 4, 6, 9, 6, 7, 7, 6, 6, 3, 2, "Yuhua", "Yuhua", "US10", false);
+let eureka2 = new Queen("Eureka!", 9, 11, 8, 10, 13, 10, 12, 13, 10, 4, 1, "Eureka", "Eureka", "US10", false)
+
+let US10 = shuffle([aquaria, asia, blair, dusty, eureka2, kalorie, kameron, mayhem, miz, monet1, monique, vanessa, vixen, yuhua])
+
 let akeria = new Queen("A'keria C. Davenport", 11, 9, 11, 8, 10, 13, 10, 11, 10, 4, 1, "Akeria", "Akeria", "US11", false);
 let ariel = new Queen("Ariel Versace", 8, 6, 8, 5, 8, 8, 8, 7, 5, 3, 3, "Ariel", "Ariel", "US11", false);
 let brooke = new Queen("Brooke Lynn Hytes", 8, 8, 13, 12, 8, 10, 13, 12, 10, 4, 1, "Brooke", "Brooke", "US11", false);
@@ -7003,6 +7020,7 @@ let DragRaceQueens = [
   bianca, adore, courtney, darienne, bendela, joslyn, trinityk, laganja, milk, gia, april, vivacious, magnolia, kelly,
   ginger, jaidynn, jasmine, kandyH, katya, kennedy, max, fame, kasha, pearl, sashab, tempest, trixie, violet,
   aja, alexism, charlie, cynthia2, eureka, farrah, jaymes, kimora, ninab, peppermint, sasha, shea, trinity, valentina,
+  aquaria, asia, blair, dusty, eureka2, kalorie, kameron, mayhem, miz, monet1, monique, vanessa, vixen, yuhua,
   akeria, ariel, brooke, honeyd, kahanna, mercedes, ninaw, plastique, rajah, scarlet, shuga, silky, yvie, vanjie,
   bob, kimchi, naomi, chichi, derrick, thorgy, robbie, acid, naysha, cynthia, dax, laila,
   jaida, crystalm, gigi, jackie, heidi, widow, jan, brita, aiden, nicky, rock, dahlia,
