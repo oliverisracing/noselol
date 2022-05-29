@@ -6809,7 +6809,7 @@ let jan = new Queen("Jan", 9, 10, 10, 7, 11, 10, 6, 8, 7, 4, 2, "Jan", "Jan", "U
 let brita = new Queen("Brita", 7, 6, 9, 10, 6, 15, 15, 14, 13, 2, 3, "Brita", "Brita", "US12", false);
 let aiden = new Queen("Aiden Zhane", 8, 7, 9, 7, 6, 7, 6, 10, 9, 2, 2, "Aiden", "Aiden", "US12", false);
 let nicky = new Queen("Nicky Doll", 7, 6, 6, 6, 15, 15, 7, 7, 10, 4, 1, "Nicky", "Nicky", "US12", false);
-let rock = new Queen("Rock M. Sakura", 10, 8, 9, 10, 5, 6, 10, 12, 8, 3, 1, "Rock", "Rock", "US12", false);
+let rock = new Queen("Rock M. Sakura", 10, 8, 9, 10, 5, 7, 10, 12, 8, 3, 1, "Rock", "Rock", "US12", false);
 let dahlia = new Queen("Dahlia Sin", 7, 8, 4, 4, 10, 15, 4, 12, 15, 1, 4, "Dahlia", "Dahlia", "US12", false);
 
 let US12 = shuffle([jaida, crystalm, gigi, jackie, heidi, widow, jan, brita, aiden, nicky, rock, dahlia]);
@@ -6842,7 +6842,7 @@ let kerri = new Queen("Kerri Colby", 10, 9, 10, 7, 5, 8, 5, 10, 15, 5, 0, "Kerri
 let kornbread = new Queen("Kornbred \"The Snack\" Jeté", 11, 12, 13, 6, 6, 8, 8, 12, 10, 5, 1, "Kornbread", "Kornbread", "US14", false);
 let camden = new Queen("Lady Camden", 14, 10, 10, 11, 10, 8, 12, 8, 8, 4, 0, "Camden", "Camden", "US14", false);
 let maddym = new Queen("Maddy Morphosis", 12, 10, 12, 6, 5, 6, 7, 6, 12, 3, 1, "Maddy", "Maddy", "US14", false);
-let orion = new Queen("Orion Story", 7, 8, 9, 7, 10, 10, 12, 10, 14, 4, 2, "Orion", "Orion","US14", false);
+let orion = new Queen("Orion Story", 7, 8, 9, 7, 10, 10, 10, 10, 14, 4, 2, "Orion", "Orion","US14", false);
 let willow = new Queen("Willow Pill", 12, 13, 11, 8, 14, 10, 12, 12, 13, 5, 1, "Willow", "Willow", "US14", false);
 
 let US14 = shuffle([alyssah, angeria, bosco, daya, deja, jasminek, jorgeous, junej, kerri, kornbread, camden, maddym, orion, willow]);
