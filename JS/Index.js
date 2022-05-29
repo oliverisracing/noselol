@@ -6795,7 +6795,7 @@ let silky = new Queen("Silky Nutmeg Ganache", 10, 8, 9, 6, 10, 8, 11, 14, 12, 4,
 let yvie11 = new Queen("Yvie Oddly", 12, 4, 12, 11, 6, 10, 15, 11, 12, 4, 2, "Yvie", "Yvie", "US11", false);
 let vanjie = new Queen("Vanessa Vanjie Mateo", 9, 8, 9, 8, 7, 8, 10, 11, 12, 4, 1, "Vanjie", "Vanjie", "US11", false)
 
-let US11 = shuffle([akeria, ariel, brooke, honeyd, kahanna, mercedes, ninaw, plastique, rajah, scarlet, shuga, silky, vanessa, yvie11, vanjie])
+let US11 = shuffle([akeria, ariel, brooke, honeyd, kahanna, mercedes, ninaw, plastique, rajah, scarlet, shuga, silky, yvie11, vanjie])
 
 let denali = new Queen("Denali Foxx", 5, 10, 9, 14, 8, 10, 15, 11, 6, 4, 1, "Denali", "Denali", "US13", false);
 let eliott = new Queen("Eliott with 2 Ts", 8, 9, 5, 14, 10, 8, 12, 8, 7, 0, 2, "Eliott", "Eliott", "US13", false);
@@ -7003,7 +7003,7 @@ let DragRaceQueens = [
   bianca, adore, courtney, darienne, bendela, joslyn, trinityk, laganja, milk, gia, april, vivacious, magnolia, kelly,
   ginger, jaidynn, jasmine, kandyH, katya, kennedy, max, fame, kasha, pearl, sashab, tempest, trixie, violet,
   aja, alexism, charlie, cynthia2, eureka, farrah, jaymes, kimora, ninab, peppermint, sasha, shea, trinity, valentina,
-  akeria, ariel, brooke, honeyd, kahanna, mercedes, ninaw, plastique, rajah, scarlet, shuga, silky, vanessa, yvie11, vanjie,
+  akeria, ariel, brooke, honeyd, kahanna, mercedes, ninaw, plastique, rajah, scarlet, shuga, silky, yvie11, vanjie,
   bob, kimchi, naomi, chichi, derrick, thorgy, robbie, acid, naysha, cynthia, dax, laila,
   jaida, crystalm, gigi, jackie, heidi, widow, jan, brita, aiden, nicky, rock, dahlia,
   denali, eliott, gottmik, joey, kahmora, kandy, lalari, liv, rose, symone, tamisha, tina, utica,
