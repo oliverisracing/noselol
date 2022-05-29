@@ -9095,7 +9095,7 @@ function RankQueens(){
       case "LIFE":
       if(CurrentSeason.currentCast.length>=12)
       {
-        for(let i = 0; i<4; i++)
+        for(let i = 0; i<3; i++)
         {
           Tops.push(CurrentSeason.currentCast[i]);
           Bottoms.push(CurrentSeason.currentCast[CurrentSeason.currentCast.length-1-i]);
@@ -9125,7 +9125,7 @@ function RankQueens(){
           Tops.push(CurrentSeason.currentCast[1]);
           Bottoms.push(CurrentSeason.currentCast[2]);
           Bottoms.push(CurrentSeason.currentCast[3]);
-        for(let i = 0; i<4; i++)
+        for(let i = 0; i<3; i++)
         {
           Critiqued.push(CurrentSeason.currentCast[i]);
         }
@@ -9180,7 +9180,7 @@ function RankQueens(){
         }
         else
         {
-          for(let i = 0; i<4; i++)
+        for(let i = 0; i<3; i++)
           {
             Tops.push(CurrentSeason.currentCast[i]);
           }
