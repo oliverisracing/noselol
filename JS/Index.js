@@ -6792,10 +6792,10 @@ let rajah = new Queen("Ra'Jah O'Hara", 6, 8, 11, 13, 8, 11, 13, 10, 13, 4, 2, "R
 let scarlet = new Queen("Scarlet Envy", 13, 7, 6, 13, 8, 10, 7, 8, 8, 4, 1, "Scarlet", "Scarlet", "US11", false);
 let shuga = new Queen("Shuga Cain", 10, 9, 7, 6, 7, 10, 7, 8, 6, 4, 2, "Shuga", "Shuga", "US11", false);
 let silky = new Queen("Silky Nutmeg Ganache", 10, 8, 9, 6, 10, 8, 11, 14, 12, 4, 2, "Silky", "Silky", "US11", false);
-let yvie11 = new Queen("Yvie Oddly", 12, 4, 12, 11, 6, 10, 15, 11, 12, 4, 2, "Yvie", "Yvie", "US11", false);
+let yvie = new Queen("Yvie Oddly", 12, 4, 12, 11, 6, 10, 15, 11, 12, 4, 2, "Yvie", "Yvie", "US11", false);
 let vanjie = new Queen("Vanessa Vanjie Mateo", 9, 8, 9, 8, 7, 8, 10, 11, 12, 4, 1, "Vanjie", "Vanjie", "US11", false)
 
-let US11 = shuffle([akeria, ariel, brooke, honeyd, kahanna, mercedes, ninaw, plastique, rajah, scarlet, shuga, silky, yvie11, vanjie])
+let US11 = shuffle([akeria, ariel, brooke, honeyd, kahanna, mercedes, ninaw, plastique, rajah, scarlet, shuga, silky, yvie, vanjie])
 
 let denali = new Queen("Denali Foxx", 5, 10, 9, 14, 8, 10, 15, 11, 6, 4, 1, "Denali", "Denali", "US13", false);
 let eliott = new Queen("Eliott with 2 Ts", 8, 9, 5, 14, 10, 8, 12, 8, 7, 0, 2, "Eliott", "Eliott", "US13", false);
@@ -7003,7 +7003,7 @@ let DragRaceQueens = [
   bianca, adore, courtney, darienne, bendela, joslyn, trinityk, laganja, milk, gia, april, vivacious, magnolia, kelly,
   ginger, jaidynn, jasmine, kandyH, katya, kennedy, max, fame, kasha, pearl, sashab, tempest, trixie, violet,
   aja, alexism, charlie, cynthia2, eureka, farrah, jaymes, kimora, ninab, peppermint, sasha, shea, trinity, valentina,
-  akeria, ariel, brooke, honeyd, kahanna, mercedes, ninaw, plastique, rajah, scarlet, shuga, silky, yvie11, vanjie,
+  akeria, ariel, brooke, honeyd, kahanna, mercedes, ninaw, plastique, rajah, scarlet, shuga, silky, yvie, vanjie,
   bob, kimchi, naomi, chichi, derrick, thorgy, robbie, acid, naysha, cynthia, dax, laila,
   jaida, crystalm, gigi, jackie, heidi, widow, jan, brita, aiden, nicky, rock, dahlia,
   denali, eliott, gottmik, joey, kahmora, kandy, lalari, liv, rose, symone, tamisha, tina, utica,
