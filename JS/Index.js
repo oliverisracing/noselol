@@ -6788,12 +6788,13 @@ let brooke = new Queen("Brooke Lynn Hytes", 10, 10, 13, 12, 10, 11, 13, 11, 8, 3
 let honeyd = new Queen("Honey Davenport", 4, 6, 5, 7, 4, 4, 4, 6, 4, 1, 1, "Honey", "Honey", "US11", false);
 let kahanna = new Queen("Kahanna Montrese", 4, 5, 5, 4, 5, 6, 8, 2, 4, 1, 1, "Kahanna", "Kahanna", "US11", false);
 let mercedes = new Queen("Mercedes Iman Diamond", 4, 6, 4, 6, 6, 8, 8, 5, 8, 1, 1, "Mercedes", "Mercedes", "US11", false);
-let ninaw = new Queen("Nina West", 9, 10, 6, 5, 6, 8, 6, 8, 9, 1, 1, "NinaW", "NinaW", "US11", false);
+let ninaw = new Queen("Nina West", 9, 10, 6, 5, 6, 8, 6, 8, 9, 1, 1, "NinaWest", "NinaWest", "US11", false);
 let plastique = new Queen("Plastique Tiara", 10, 7, 8, 11, 8, 10, 9, 8, 9, 1, 1, "Plastique", "Plastique", "US11", false);
 let rajahs11 = new Queen("Ra'Jah O'Hara", 6, 8, 8, 11, 9, 8, 12, 8, 10, 1, 3, "Rajah", "Rajah", "US11", false);
 let scarletenvys11 = new Queen("Scarlet Envy", 13, 7, 6, 13, 8, 10, 7, 8, 10, 1, 1, "ScarletEnvy", "ScarletEnvy", "US11", false);
 let shuga = new Queen("Shuga Cain", 10, 7, 7, 6, 7, 10, 7, 6, 7, 1, 1, "Shuga", "Shuga", "US11", false);
-let silkys11 = new Queen("Silky Nutmeg Ganache", 10, 11, 11, 6, 9, 8, 11, 10, 9, 3, 4, "Silky", "SilkyS11", "US11", false);
+let silkys11 = new Queen("Silky Nutmeg Ganache", 10, 11, 11, 6, 9, 8, 11, 10, 9, 3, 4, "SilkyNutmet", "SilkyNutmet", "US11", false);let vanessa = new Queen("Vanessa 'Vanjie' Mateo", 6, 6, 8, 6, 9, 7, 11, 8, 8, 4, 1, "Vanessa", "Vanessa", "US10", false);
+let vanessas11 = new Queen("Vanessa 'Vanjie' Mateo", 6, 6, 8, 6, 9, 7, 11, 8, 8, 4, 1, "VanessaS11", "VanessaS11", "US10", false);
 let soju = new Queen("Soju", 3, 1, 2, 1, 1, 3, 3, 1, 1, 1, 1, "Soju", "Soju", "US11", false);
 let yvie = new Queen("Yvie Oddly", 12, 6, 12, 11, 6, 10, 15, 12, 8, 1, 1, "Yvie", "Yvie", "US11", false);
 
