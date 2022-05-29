@@ -6729,7 +6729,7 @@ let pearl = new Queen("Pearl", 7, 10, 8, 9, 10, 9, 5, 6, 3, 4, 3, "Pearl", "Pear
 let sashab = new Queen("Sasha Belle", 6, 6, 4, 4, 6, 6, 4, 4, 5, 4, 1, "SashaB", "SashaB", "US7", false);
 let tempest = new Queen("Tempest DuJour", 6, 6, 5, 3, 6, 7, 4, 7, 8, 4, 2, "Tempest", "Tempest", "US7", false);
 let trixie = new Queen("Trixie Mattel", 13, 10, 6, 10, 11, 10, 5, 15, 10, 3, 1, "Trixie", "Trixie", "US7", false);
-let violet = new Queen("Violet Chachki", 6, 7, 8, 7, 9, 13, 8, 10, 7, 2, 4, "Violet", "Violet", "US7", false);
+let violet = new Queen("Violet Chachki", 6, 7, 8, 7, 13, 13, 8, 10, 7, 2, 4, "Violet", "Violet", "US7", false);
 
 let US7 = shuffle([ginger, jaidynn, jasmine, kandyH, katya, kennedy, max, fame, kasha, pearl, sashab, tempest, trixie, violet])
 //acting, improv, comedy, dance, design, runway, lipsync, branding, charisma, kindness, shadyness
