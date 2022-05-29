@@ -2015,7 +2015,7 @@ class Ball{
       {
           for(let i = 0; i < CurrentSeason.currentCast.length;i++)
           {
-            CurrentSeason.currentCast[i].getBall();
+            CurrentSeason.currentCast[i].GetRusical();
           }
     
           CurrentSeason.currentCast.sort((a, b) => a.perfomancescore - b.perfomancescore);
@@ -6764,85 +6764,87 @@ let valentina = new Queen("Valentina", 11, 7, 10, 9, 9, 9, 10, 13, 13, 3, 3, "Va
 let cynthia2 = new Queen("Cynthia Lee Fontaine", 4, 4, 7, 6, 4, 7, 6, 10, 12, 5, 0, "Cynthia", "Cynthia", "US9", false);
 
 let US9 = shuffle([aja, alexism, charlie, cynthia2, eureka, farrah, jaymes, kimora, ninab, peppermint, sasha, shea, trinity, valentina])
-
-let aquaria = new Queen("Aquaria", 7, 11, 8, 15, 12, 14, 11, 11, 9, 4, 2, "Aquaria", "Aquaria", "US10", false);
+//acting, improv, comedy, dance, design, runway, lipsync, branding, charisma, kindness, shadyness
+let aquaria = new Queen("Aquaria", 7, 11, 11, 13, 15, 14, 11, 11, 9, 4, 2, "Aquaria", "Aquaria", "US10", false);
 let asia = new Queen("Asia O'Hara", 11, 9, 6, 6, 7, 9, 9, 8, 9, 5, 1, "Asia", "Asia", "US10", false);
 let blair = new Queen("Blair St. Clair", 9, 8, 6, 10, 8, 8, 7, 8, 8, 4, 0, "Blair", "Blair", "US10", false);
-let dusty = new Queen("Dusty Ray Bottoms", 8, 8, 6, 7, 6, 7, 6, 9, 8, 4, 0, "Dusty", "Dusty", "US10", false);
-let kalorie = new Queen("Kalorie K. Williams", 6, 6, 6, 5, 7, 7, 8, 6, 6, 4, 1, "Kalorie", "Kalorie", "US10", false);
-let kameron = new Queen("Kameron Michaels", 5, 8, 14, 10, 8, 8, 15, 7, 6, 4, 2, "Kameron", "Kameron", "US10", false);
-let mayhem = new Queen("Mayhem Miller", 4, 8, 9, 13, 7, 9, 10, 8, 7, 4, 1, "Mayhem", "Mayhem", "US10", false);
-let miz = new Queen("Miz Cracker", 13, 11, 5, 12, 15, 9, 5, 10, 9, 4, 2, "Miz", "Miz", "US10", false);
-let monet1 = new Queen("Monét X Change", 9, 11, 13, 6, 10, 9, 14, 10, 10, 5, 1, "Monet", "Monet", "US10", false);
-let monique = new Queen("Mo Heart", 12, 9, 8, 11, 15, 13, 10, 9, 11, 4, 1, "Mo", "Mo", "US10", false);
-let vanessa = new Queen("Vanessa 'Vanjie' Mateo", 9, 6, 8, 6, 9, 7, 11, 8, 8, 4, 1, "Vanessa", "Vanessa", "US10", false);
+let dusty = new Queen("Dusty Ray Bottoms", 8, 8, 6, 4, 6, 7, 6, 9, 8, 4, 0, "Dusty", "Dusty", "US10", false);
+let kalorie = new Queen("Kalorie K. Williams", 4, 4, 4, 5, 7, 7, 8, 6, 6, 4, 1, "Kalorie", "Kalorie", "US10", false);
+let kameron = new Queen("Kameron Michaels", 9, 8, 14, 10, 8, 8, 15, 7, 6, 4, 2, "Kameron", "Kameron", "US10", false);
+let mayhem = new Queen("Mayhem Miller", 4, 8, 9, 13, 14, 9, 10, 8, 7, 4, 1, "Mayhem", "Mayhem", "US10", false);
+let miz = new Queen("Miz Cracker", 10, 9, 4, 11, 11, 7, 5, 10, 9, 4, 2, "Miz", "Miz", "US10", false);
+let monet1 = new Queen("Monét X Change", 9, 11, 13, 6, 5, 5, 14, 10, 10, 5, 1, "Monet", "Monet", "US10", false);
+let monique = new Queen("Mo Heart", 12, 9, 8, 4, 10, 13, 10, 9, 11, 4, 1, "Mo", "Mo", "US10", false);
+let vanessa = new Queen("Vanessa 'Vanjie' Mateo", 6, 6, 8, 6, 9, 7, 11, 8, 8, 4, 1, "Vanessa", "Vanessa", "US10", false);
 let vixen = new Queen("The Vixen", 5, 4, 12, 9, 3, 8, 12, 9, 5, 3, 4, "Vixen", "Vixen", "US10", false);
 let yuhua = new Queen("Yuhua Hamasaki", 4, 4, 6, 9, 6, 7, 7, 6, 6, 3, 2, "Yuhua", "Yuhua", "US10", false);
 let eureka2 = new Queen("Eureka!", 9, 11, 8, 10, 13, 10, 12, 13, 10, 4, 1, "Eureka", "Eureka", "US10", false)
 
 let US10 = shuffle([aquaria, asia, blair, dusty, eureka2, kalorie, kameron, mayhem, miz, monet1, monique, vanessa, vixen, yuhua])
 
-let akeria = new Queen("A'keria C. Davenport", 11, 9, 11, 8, 10, 13, 10, 11, 10, 4, 1, "Akeria", "Akeria", "US11", false);
-let ariel = new Queen("Ariel Versace", 8, 6, 8, 5, 8, 8, 8, 7, 5, 3, 3, "Ariel", "Ariel", "US11", false);
-let brooke = new Queen("Brooke Lynn Hytes", 8, 8, 13, 12, 8, 10, 13, 12, 10, 4, 1, "Brooke", "Brooke", "US11", false);
-let honeyd = new Queen("Honey Davenport", 4, 6, 5, 7, 4, 9, 4, 8, 7, 4, 1, "Honey", "Honey", "US11", false);
-let kahanna = new Queen("Kahanna Montrese", 4, 5, 5, 4, 5, 6, 8, 5, 5, 4, 2, "Kahanna", "Kahanna", "US11", false);
-let mercedes = new Queen("Mercedes Iman Diamond", 4, 6, 4, 6, 6, 8, 8, 5, 5, 4, 1, "Mercedes", "Mercedes", "US11", false);
-let ninaw = new Queen("Nina West", 12, 11, 6, 8, 11, 8, 6, 9, 9, 5, 0, "Nina", "Nina", "US11", false);
-let plastique = new Queen("Plastique Tiara", 10, 7, 8, 11, 8, 10, 9, 10, 7, 4, 1, "Plastique", "Plastique", "US11", false);
-let rajah = new Queen("Ra'Jah O'Hara", 6, 8, 11, 13, 10, 11, 13, 10, 13, 4, 2, "Rajah", "Rajah", "US11", false);
-let scarlet = new Queen("Scarlet Envy", 13, 7, 6, 13, 8, 10, 7, 8, 8, 4, 1, "Scarlet", "Scarlet", "US11", false);
-let shuga = new Queen("Shuga Cain", 10, 9, 7, 6, 7, 10, 7, 8, 6, 4, 2, "Shuga", "Shuga", "US11", false);
-let silky = new Queen("Silky Nutmeg Ganache", 10, 8, 9, 6, 10, 8, 11, 14, 12, 4, 2, "Silky", "Silky", "US11", false);
-let yvie = new Queen("Yvie Oddly", 12, 4, 12, 11, 6, 10, 15, 11, 12, 4, 2, "Yvie", "Yvie", "US11", false);
-let vanjie = new Queen("Vanessa Vanjie Mateo", 9, 8, 9, 8, 7, 8, 10, 11, 12, 4, 1, "Vanjie", "Vanjie", "US11", false)
+let akeria = new Queen("A'keria C. Davenport", 9, 11, 9, 10, 10, 10, 10, 9, 11, 3, 1, "Akeria", "Akeria", "US11", false);
+let ariel = new Queen("Ariel Versace", 4, 6, 4, 5, 5, 5, 5, 3, 4, 2, 2, "Ariel", "Ariel", "US11", false);
+let brooke = new Queen("Brooke Lynn Hytes", 10, 10, 13, 12, 10, 11, 13, 11, 8, 3, 1, "Brooke", "Brooke", "US11", false);
+let honeyd = new Queen("Honey Davenport", 4, 6, 5, 7, 4, 4, 4, 6, 4, 1, 1, "Honey", "Honey", "US11", false);
+let kahanna = new Queen("Kahanna Montrese", 4, 5, 5, 4, 5, 6, 8, 2, 4, 1, 1, "Kahanna", "Kahanna", "US11", false);
+let mercedes = new Queen("Mercedes Iman Diamond", 4, 6, 4, 6, 6, 8, 8, 5, 8, 1, 1, "Mercedes", "Mercedes", "US11", false);
+let ninaw = new Queen("Nina West", 9, 10, 6, 5, 6, 8, 6, 8, 9, 1, 1, "NinaW", "NinaW", "US11", false);
+let plastique = new Queen("Plastique Tiara", 10, 7, 8, 11, 8, 10, 9, 8, 9, 1, 1, "Plastique", "Plastique", "US11", false);
+let rajahs11 = new Queen("Ra'Jah O'Hara", 6, 8, 8, 11, 9, 8, 12, 8, 10, 1, 3, "Rajah", "Rajah", "US11", false);
+let scarletenvys11 = new Queen("Scarlet Envy", 13, 7, 6, 13, 8, 10, 7, 8, 10, 1, 1, "ScarletEnvy", "ScarletEnvy", "US11", false);
+let shuga = new Queen("Shuga Cain", 10, 7, 7, 6, 7, 10, 7, 6, 7, 1, 1, "Shuga", "Shuga", "US11", false);
+let silkys11 = new Queen("Silky Nutmeg Ganache", 10, 11, 11, 6, 9, 8, 11, 10, 9, 3, 4, "Silky", "SilkyS11", "US11", false);
+let soju = new Queen("Soju", 3, 1, 2, 1, 1, 3, 3, 1, 1, 1, 1, "Soju", "Soju", "US11", false);
+let vanessa = new Queen("Vanessa 'Vanjie' Mateo", 9, 6, 8, 6, 9, 7, 11, 10, 10, 1, 1, "Vanjie", "Vanjie", "US11", false);
+let yvie = new Queen("Yvie Oddly", 12, 6, 12, 11, 6, 10, 15, 12, 8, 1, 1, "Yvie", "Yvie", "US11", false);
 
-let US11 = shuffle([akeria, ariel, brooke, honeyd, kahanna, mercedes, ninaw, plastique, rajah, scarlet, shuga, silky, yvie, vanjie])
+let US11 = shuffle([akeria, ariel, brooke, honeyd, kahanna, mercedes, ninaw, plastique, rajahs11, scarletenvys11, shuga, silkys11, soju, vanessa, yvie]);
 
 let jaida = new Queen("Jaida Essence Hall", 10, 11, 8, 9, 14, 15, 13, 14, 13, 4, 1, "Jaida", "Jaida", "US12",false);
 let crystalm = new Queen("Crystal Methyd", 8, 10, 12, 8, 10, 12, 8, 15, 10, 4, 1, "Crystal", "Crystal", "US12", false);
-let gigi = new Queen("Gigi Goode", 11, 12, 13, 6, 12, 10, 5, 10, 11, 3, 1, "Gigi", "Gigi", "US12", false);
+let gigi = new Queen("Gigi Goode", 11, 12, 13, 8, 12, 13, 5, 10, 11, 3, 1, "Gigi", "Gigi", "US12", false);
 let jackie = new Queen("Jackie Cox", 12, 10, 11, 8, 7, 10, 11, 10, 7, 4, 1, "Jackie", "Jackie", "US12", false);
 let heidi = new Queen("Heidi N Closet", 9, 10, 10, 9, 8, 8, 14, 12, 15, 5, 0, "Heidi", "Heidi", "US12", false);
-let widow = new Queen("Widow Von'Du", 10, 12, 12, 14, 10, 12, 15, 5, 12, 4, 1, "Widow", "Widow", "US12", false);
-let jan = new Queen("Jan", 9, 10, 10, 7, 11, 10, 6, 8, 7, 4, 2, "Jan", "Jan", "US12", false);
-let brita = new Queen("Brita", 7, 6, 9, 10, 6, 15, 15, 14, 13, 2, 3, "Brita", "Brita", "US12", false);
-let aiden = new Queen("Aiden Zhane", 8, 7, 9, 7, 6, 7, 6, 10, 9, 2, 2, "Aiden", "Aiden", "US12", false);
-let nicky = new Queen("Nicky Doll", 7, 6, 6, 6, 15, 15, 7, 7, 10, 4, 1, "Nicky", "Nicky", "US12", false);
-let rock = new Queen("Rock M. Sakura", 10, 8, 9, 10, 5, 7, 10, 12, 8, 3, 1, "Rock", "Rock", "US12", false);
-let dahlia = new Queen("Dahlia Sin", 7, 8, 4, 4, 10, 15, 4, 12, 15, 1, 4, "Dahlia", "Dahlia", "US12", false);
+let widow = new Queen("Widow Von'Du", 8, 6, 10, 5, 6, 9, 13, 5, 3, 4, 1, "Widow", "Widow", "US12", false);
+let jan = new Queen("Jan", 9, 10, 10, 7, 11, 10, 1, 8, 7, 4, 2, "Jan", "Jan", "US12", false);
+let brita = new Queen("Brita", 7, 6, 9, 7, 6, 7, 10, 5, 5, 2, 3, "Brita", "Brita", "US12", false);
+let aiden = new Queen("Aiden Zhane", 8, 7, 9, 7, 6, 7, 6, 5, 9, 2, 2, "Aiden", "Aiden", "US12", false);
+let nicky = new Queen("Nicky Doll", 7, 6, 6, 6, 15, 15, 6, 7, 4, 4, 1, "Nicky", "Nicky", "US12", false);
+let rock = new Queen("Rock M. Sakura", 5, 6, 6, 6, 5, 4, 3, 3, 3, 3, 1, "Rock", "Rock", "US12", false);
+let sherry = new Queen("Sherry Pie", 10, 10, 7, 6, 10, 8, 8, 10, 8, 1, 3, "Sherry", "Sherry", "US12", false)
+let dahlia = new Queen("Dahlia Sin", 3, 2, 4, 4, 4, 15, 4, 1, 1, 1, 4, "Dahlia", "Dahlia", "US12", false);
 
-let US12 = shuffle([jaida, crystalm, gigi, jackie, heidi, widow, jan, brita, aiden, nicky, rock, dahlia]);
+let US12 = shuffle([jaida, crystalm, gigi, jackie, heidi, widow, jan, brita, aiden, nicky, rock, sherry, dahlia]);
 //acting, improv, comedy, dance, design, runway, lipsync, branding, charisma, kindness, shadyness
-let denali = new Queen("Denali Foxx", 5, 10, 9, 14, 8, 10, 15, 11, 6, 4, 1, "Denali", "Denali", "US13", false);
-let eliott = new Queen("Eliott with 2 Ts", 8, 9, 5, 14, 10, 8, 11, 8, 7, 0, 2, "Eliott", "Eliott", "US13", false);
-let gottmik = new Queen("Gottmik", 9, 11, 12, 6, 12, 15, 6, 9, 12, 4, 0, "Gottmik", "Gottmik", "US13", false);
-let joey = new Queen("Joey Jay", 9, 8, 10, 7, 5, 5, 8, 12, 10, 4, 1, "Joey", "Joey", "US13", false);
-let kahmora = new Queen("Kahmora Hall", 5, 6, 5, 6, 8, 15, 3, 8, 12, 3, 1, "Kahmora", "Kahmora", "US13", false);
-let kandy = new Queen("Kandy Muse", 8, 11, 10, 6, 8, 10, 13, 13, 14, 2, 5, "Kandy", "Kandy", "US13", false);
-let lalari = new Queen("LaLa Ri", 8, 6, 10, 9, 2, 5, 12, 10, 13, 4, 1, "Lala", "Lalari", "US13", false);
-let liv = new Queen("Liv Lux Miyake-Mugler", 10, 11, 9, 12, 10, 14, 10, 7, 11, 5, 0, "Liv", "Liv", "US13", false);
-let rose = new Queen("Rosé", 9, 10, 11, 11, 12, 13, 6, 10, 6, 3, 0, "Rose", "Rose", "US13", false);
-let symone = new Queen("Symone", 13, 11, 8, 6, 6, 15, 13, 15, 15, 4, 0, "Symone", "Symone", "US13", false);
-let tamisha = new Queen("Tamisha Iman", 9, 8, 7, 6, 6, 8, 8, 8, 15, 2, 1, "Tamisha", "Tamisha", 'US13', false);
-let tina = new Queen("Tina Burner", 10, 10, 9, 7, 5, 5, 7, 12, 9, 3, 2, "TIna", "Tina", "US13", false);
-let utica = new Queen("Utica Queen", 8, 7, 6, 11, 14, 15, 11, 10, 10, 4, 1, "Utica", "Utica", "US13", false);
+let denali = new Queen("Denali", 4, 8, 14, 9, 10, 11, 13, 6, 8, 1, 0, "Denali", "Denali", "US13", false);
+let elliott = new Queen("Elliott With 2 Ts", 5, 5, 12, 9, 3, 8, 11, 3, 3, 1, 1, "Elliott", "Elliott", "US13", false);
+let mik = new Queen("Gottmik", 8, 11, 6, 13, 12, 13, 6, 11, 10, 3, 1, "Gottmik", "Gottmik", "US13", false);
+let joey = new Queen("Joey Jay", 6, 7, 6, 5, 5, 7, 7, 2, 4, 4, 2, "JoeyJay", "JoeyJay", "US13", false);
+let kahmora = new Queen("Kahmora Hall", 3, 4, 3, 5, 4, 12, 4, 3, 6, 1, 1,  "Kahmora", "Kahmora", "US13", false);
+let kandym = new Queen("Kandy Muse", 9, 10, 5, 6, 7, 8, 14, 11, 10, 2, 4, "KandyM", "KandyM", "US13", false);
+let lala = new Queen("LaLa Ri", 5, 7, 10, 2, 6, 9, 14, 5, 10, 4, 1, "LalaRi", "LalaRi", "US13", false);
+let olivia = new Queen("Olivia Lux", 11, 5, 11, 10, 8, 11, 8, 7, 10, 4, 1, "OliviaLux", "OliviaLux", "US13", false);
+let rose = new Queen("Rosé", 12, 11, 13, 8, 10, 10, 6, 13, 9, 3, 1, "Rose", "Rose", "US13", false);
+let symone = new Queen("Symone", 14, 7, 7, 9, 12, 9, 13, 13, 13, 4, 1, "Symone", "Symone", "US13", false);
+let tamisha = new Queen("Tamisha Iman", 7, 6, 7, 5, 6, 7, 7, 5, 7, 3, 1, "Tamisha", "Tamisha", "US13", false);
+let tina = new Queen("Tina Burner", 6, 6, 10, 5, 6, 8, 9, 9, 6, 1, 1, "TinaBurner", "TinaBurner", "US13", false);
+let utica = new Queen("Utica Queen", 7, 4, 6, 15, 5, 12, 11, 7, 9, 1, 1, "UticaQueen", "UticaQueen", "US13", false);
 
-let US13 = shuffle([denali, eliott, gottmik, joey, kahmora, kandy, lalari, liv, rose, symone, tamisha, tina, utica]);
+let US13 = shuffle([denali, elliott, mik, joey, kahmora, kandym, lala, olivia, rose, symone, tamisha, tina, utica]);
 
-let alyssah = new Queen("Alyssa Hunter", 7, 8, 9, 10, 12, 14, 8, 7, 8, 4, 2, "Alyssa", "Alyssa", "US14", false);
-let angeria = new Queen("Angeria Paris VanMicheals", 12, 12, 11, 8, 12, 12, 8, 10, 12, 5, 0, "Angeria", "Angeria", "US14", false);
-let bosco = new Queen("Bosco", 10, 14, 9, 8, 8, 8, 6, 12, 10, 4, 0, "Bosco", "Bosco", "US14", false);
-let daya = new Queen("Daya Betty", 12, 10, 8, 8, 10, 14, 7, 14, 15, 3, 3, "Daya", "Daya", "US14", false);
+let alyssah = new Queen("Alyssa Hunter", 5, 4, 6, 6, 6, 11, 8, 4, 6, 4, 2, "Alyssa", "Alyssa", "US14", false);
+let angeria = new Queen("Angeria Paris VanMicheals", 13, 13, 11, 8, 12, 12, 8, 10, 12, 5, 0, "Angeria", "Angeria", "US14", false);
+let bosco = new Queen("Bosco", 12, 14, 9, 10, 10, 8, 8, 12, 10, 4, 0, "Bosco", "Bosco", "US14", false);
+let daya = new Queen("Daya Betty", 10, 10, 8, 8, 10, 10, 7, 10, 10, 3, 3, "Daya", "Daya", "US14", false);
 let deja = new Queen("DeJa Skye", 9, 8, 12, 10, 8, 6, 13, 12, 10, 4, 1, "Deja", "Deja", "US14", false);
-let jasminek = new Queen("Jasmine Kennedie", 8, 7, 9, 15, 6, 10, 15, 12, 10, 5, 2, "Jasmine", "Jasmine", "US14", false);
-let jorgeous = new Queen("Jorgeous", 9, 8, 10, 15, 6, 8, 15, 12, 12, 4, 1, "Jorgeous", "Jorgeous", "US14", false);
-let junej = new Queen("June Jambalaya", 6, 7, 10, 12, 6, 8, 10, 8, 10, 3, 1, "June", "June", "US14", false);
-let kerri = new Queen("Kerri Colby", 10, 9, 10, 7, 5, 8, 5, 10, 15, 5, 0, "Kerri", "Kerri", "US14", false);
+let jasminek = new Queen("Jasmine Kennedie", 7, 7, 8, 10, 6, 10, 15, 5, 5, 5, 2, "Jasmine", "Jasmine", "US14", false);
+let jorgeous = new Queen("Jorgeous", 9, 8, 5, 11, 6, 6, 14, 6, 6, 4, 1, "Jorgeous", "Jorgeous", "US14", false);
+let junej = new Queen("June Jambalaya", 4, 6, 4, 4, 6, 5, 4, 8, 4, 3, 1, "June", "June", "US14", false);
+let kerri = new Queen("Kerri Colby", 6, 6, 6, 7, 5, 8, 5, 5, 15, 5, 0, "Kerri", "Kerri", "US14", false);
 let kornbread = new Queen("Kornbred \"The Snack\" Jeté", 11, 12, 13, 6, 6, 8, 8, 12, 10, 5, 1, "Kornbread", "Kornbread", "US14", false);
 let camden = new Queen("Lady Camden", 14, 10, 10, 11, 10, 8, 12, 8, 8, 4, 0, "Camden", "Camden", "US14", false);
-let maddym = new Queen("Maddy Morphosis", 12, 10, 12, 6, 5, 6, 7, 6, 12, 3, 1, "Maddy", "Maddy", "US14", false);
-let orion = new Queen("Orion Story", 7, 8, 9, 7, 10, 10, 10, 10, 14, 4, 2, "Orion", "Orion","US14", false);
+let maddym = new Queen("Maddy Morphosis", 7, 6, 4, 4, 3, 6, 7, 6, 7, 3, 1, "Maddy", "Maddy", "US14", false);
+let orion = new Queen("Orion Story", 3, 5, 6, 6, 7, 7, 7, 7, 14, 4, 2, "Orion", "Orion","US14", false);
 let willow = new Queen("Willow Pill", 12, 13, 11, 8, 14, 10, 12, 12, 13, 5, 1, "Willow", "Willow", "US14", false);
 
 let US14 = shuffle([alyssah, angeria, bosco, daya, deja, jasminek, jorgeous, junej, kerri, kornbread, camden, maddym, orion, willow]);
@@ -6931,18 +6933,18 @@ let tynomi = new Queen("Tynomi Banks", 6, 7, 9, 12, 8, 8, 13, 12, 10, 4, 2, "Tyn
 let CA1 = shuffle([anastarzia,boa,ilona,jimbo,juice,kiara,kyne,lemon,priyanka,rita,scarlettbobo,tynomi]);
 
 
-let icesis = new Queen("Icesis Couture", 8, 9, 10, 11, 12, 14, 12, 10, 8, 4, 0, "Icesis", "Icesis", "CA2", false);
+let icesis = new Queen("Icesis Couture", 8, 9, 10, 11, 15, 14, 12, 10, 8, 4, 0, "Icesis", "Icesis", "CA2", false);
 let kendall = new Queen("Kendall Gender", 7, 9, 10, 8, 6, 10, 14, 10, 11, 4, 1, "Kendall", "Kendall", "CA2", false);
-let eve = new Queen("Eve 6000", 10, 8, 10, 4, 6, 12, 6, 15, 15, 4, 2, "Eve", "Eve", "CA2", false);
+let eve = new Queen("Eve 6000", 7, 8, 6, 4, 6, 6, 6, 4, 7, 4, 2, "Eve", "Eve", "CA2", false);
 let giam = new Queen("Gia Metric", 8, 10, 12, 14, 7, 10, 10, 6, 12, 2, 1, "Gia", "Gia", "CA2", false);
 let pythia = new Queen("Pythia", 10, 11, 8, 7, 12, 10, 5, 12, 13, 5, 0, "Pythia", "Pythia", "CA2", false);
-let adriana = new Queen("Adriana", 13, 9, 6, 7, 9, 12, 9, 12, 9, 3, 1, "Adriana", "Adrianna", "CA2", false);
-let kimoraa = new Queen("Kimora Amour", 10, 9, 11, 8, 12, 8, 7, 12, 10, 5, 0, "Kimora", "Kimora", "CA2", false);
+let adriana = new Queen("Adriana", 13, 9, 6, 7, 9, 12, 9, 12, 9, 3, 1, "AdrianaCA2", "Adrianna", "CA2", false);
+let kimoraa = new Queen("Kimora Amour", 4, 4, 4, 8, 7, 8, 7, 5, 7, 5, 0, "Kimora", "Kimora", "CA2", false);
 let synthia = new Queen("Synthia Kiss", 11, 8, 12, 10, 5, 8, 13, 10, 12, 4, 0, "Synthia", "Synthia", "CA2", false);
-let suki = new Queen("Suki Doll", 10, 8, 7, 8, 15, 15, 6, 10, 11, 4, 0, "Suki", "Suki", "CA2", false);
-let oceane = new Queen("Océane Aqua-Black", 9, 10, 11, 6, 7, 10, 12, 10, 12, 5, 0, "Oceane", "Oceane", "CA2");
+let suki = new Queen("Suki Doll", 10, 5, 5, 6, 13, 5, 6, 7, 7, 4, 0, "Suki", "Suki", "CA2", false);
+let oceane = new Queen("Océane Aqua-Black", 3, 4, 5, 6, 5, 8, 6, 5, 4, 5, 0, "Oceane", "Oceane", "CA2");
 let beth = new Queen("Beth", 8, 9, 10, 6, 5, 10, 8, 10, 10, 4, 0, "Beth", "Beth", "CA2", false);
-let stephanie = new Queen("Stephanie Prince", 8, 9, 7, 6, 10, 12, 10, 14, 10, 4 , 0, "Stephanie", "Stephanie", "CA2", false);
+let stephanie = new Queen("Stephanie Prince", 8, 9, 7, 6, 10, 12, 8, 8, 10, 4 , 0, "Stephanie", "Stephanie", "CA2", false);
 
 let CA2 = shuffle([icesis, kendall, eve, giam, pythia, adriana, kimoraa, synthia, suki, oceane, beth, stephanie]);
 
@@ -7891,11 +7893,11 @@ function Placements() {
     for (let i = 0; i < Tops.length; i++) {
       if(Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "WIN" || Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "DOUBLEWIN")
       {
-        Tops[i].finalscore += 7;
+        Tops[i].finalscore += 5;
       }
       else if(Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "BOTTOM")
       {
-        Tops[i].finalscore += -7;
+        Tops[i].finalscore += -5;
       }
     }
     Tops.sort((a, b) => a.finalscore - b.finalscore);
