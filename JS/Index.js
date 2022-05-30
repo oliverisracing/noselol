@@ -7044,6 +7044,7 @@ let sederginne = new Queen("Sederginne", 7, 6, 6, 7, 5, 13, 5, 7, 7, 3, 0, "Sede
 let HO1 = shuffle([chelsea, envy, janey, madamem, mama, megan, abby, patty, roem, sederginne])
 
 let arthost = new Host("Art Arya", "ArtIn", "ArtArya");
+
 let anita = new Queen("Anita Wigl'It", 9, 11, 15, 9, 8, 10, 6, 12, 13, 4, 1, "Anita", "Anita", "DU1",false);
 let arts = new Queen("Art Simone", 10, 8, 7, 10, 14, 15, 6, 10, 8, 4, 1, "Art", "Art", "DU1",false);
 let cocoj = new Queen("Coco Jumbo", 8, 10, 9, 8, 7, 6, 12, 6, 10, 4, 1, "Coco", "Coco", "DU1",false);
@@ -7055,8 +7056,6 @@ let kita = new Queen("Kita Mean", 12, 12, 13, 14, 8, 12, 10, 15, 12, 4, 1, "Kita
 let maxi = new Queen("Maxi Shield", 8, 9, 7, 10, 12, 10, 15, 9, 12, 5, 0, "Maxi", "Maxi", "DU1",false);
 
 let DU1 = shuffle([anita, arts, cocoj, elektra, etc, jojoz, karenf, kita, maxi]);
-
-let arthost = new Host("Art Arya", "ArtIn", "ArtArya");
 
 let ava = new Queen("Ava Hangar",9, 4, 6, 11, 7, 5, 12, 5, 8, 1, 1, "Ava", "Ava","IT1",false);
 let divinity = new Queen("Divinity", 10, 1, 6, 8, 6, 8, 10, 11, 10, 3, 1, 'Divinity', 'Divinity', 'IT1', false);
