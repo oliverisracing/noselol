@@ -7048,10 +7048,10 @@ let DragRaceQueens = [
   ginger, jaidynn, jasmine, kandyH, katya, kennedy, max, fame, kasha, pearl, sashab, tempest, trixie, violet,
   aja, alexism, charlie, cynthia2, eureka, farrah, jaymes, kimora, ninab, peppermint, sasha, shea, trinity, valentina,
   aquaria, asia, blair, dusty, eureka2, kalorie, kameron, mayhem, miz, monet1, monique, vanessa, vixen, yuhua,
-  akeria, ariel, brooke, honeyd, kahanna, mercedes, ninaw, plastique, rajah, scarlet, shuga, silky, yvie, vanjie,
+  akeria, ariel, brooke, honeyd, kahanna, mercedes, ninaw, plastique, rajahs11, scarletenvys11, shuga, silkys11, soju, yvie, vanjies11,
   bob, kimchi, naomi, chichi, derrick, thorgy, robbie, acid, naysha, cynthia, dax, laila,
-  jaida, crystalm, gigi, jackie, heidi, widow, jan, brita, aiden, nicky, rock, dahlia,
-  denali, eliott, gottmik, joey, kahmora, kandy, lalari, liv, rose, symone, tamisha, tina, utica,
+  jaida, crystalm, gigi, jackie, heidi, widow, jan, brita, aiden, nicky, rock, sherry, dahlia,
+  denali, elliott, gottmik, joey, kahmora, kandym, lalari, olivia, rose, symone, tamisha, tina, utica,
   alyssah, angeria, bosco, daya, deja, jasminek, jorgeous, junej, kerri, kornbread, camden, maddym, orion, willow,
 
   jaidaas7, jinkxas7, monetas7, rajaas7, sheaas7, vivas7, trinityas7, yvieas7,
