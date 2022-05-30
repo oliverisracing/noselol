@@ -9023,7 +9023,7 @@ function ChallengeAnnouncement(){
         CurrentSeason.episodes.push(CurrentEpisode);
         CurrentSeason.snatchgame++;
       }
-      else if( (getRandomInt(0,100)>=90 && CurrentSeason.currentCast.length == 8) || (getRandomInt(0,100)>=60 && CurrentSeason.currentCast.length == 6) || (getRandomInt(0,100)>=20 && CurrentSeason.currentCast.length == 5) || (CurrentSeason.currentCast.length == 4)  && CurrentSeason.makeoverchallenges == 0)
+      else if( (getRandomInt(0,100)>=90 && CurrentSeason.currentCast.length == 8) || (getRandomInt(0,100)>=60 && CurrentSeason.currentCast.length == 6) || (getRandomInt(0,100)>=20 && CurrentSeason.currentCast.length == 5) ||  && CurrentSeason.makeoverchallenges == 0)
       {
         CurrentChallenge = new Makeover();
         CurrentEpisode = new Episode(CurrentChallenge.episodename[CurrentChallenge.chosen], "Makeover");
