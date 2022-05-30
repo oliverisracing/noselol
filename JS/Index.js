@@ -6818,7 +6818,7 @@ let US12 = shuffle([jaida, crystalm, gigi, jackie, heidi, widow, jan, brita, aid
 //acting, improv, comedy, dance, design, runway, lipsync, branding, charisma, kindness, shadyness
 let denali = new Queen("Denali", 4, 8, 14, 9, 10, 11, 13, 6, 8, 1, 0, "Denali", "Denali", "US13", false);
 let elliott = new Queen("Elliott With 2 Ts", 5, 5, 12, 9, 3, 8, 11, 3, 3, 1, 1, "Elliott", "Elliott", "US13", false);
-let mik = new Queen("Gottmik", 8, 11, 6, 13, 12, 13, 6, 11, 10, 3, 1, "Gottmik", "Gottmik", "US13", false);
+let gottmik = new Queen("Gottmik", 8, 11, 6, 13, 12, 13, 6, 11, 10, 3, 1, "Gottmik", "Gottmik", "US13", false);
 let joey = new Queen("Joey Jay", 6, 7, 6, 5, 5, 7, 7, 2, 4, 4, 2, "JoeyJay", "JoeyJay", "US13", false);
 let kahmora = new Queen("Kahmora Hall", 3, 4, 3, 5, 4, 12, 4, 3, 6, 1, 1,  "Kahmora", "Kahmora", "US13", false);
 let kandym = new Queen("Kandy Muse", 9, 10, 5, 6, 7, 8, 14, 11, 10, 2, 4, "KandyMuse", "KandyMuse", "US13", false);
@@ -6830,7 +6830,7 @@ let tamisha = new Queen("Tamisha Iman", 7, 6, 7, 5, 6, 7, 7, 5, 7, 3, 1, "Tamish
 let tina = new Queen("Tina Burner", 6, 6, 10, 5, 6, 8, 9, 9, 6, 1, 1, "TinaBurner", "TinaBurner", "US13", false);
 let utica = new Queen("Utica Queen", 7, 4, 6, 15, 5, 12, 11, 7, 9, 1, 1, "UticaQueen", "UticaQueen", "US13", false);
 
-let US13 = shuffle([denali, elliott, mik, joey, kahmora, kandym, lala, olivia, rose, symone, tamisha, tina, utica]);
+let US13 = shuffle([denali, elliott, gottmik, joey, kahmora, kandym, lala, olivia, rose, symone, tamisha, tina, utica]);
 
 let alyssah = new Queen("Alyssa Hunter", 5, 4, 6, 6, 6, 11, 8, 4, 6, 4, 2, "Alyssa", "Alyssa", "US14", false);
 let angeria = new Queen("Angeria Paris VanMicheals", 13, 13, 11, 8, 12, 12, 8, 10, 12, 5, 0, "Angeria", "Angeria", "US14", false);
