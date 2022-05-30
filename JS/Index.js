@@ -6845,7 +6845,7 @@ let kerri = new Queen("Kerri Colby", 6, 6, 6, 7, 5, 8, 5, 5, 15, 5, 0, "Kerri", 
 let kornbread = new Queen("Kornbred \"The Snack\" Jeté", 9, 9, 9, 6, 6, 8, 8, 12, 10, 5, 1, "Kornbread", "Kornbread", "US14", false);
 let camden = new Queen("Lady Camden", 14, 10, 10, 11, 10, 8, 12, 8, 8, 4, 0, "Camden", "Camden", "US14", false);
 let maddym = new Queen("Maddy Morphosis", 6, 6, 4, 4, 3, 6, 7, 6, 7, 3, 1, "Maddy", "Maddy", "US14", false);
-let orion = new Queen("Orion Story", 3, 5, 6, 6, 7, 7, 7, 7, 14, 4, 2, "Orion", "Orion","US14", false);
+let orion = new Queen("Orion Story", 3, 5, 3, 3, 2, 2, 2, 2, 14, 4, 2, "Orion", "Orion","US14", false);
 let willow = new Queen("Willow Pill", 12, 10, 11, 8, 14, 10, 12, 12, 13, 5, 1, "Willow", "Willow", "US14", false);
 
 let US14 = shuffle([alyssah, angeria, bosco, daya, deja, jasminek, jorgeous, junej, kerri, kornbread, camden, maddym, orion, willow]);
@@ -7894,11 +7894,11 @@ function Placements() {
     for (let i = 0; i < Tops.length; i++) {
       if(Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "WIN" || Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "DOUBLEWIN")
       {
-        Tops[i].finalscore += 60;
+        Tops[i].finalscore += 3;
       }
       else if(Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "BOTTOM")
       {
-        Tops[i].finalscore += -3;
+        Tops[i].finalscore += -70;
       }
     }
     Tops.sort((a, b) => a.finalscore - b.finalscore);
