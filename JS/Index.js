@@ -7104,7 +7104,7 @@ let DragRaceQueens = [
   marina, estrella, venedita, juriji, sethlas, diamante, onyx, jota, samantha, arielr, marisa,
 
   amadiva, année, bella, bbf, dearis, jaja, meannie, morrigan, natalia, petchra,
-  angele, bandit, genie, gimhuay, kana, kandyz, katy, mstranger, maya, mocha, silvers, srimala, tormai, vanda
+  angele, bandit, genie, gimhuay, kana, kandyz, katy, mstranger, maya, mocha, silvers, srimala, tormai, vanda,
   ava ,divinity ,elecktra, enorma, farida, ivana, leriche, luquisha
 
 ].sort((a, b) => a.GetName().localeCompare(b.GetName()));
