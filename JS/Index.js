@@ -726,7 +726,7 @@ class Screen {
           
           case "DOUBLEWIN":
             trtr.innerHTML = "WIN";
-            trtr.setAttribute("style","background: darkblue; font-weight: bold; color: white;");
+            trtr.setAttribute("style","background: royalblue; font-weight: bold; color: white;");
             break;
 
           default:
@@ -860,7 +860,7 @@ class Screen {
           
           case "DOUBLEWIN":
             trtr.innerHTML = "WIN";
-            trtr.setAttribute("style","background: darkblue; font-weight: bold; color: white;");
+            trtr.setAttribute("style","background: royalblue; font-weight: bold; color: white;");
             break;
 
           default:
