@@ -6781,12 +6781,12 @@ let mayhem = new Queen("Mayhem Miller", 4, 8, 9, 13, 14, 9, 10, 8, 7, 4, 1, "May
 let miz = new Queen("Miz Cracker", 10, 9, 4, 11, 11, 7, 5, 10, 9, 4, 2, "Miz", "Miz", "US10", false);
 let monet1 = new Queen("Monét X Change", 9, 11, 13, 6, 5, 5, 14, 10, 10, 5, 1, "Monet", "Monet", "US10", false);
 let monique = new Queen("Mo Heart", 12, 9, 8, 4, 10, 13, 10, 9, 11, 4, 1, "Mo", "Mo", "US10", false);
-let vanessa = new Queen("Vanessa 'Vanjie' Mateo", 6, 6, 8, 6, 9, 7, 11, 8, 8, 4, 1, "Vanessa", "Vanessa", "US10", false);
+let vanjies10 = new Queen("Vanessa 'Vanjie' Mateo", 6, 6, 8, 6, 9, 7, 11, 8, 8, 4, 1, "Vanessa", "Vanessa", "US10", false);
 let vixen = new Queen("The Vixen", 5, 4, 12, 9, 3, 8, 12, 9, 5, 3, 4, "Vixen", "Vixen", "US10", false);
 let yuhua = new Queen("Yuhua Hamasaki", 4, 4, 6, 9, 6, 7, 7, 6, 6, 3, 2, "Yuhua", "Yuhua", "US10", false);
 let eureka2 = new Queen("Eureka!", 9, 11, 8, 10, 13, 10, 12, 13, 10, 4, 1, "Eureka", "Eureka", "US10", false)
 
-let US10 = shuffle([aquaria, asia, blair, dusty, eureka2, kalorie, kameron, mayhem, miz, monet1, monique, vanessa, vixen, yuhua])
+let US10 = shuffle([aquaria, asia, blair, dusty, eureka2, kalorie, kameron, mayhem, miz, monet1, monique, vanjies10, vixen, yuhua])
 
 let akeria = new Queen("A'keria C. Davenport", 9, 11, 9, 10, 10, 10, 10, 9, 11, 3, 1, "Akeria", "Akeria", "US11", false);
 let ariel = new Queen("Ariel Versace", 4, 6, 4, 5, 5, 5, 5, 3, 4, 2, 2, "Ariel", "Ariel", "US11", false);
@@ -7081,7 +7081,7 @@ let DragRaceQueens = [
   bianca, adore, courtney, darienne, bendela, joslyn, trinityk, laganja, milk, gia, april, vivacious, magnolia, kelly,
   ginger, jaidynn, jasmine, kandyH, katya, kennedy, max, fame, kasha, pearl, sashab, tempest, trixie, violet,
   aja, alexism, charlie, cynthia2, eureka, farrah, jaymes, kimora, ninab, peppermint, sasha, shea, trinity, valentina,
-  aquaria, asia, blair, dusty, eureka2, kalorie, kameron, mayhem, miz, monet1, monique, vanessa, vixen, yuhua,
+  aquaria, asia, blair, dusty, eureka2, kalorie, kameron, mayhem, miz, monet1, monique, vanjies10, vixen, yuhua,
   akeria, ariel, brooke, honeyd, kahanna, mercedes, ninaw, plastique, rajahs11, scarletenvys11, shuga, silkys11, soju, yvie, vanjies11,
   bob, kimchi, naomi, chichi, derrick, thorgy, robbie, acid, naysha, cynthia, dax, laila,
   jaida, crystalm, gigi, jackie, heidi, widow, jan, brita, aiden, nicky, rock, sherry, dahlia,
