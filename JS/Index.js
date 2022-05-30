@@ -7051,7 +7051,7 @@ let DragRaceQueens = [
   akeria, ariel, brooke, honeyd, kahanna, mercedes, ninaw, plastique, rajahs11, scarletenvys11, shuga, silkys11, soju, yvie, vanjies11,
   bob, kimchi, naomi, chichi, derrick, thorgy, robbie, acid, naysha, cynthia, dax, laila,
   jaida, crystalm, gigi, jackie, heidi, widow, jan, brita, aiden, nicky, rock, sherry, dahlia,
-  denali, elliott, gottmik, joey, kahmora, kandym, lalari, olivia, rose, symone, tamisha, tina, utica,
+  denali, elliott, gottmik, joey, kahmora, kandym, lala, olivia, rose, symone, tamisha, tina, utica,
   alyssah, angeria, bosco, daya, deja, jasminek, jorgeous, junej, kerri, kornbread, camden, maddym, orion, willow,
 
   jaidaas7, jinkxas7, monetas7, rajaas7, sheaas7, vivas7, trinityas7, yvieas7,
