@@ -601,6 +601,7 @@ class Screen {
   createTrackRecords(){
     let putincenter = document.createElement("center");
     let table = document.createElement("table");
+    table.setAttribute("id","TR");
     let thead = document.createElement("thead");
 
     table.setAttribute("class","tr");
@@ -614,12 +615,22 @@ class Screen {
     
     thq.setAttribute("class","tr");
     thq.setAttribute("style","width: 100px;")
+
     treps.append(thq);
   
+      let photos = document.createElement("th");
+    photos.innerHTML = "Photos";
+    
+    photos.setAttribute("class","tr");
+    photos.setAttribute("style","width: 75px;")
+
+    treps.append(photos);
+  
+
     for(let i = 0; i < CurrentSeason.episodes.length; i++)
     {
       let thep = document.createElement("th");
-      thep.innerHTML = "<p style='font-size:15px;'>"+CurrentSeason.episodes[i].name+"</p><p style='font-size:12px;'>("+CurrentSeason.episodes[i].type+")</p>";
+      thep.innerHTML = "<p style='font-size:10px;'>"+CurrentSeason.episodes[i].name+"</p><p style='font-size:8px;'>("+CurrentSeason.episodes[i].type+")</p>";
       thep.setAttribute("class","tr");
       treps.append(thep);
     }
@@ -634,7 +645,15 @@ class Screen {
 
       qname.setAttribute("class","trq");
 
+      qname.setAttribute("style","height : 50px;");
+
       track.append(qname);
+
+      let td = document.createElement("td");
+
+      td.setAttribute("style", "background: url("+ CurrentSeason.currentCast[q].image +"); background-size: 102px 102px; background-position: center;");
+
+      track.append(td);
 
       for(let t = 0; t < CurrentSeason.currentCast[q].trackrecord.length; t++)
       {
@@ -763,7 +782,15 @@ class Screen {
 
       qname.setAttribute("class","trq");
 
+      qname.setAttribute("style","height : 50px;");
+
       track.append(qname);
+
+      let td = document.createElement("td");
+
+      td.setAttribute("style", "background: url("+ CurrentSeason.eliminatedCast[q].image +"); background-size: 102px 102px; background-position: center;");
+
+      track.append(td);
 
       while(CurrentSeason.eliminatedCast[q].trackrecord.length<CurrentSeason.episodes.length)
       {
@@ -7646,7 +7673,7 @@ function Finale()
               }
             }
             Main.createText(losersqueen+", you will not be participating in tonight's lipsync smackdown.","Bold");
-            Steps++;
+            Steps = 3;
           }
           break;
       case 1:
@@ -7757,6 +7784,7 @@ function Finale()
         Steps++;
         break;
       case 3:
+
         for (let index = 0; index < CurrentSeason.currentCast.length; index++) {
           if(top4.indexOf(CurrentSeason.currentCast[index])==-1)
           {
@@ -7764,6 +7792,7 @@ function Finale()
             CurrentSeason.currentCast[index].placement = 5;
           }
         }
+
         for (let index = 0; index < top4.length; index++) {
           Main.createImage(top4[index].image,"springgreen"); 
         }
@@ -9048,7 +9077,7 @@ function ChallengeAnnouncement(){
     }
     else
     {
-      if( (rusicalcastsizes.indexOf(CurrentSeason.currentCast.length)!=-1 && getRandomInt(0,100)>60 )&& CurrentSeason.rusicals == 0)
+      if( (rusicalcastsizes.indexOf(CurrentSeason.currentCast.length)!=-1 && getRandomInt(0,100)>60 ) && CurrentSeason.rusicals == 0)
       {
         CurrentChallenge = new Rusical();
         while(CurrentChallenge.castsizes[CurrentChallenge.chosen] != CurrentSeason.currentCast.length)
@@ -9058,13 +9087,6 @@ function ChallengeAnnouncement(){
         CurrentEpisode = new Episode(CurrentChallenge.regrusical[CurrentChallenge.chosen], "Rusical");
         CurrentSeason.episodes.push(CurrentEpisode);
         CurrentSeason.rusicals++;
-      }
-      else if(getRandomInt(0,100)>=85 && CurrentSeason.balls <2)
-      {
-        CurrentChallenge = new Ball();
-        CurrentEpisode = new Episode(CurrentChallenge.balls[CurrentChallenge.chosen][0], "Ball");
-        CurrentSeason.episodes.push(CurrentEpisode);
-        CurrentSeason.balls++;
       }
       else if( (getRandomInt(0,100)>=70 && CurrentSeason.currentCast.length == 9) || (getRandomInt(0,100)>=40 && CurrentSeason.currentCast.length == 9) ||(CurrentSeason.currentCast.length == 7)  && CurrentSeason.snatchgame == 0)
       {
@@ -9079,6 +9101,13 @@ function ChallengeAnnouncement(){
         CurrentEpisode = new Episode(CurrentChallenge.episodename[CurrentChallenge.chosen], "Makeover");
         CurrentSeason.episodes.push(CurrentEpisode);
         CurrentSeason.makeoverchallenges++;
+      }
+      else if(getRandomInt(0,100)>=85 && CurrentSeason.balls <2)
+      {
+        CurrentChallenge = new Ball();
+        CurrentEpisode = new Episode(CurrentChallenge.balls[CurrentChallenge.chosen][0], "Ball");
+        CurrentSeason.episodes.push(CurrentEpisode);
+        CurrentSeason.balls++;
       }
       else
       {
@@ -9144,9 +9173,9 @@ function RankQueens(){
     switch(CurrentSeason.lipsyncformat)
     {
       case "LIFE":
-      if(CurrentSeason.currentCast.length>=12)
+      if(CurrentSeason.currentCast.length>=14)
       {
-        for(let i = 0; i<3; i++)
+        for(let i = 0; i<4; i++)
         {
           Tops.push(CurrentSeason.currentCast[i]);
           Bottoms.push(CurrentSeason.currentCast[CurrentSeason.currentCast.length-1-i]);
@@ -9176,7 +9205,7 @@ function RankQueens(){
           Tops.push(CurrentSeason.currentCast[1]);
           Bottoms.push(CurrentSeason.currentCast[2]);
           Bottoms.push(CurrentSeason.currentCast[3]);
-        for(let i = 0; i<3; i++)
+        for(let i = 0; i<4; i++)
         {
           Critiqued.push(CurrentSeason.currentCast[i]);
         }
@@ -9231,7 +9260,7 @@ function RankQueens(){
         }
         else
         {
-        for(let i = 0; i<3; i++)
+          for(let i = 0; i<4; i++)
           {
             Tops.push(CurrentSeason.currentCast[i]);
           }
@@ -9262,6 +9291,31 @@ function TrackRecords()
   {
     MainScreen.createButton("Proceed","ChallengeAnnouncement()");
   }
+
+  MainScreen.createButton("Dowload", "convertToImage()");
+}
+
+function convertToImage() {
+  var resultDiv = document.getElementById("result");
+  html2canvas(document.getElementById("TR"), {
+      onrendered: function(canvas) {
+          var img = canvas.toDataURL("image/png");
+          download("Trackrecord", img);
+          }
+  });
+}
+
+function download(filename, image) {
+  var element = document.createElement('a');
+  element.setAttribute('href',  image);
+  element.setAttribute('download', filename);
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
 }
 
 function CreateEntrances()
@@ -9400,7 +9454,7 @@ function LaunchCustomCast(){
     Finale = "AS7";
   }
 
-  if(CustomCast.length<4)
+  if(CustomCast.length<5)
   {
     isgood = false;
   }
@@ -9413,7 +9467,7 @@ function LaunchCustomCast(){
   }
   else
   {
-    window.alert("Please fill out everything and have at least 4 queens in your cast!");
+    window.alert("Please fill out everything and have at least 5 queens in your cast!");
   }
 }
 
@@ -10061,7 +10115,7 @@ function GetSong(){
       ];
       let chosenho = songho[getRandomInt(0,songho.length-1)];
       songho.splice(songho.indexOf(chosenho),1);
-      return(chosendu);
+      return(chosenho);
       break;
   }
 }
