@@ -7956,11 +7956,11 @@ function Placements() {
     for (let i = 0; i < Tops.length; i++) {
       if(Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "WIN" || Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "DOUBLEWIN")
       {
-        Tops[i].finalscore += 1;
+        Tops[i].finalscore += 20;
       }
       else if(Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "BOTTOM")
       {
-        Tops[i].finalscore += -200;
+        Tops[i].finalscore += 20;
       }
     }
     Tops.sort((a, b) => a.finalscore - b.finalscore);
