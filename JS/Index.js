@@ -9380,7 +9380,7 @@ function RankQueens(){
               else
               {
           Bottoms.push(CurrentSeason.currentCast[2]);
-
+              }
           Bottoms.push(CurrentSeason.currentCast[3]);
             Bottoms.push(CurrentSeason.currentCast[4]);
         }
