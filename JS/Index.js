@@ -121,6 +121,10 @@ class Season {
   {
     return(this.fullCast);
   }
+
+  PushEvent(Event){
+    this.events.push(Event);
+  }
 }
 
 class Episode{
@@ -130,6 +134,82 @@ class Episode{
     this.type = Type;
   }
 }
+
+class Relation {
+
+  constructor(FirstQ, SecondQ)
+  {
+    this.points = 0
+    this.status = "Neutral"
+    this.fqueen = FirstQ;
+    this.squeen = SecondQ;
+  }
+
+  SetRelation(points)
+  {
+    this.points += points;
+  }
+
+  GetRelation()
+  {
+    return(this.points);
+  }
+
+  UpdateStatus()
+  {
+    if(this.points<=10 && this.points >= 10)
+    {
+      this.status = "Neutral";
+    }
+    else if(this.points > 10 && this.points <= 30)
+    {
+      this.status = "Friendly";
+    }
+    else if(this.points > 30 && this.points<=50)
+    {
+      this.status = "Friends";
+    }
+    else if(this.points > 50)
+    {
+      this.status = "Best Friends";
+    }
+
+    else if(this.points < -10 && this.points >= -30)
+    {
+      this.status = "Hostile";
+    }
+    else if(this.points < -30 && this.points >= -50)
+    {
+      this.status = "Ennemies";
+    }
+    else(this.points > 50)
+    {
+      this.status = "Worst Ennemies";
+    }
+  }
+
+  Sabotage()
+  {
+    if(getRandomInt(this.points,100)<0)
+    {
+      return(true);
+    }
+    else
+    {
+      return(false);
+    }
+  }
+}
+
+class Event {
+  constructor(FirstQ, SecondQ, WhatHappenned)
+  {
+    this.fqueen = FirstQ;
+    this.squeen = SecondQ;
+    this.event = WhatHappenned;
+  }
+}
+
 class Queen {
 
   constructor(Name, Acting, Improv, Comedy, Dance, Design, Runway, Lipsync, Branding, Charisma, Kindness, Shadyness, Image = "noimage", Promo = "nopromo", OriginalSeason = "noseason", IsCustom = false)
@@ -159,6 +239,8 @@ class Queen {
 
       this.premieregroup = "NONE";
 
+      this.relationsships
+
       this.miniwinner = false;
       this.miniwon = [];
 
@@ -181,8 +263,17 @@ class Queen {
       this.iscustom = IsCustom;
       this.placement = 0;
 
+
+      if(this.iscustom==false)
+      {
       this.image = "Images/Queens/"+this.ogseason+"/"+Image+".webp";
       this.promo = "Images/Promos/"+this.ogseason+"/"+Promo+".webp";
+      }
+      else
+      {
+        this.image = Image;
+        this.promo = Promo;
+      }
 
       this.perfomancescore = 0;
       this.runwayscore = 0;
@@ -297,7 +388,7 @@ class Queen {
 
     this.ballthilook = this.GetScore(15,35,this.design);
 
-    this.finalescore = this.ballthilook+(17-this.ballfirlook)+(17-this.ballseclook);
+    this.finalscore = this.ballthilook+(17-this.ballfirlook)+(17-this.ballseclook);
   }
 
   GetDesignScore(bonus = 0)
@@ -6673,7 +6764,7 @@ let US1 = shuffle([akashia, bebes1, jades, ninas1, onginas1, rebecca, shannels1,
 
 let jessicaw = new Queen("Jessica Wild", 10, 11, 7, 12, 9, 10, 5, 6, 12, 5, 0, "Jessica", "Jessica", "US2", false);
 let jujus2 = new Queen("Jujubee", 8, 9, 12, 8, 7, 6, 15, 10, 13, 3, 1, "Jujubee", "Jujubee", "US2", false);
-let morganmcs2 = new Queen("Morgan McMicheals", 8, 7, 6, 10, 13, 10, 11, 8, 14, 2, 4, "Morgan","Morgan","US2",false);
+let morganmcs2 = new Queen("Morgan McMichaels", 8, 7, 6, 10, 13, 10, 11, 8, 14, 2, 4, "Morgan","Morgan","US2",false);
 let mystique = new Queen("Mystique Summers Madison", 6, 8, 9, 11, 7, 5, 10, 8, 14, 2, 2, "Mystique", "Mystique", "US2", false);
 let npb = new Queen("Nicole Paige Brooks", 7, 6, 8, 4, 8, 10, 7, 5, 5, 4, 0, "Nicole", "Nicole", "US2", false);
 let pandoras2 = new Queen("Pandora Boxx", 8, 9 ,12, 7, 5, 5, 6, 7, 10, 4, 1, "Pandora", "Pandora", "US2",false);
@@ -7235,7 +7326,15 @@ function WhoGetsCritiques()
                 }
               }
           }
+          if(Safes.length == 1)
+          {
+            Main.createText(Safes[0].GetName()+" you are safe. You may go untuck backstage.","Bold");
+          }
+          else
+          {
           Main.createText(firstnames+" you are all safe. You may go untuck backstage.","Bold");
+          }
+          
 
           Main.createLine();
           for(let i = 0; i < Critiqued.length; i++)
@@ -7301,7 +7400,14 @@ function WhoGetsCritiques()
                 }
               }
           }
+          if(Safes.length == 1)
+          {
+            Main.createText(Safes[0].GetName()+" you are safe. You may go untuck backstage.","Bold");
+          }
+          else
+          {
           Main.createText(firstnames+" you are all safe. You may go untuck backstage.","Bold");
+        }
         }
         Main.createButton("Proceed", "UntuckedPart1()");
       }
@@ -7350,6 +7456,11 @@ function UntuckedPart1() {
   Main = new Screen();
   Main.clean();
   Main.createButton("Proceed", "Critiques()");
+
+  if(Safes.length == 1)
+  {
+
+  }
 }
 
 function Critiques() {
@@ -8047,6 +8158,7 @@ function Placements() {
                     Main.createText(Tops[randomtop].GetName()+", great job this week. You are safe.","");
                     Tops[randomtop].trackrecord.push("HIGH");
                     Tops[randomtop].favoritism += 1;
+                    Tops[randomtop].highs++;
                   }
                   else if(CurrentChallenge.winner == true && doublewin == true)
                   {
@@ -8054,6 +8166,7 @@ function Placements() {
                     Main.createText(Tops[randomtop].GetName()+", CONDRAGULATIONS! You're the other winner of this week main challenge.","Bold");
                     Tops[randomtop].trackrecord.push("DOUBLEWIN");
                     Tops[randomtop].favoritism += 4;
+                    Tops[randomtop].wins++;
                   }
                   else
                   {
@@ -8061,6 +8174,7 @@ function Placements() {
                     Main.createText(Tops[randomtop].GetName()+", great job this week. You are safe.","");
                     Tops[randomtop].trackrecord.push("HIGH");
                     Tops[randomtop].favoritism += 1;
+                    Tops[randomtop].highs++;
                   }
                 }
                 Tops.splice(randomtop,1);
@@ -8089,6 +8203,7 @@ function Placements() {
             {
               Main.createImage(Bottoms[randombtm].image,"#fa2525");
               Main.createText(Bottoms[randombtm].GetName()+", I'm sorry my dear but you are up for elimination.","Bold");
+                            Bottoms[randombtm].bottoms++;
               Bottoms.splice(randombtm,1);
             }
             else
@@ -8097,6 +8212,7 @@ function Placements() {
               Main.createText(Bottoms[randombtm].GetName()+", you are safe.");
               Bottoms[randombtm].trackrecord.push("LOW");
               Bottoms[randombtm].favoritism += -1;
+              Bottoms[randombtm].lows++;
               Bottoms.splice(randombtm,1);
             }
           }
@@ -9180,9 +9296,6 @@ function RankQueens(){
         {
           Tops.push(CurrentSeason.currentCast[i]);
           Bottoms.push(CurrentSeason.currentCast[CurrentSeason.currentCast.length-1-i]);
-
-          Critiqued.push(CurrentSeason.currentCast[i]);
-          Critiqued.push(CurrentSeason.currentCast[CurrentSeason.currentCast.length-1-i]);
         }
       }
       else
@@ -9191,35 +9304,105 @@ function RankQueens(){
         {
             Tops.push(CurrentSeason.currentCast[0]);
             Tops.push(CurrentSeason.currentCast[1]);
+              if(CurrentSeason.currentCast[2].finalscore <= 10)
+              {
             Tops.push(CurrentSeason.currentCast[2]);
-            Bottoms.push(CurrentSeason.currentCast[3]);
+              }
+              else
+              {
+                Safes.push(CurrentSeason.currentCast[2]);
+                CurrentSeason.currentCast[2].trackrecord.push("SAFE");
+                CurrentSeason.currentCast[2].ppe += 3;
+              }
+
+              if(CurrentSeason.currentCast[3].finalscore <= 10)
+              {
+                Tops.push(CurrentSeason.currentCast[3]);
+              }
+              else
+              {
+                Safes.push(CurrentSeason.currentCast[3]);
+                CurrentSeason.currentCast[3].trackrecord.push("SAFE");
+                CurrentSeason.currentCast[3].ppe += 3;
+              }
+
+              if(CurrentSeason.currentCast[4].finalscore <= 10)
+              {
+                Safes.push(CurrentSeason.currentCast[4]);
+                CurrentSeason.currentCast[4].trackrecord.push("SAFE");
+                CurrentSeason.currentCast[4].ppe += 3;
+              }
+              else
+              {
             Bottoms.push(CurrentSeason.currentCast[4]);
-          for(let i = 0; i<5; i++)
+              }
+            Bottoms.push(CurrentSeason.currentCast[5]);
+            Bottoms.push(CurrentSeason.currentCast[6]);
+        }
+        else if(CurrentSeason.currentCast.length==6)
+        {
+            Tops.push(CurrentSeason.currentCast[0]);
+            Tops.push(CurrentSeason.currentCast[1]);
+              if(CurrentSeason.currentCast[2].finalscore <= 10)
+              {
+                Tops.push(CurrentSeason.currentCast[2]);
+              }
+              else
+              {
+                Safes.push(CurrentSeason.currentCast[2]);
+                CurrentSeason.currentCast[2].trackrecord.push("SAFE");
+                CurrentSeason.currentCast[2].ppe += 3;
+              }
+
+              if(CurrentSeason.currentCast[3].finalscore <= 10)
+              {
+                Safes.push(CurrentSeason.currentCast[3]);
+                CurrentSeason.currentCast[3].trackrecord.push("SAFE");
+                CurrentSeason.currentCast[3].ppe += 3;
+              }
+              else
           {
-            Critiqued.push(CurrentSeason.currentCast[i]);
+                Bottoms.push(CurrentSeason.currentCast[3]);
+                
           }
+            Bottoms.push(CurrentSeason.currentCast[4]);
+            Bottoms.push(CurrentSeason.currentCast[5]);
 
         }
         else if(CurrentSeason.currentCast.length==4)
         {
           Tops.push(CurrentSeason.currentCast[0]);
           Tops.push(CurrentSeason.currentCast[1]);
+              if(CurrentSeason.currentCast[2].finalscore <= 10)
+              {
+                Tops.push(CurrentSeason.currentCast[2]);
+              }
+              else
+              {
+          Bottoms.push(CurrentSeason.currentCast[2]);
+
+          Bottoms.push(CurrentSeason.currentCast[3]);
+            Bottoms.push(CurrentSeason.currentCast[4]);
+        }
+        else if(CurrentSeason.currentCast.length==4)
+        {
+          Tops.push(CurrentSeason.currentCast[0]);
+            if(CurrentSeason.currentCast[1].finalscore <= 10)
+            {
+              Tops.push(CurrentSeason.currentCast[1]);
+        }
+            else
+            {
+              Bottoms.push(CurrentSeason.currentCast[1]);
+            }
           Bottoms.push(CurrentSeason.currentCast[2]);
           Bottoms.push(CurrentSeason.currentCast[3]);
-        for(let i = 0; i<4; i++)
-        {
-          Critiqued.push(CurrentSeason.currentCast[i]);
-        }
         }
         else if(CurrentSeason.currentCast.length==3)
         {
           Tops.push(CurrentSeason.currentCast[0]);
           Tops.push(CurrentSeason.currentCast[1]);
           Tops.push(CurrentSeason.currentCast[2]);
-        for(let i = 0; i<3; i++)
-        {
-          Critiqued.push(CurrentSeason.currentCast[i]);
-        }
         }
         else
         {
@@ -9227,20 +9410,25 @@ function RankQueens(){
           {
             Tops.push(CurrentSeason.currentCast[i]);
             Bottoms.push(CurrentSeason.currentCast[CurrentSeason.currentCast.length-1-i]);
-
-            Critiqued.push(CurrentSeason.currentCast[i]);
-            Critiqued.push(CurrentSeason.currentCast[CurrentSeason.currentCast.length-1-i]);
           }
         }
       }
 
+
       for(let i = 0; i<CurrentSeason.currentCast.length; i++)
       {
-        if(Tops.indexOf(CurrentSeason.currentCast[i],0) == -1 && Bottoms.indexOf(CurrentSeason.currentCast[i],0) == -1)
+        if((Tops.indexOf(CurrentSeason.currentCast[i]) == -1 && Bottoms.indexOf(CurrentSeason.currentCast[i]) == -1))
+        {
+          if(Safes.indexOf(CurrentSeason.currentCast[i])==-1)
         {
           CurrentSeason.currentCast[i].trackrecord.push("SAFE");
           CurrentSeason.currentCast[i].ppe += 3;
           Safes.push(CurrentSeason.currentCast[i]);
+          }
+        }
+        else
+        {
+          Critiqued.push(CurrentSeason.currentCast[i]);
         }
       }
 
@@ -9495,7 +9683,7 @@ function LaunchCustomCast(){
 
   if(isgood==true)
   {
-    GetPromoTable();
+    CreateEntrances();
   }
   else
   {
@@ -9946,6 +10134,51 @@ function GetSong(){
       return(chosen);
       break;
 
+    case "UK":
+      let songsuk = [
+        '"New Rules" by Dua Lipa',
+        '"Venus" by Bananarama',
+        '"Would I Lie To You?" by Eurythmics',
+        '"Spice Up Your Life" by Spice Girls',
+        '"Power" by Little Mix',
+        '"Call My Name (Wideboys Remix)" by Cheryl Cole',
+        '"Tears Dry On Their Own" by Amy Winehouse',
+        '"I\'m Your Man" by Wham!',
+        '"Relax" by Frankie Goes to Hollywood',
+        '"Memory" by Elaine Paige',
+        '"Don\'t Start Now" by Dua Lipa',
+        '"You Keep Me Hangin\' On" by Kim Wilde',
+        '"Don\'t Leave Me This Way" by The Communards',
+        '"Touch Me" by Cathy Dennis',
+        '"Don\'t Be So Hard On Yourself" by Jess Glynne',
+        '"You Don\'t Have To Say You Love Me" by Dusty Springfield',
+        '"Last Thing On My Mind" by Steps',
+        '"I\'m Still Standing" by Elton John',
+        '"Total Eclipse of the Heart" by Bonnie Tyler',
+        '"Something New" by Girls Aloud',
+        '"Sweet Melody" by Little Mix',
+        '"Moving On Up" by M People',
+        '"I\'ve Got The Music In Me" by The Kiki Dee Band',
+        '"Who Do You Think You Are" by Spice Girls',
+        '"Big Spender" by Shirley Bassey',
+        '"Shout" by Lulu',
+        '"Scandalous" by Mis-Teeq',
+        '"Hallucinate" by Dua Lipa',
+        '"You Don\'t Own Me" by Dusty Springfield',
+        '"Say You\'ll Be There" by Spice Girls',
+        '"Supermodel (El Lay Toya Jam)" by RuPaul',
+        '"We Like To Party! (The Vengabus)" by Vengaboys',
+        '"Let It Go" by Alexandra Burke',
+        '"Toy" by Netta',
+        '"Domino" by Jessie J',
+        '"The Reflex" by Duran Duran',
+        '"Supernova" by Kylie Minogue'
+      ];
+      let chosenuk = songsuk[getRandomInt(0,songsuk.length-1)];
+      songsuk.splice(songsuk.indexOf(chosenuk),1);
+      return(chosenuk);
+      break;
+
     case "CANADA":
       let songscan = [
         '"I Really Like You" by Carly Rae Jepsen',
@@ -10105,6 +10338,32 @@ function GetSong(){
       songho.splice(songho.indexOf(chosenho),1);
       return(chosenho);
       break;
+
+    case "FRANCE":
+      let songfr = [
+        '"Le sens de la vie" by TAL',
+        '"Femme est la nuit" by Dalida ',
+        '"Mourir sur scène" by Dalida',
+        '"Euphories" by Video Club',
+        '"Partenaire Particulier" by Partenaire Particulier',
+        '"Le Passé" by TAL',
+        '"Amour Censure" by Hoshi',
+        '"Aurélie" by Colonel Reyel',
+        '"Tiago" by Kendji Girac',
+        '"Mafiosa" by Lartiste (ft. Caroliina)',
+        '"Pookie" by Aya Nakamura',
+        '"Salope" by Therapie TAXI',
+        '"Candide Crush" by Therapie TAXI',
+        '"À l\'international" by TAL',
+        '"Dernière Danse" by Indila',
+        '"Et même après je t\'aimerai" by Hoshi',
+        '"Je Suis Malade" by Lara Fabian',
+        '"Je T\'aime" by Lara Fabian'
+      ];
+      let chosenfr = songfr[getRandomInt(0,songfr.length-1)];
+      songfr.splice(songfr.indexOf(chosenfr),1);
+      return(chosenfr);
+      break;
   }
 }
 
@@ -10243,4 +10502,9 @@ function GetSong(){
         break;
     }
   }
+
+function CreateCustomQueen()
+{
+  //TO DO
+}
 //#endregion
