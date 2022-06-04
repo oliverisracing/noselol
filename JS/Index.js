@@ -6919,8 +6919,9 @@ let ariel= new Queen("Ariel Versace",6,8,6,8,6,9,8,6,7,1,5,"Ariel","Ariel","US11
 let mercedes= new Queen("Mercedes Iman Diamond",5,8,5,7,7,9,12,6,10,3,1,"Mercedes","Mercedes","US11",false);
 let honey= new Queen("Honey Davenport",7,5,6,6,9,13,3,7,7,4,1,"Honey","Honey","US11",false);
 let kahanna= new Queen("Kahanna Montrese",4,6,6,12,4,6,12,6,7,1,2,"Kahanna","Kahanna","US11",false);
+let soju = new Queen("Soju", 3, 1, 2, 1, 1, 3, 3, 1, 1, 1, 1, "Soju", "Soju", "US11", false);
 
-let US11 = shuffle([yvie, brooke, akeria, silky, vanjies11, ninawest, shuga, plastique, rajah, scarlet, ariel, mercedes, honey, kahanna]);
+let US11 = shuffle([yvie, brooke, akeria, silky, vanjies11, ninawest, shuga, plastique, rajah, scarlet, ariel, mercedes, honey, kahanna, soju]);
 
 let jaida = new Queen("Jaida Essence Hall", 10, 11, 8, 9, 14, 15, 13, 14, 13, 4, 1, "Jaida", "Jaida", "US12",false);
 let crystalm = new Queen("Crystal Methyd", 8, 10, 12, 8, 10, 12, 8, 15, 10, 4, 1, "Crystal", "Crystal", "US12", false);
@@ -6934,8 +6935,9 @@ let aiden = new Queen("Aiden Zhane", 8, 7, 9, 7, 6, 7, 6, 10, 9, 2, 2, "Aiden", 
 let nicky = new Queen("Nicky Doll", 7, 6, 6, 6, 15, 15, 6, 7, 10, 4, 1, "Nicky", "Nicky", "US12", false);
 let rock = new Queen("Rock M. Sakura", 10, 8, 9, 10, 5, 8, 10, 12, 8, 3, 1, "Rock", "Rock", "US12", false);
 let dahlia = new Queen("Dahlia Sin", 7, 8, 4, 4, 10, 15, 4, 12, 15, 1, 4, "Dahlia", "Dahlia", "US12", false);
+let sherry = new Queen("Sherry Pie", 10, 10, 7, 6, 10, 8, 8, 10, 8, 1, 3, "Sherry", "Sherry", "US12", false)
 
-let US12 = shuffle([jaida, crystalm, gigi, jackie, heidi, widow, jan, brita, aiden, nicky, rock, dahlia]);
+let US12 = shuffle([jaida, crystalm, gigi, jackie, heidi, widow, jan, brita, aiden, nicky, rock, dahlia, sherry]);
 
 
 let denali = new Queen("Denali Foxx", 5, 10, 9, 14, 8, 10, 15, 11, 6, 4, 1, "Denali", "Denali", "US13", false);
@@ -7211,8 +7213,8 @@ let DragRaceQueens = [
   acid, btdq, chichis8, cynthialees8, dax, derricks8, kimchi, lailamcqueen, naomis8, naysha, robbie, thorgys8,
   aja, alexism, charlie, cynthialees9, eureka, farrah, jaymes, kimora, nina, peppermint, sasha, sheas9, trinitys9, valentina,
   aquaria, asia, blair, dusty, eurekas10, kalorie, kameron, mayhem, miz, monet, monique, vixen, vanessas10, yuhua,
-  yvie, brooke, akeria, silky, vanjies11, ninawest, shuga, plastique, rajah, scarlet, ariel, mercedes, honey, kahanna,
-  jaida, crystalm, gigi, jackie, heidi, widow, jan, brita, aiden, nicky, rock, dahlia,
+  yvie, brooke, akeria, silky, vanjies11, ninawest, shuga, plastique, rajah, scarlet, ariel, mercedes, honey, kahanna, soju,
+  jaida, crystalm, gigi, jackie, heidi, widow, jan, brita, aiden, nicky, rock, dahlia, sherry,
   denali, eliott, gottmik, joey, kahmora, kandy, lalari, liv, rose, symone, tamisha, tina, utica,
   alyssah, angeria, bosco, daya, deja, jasminek, jorgeous, junej, kerri, kornbread, camden, maddym, orion, willow,
 
@@ -9308,12 +9310,12 @@ function RankQueens(){
       case "LIFE":
       if(CurrentSeason.currentCast.length>=14)
       {
-        for(let i = 0; i<4; i++)
+        for(let i = 0; i<3; i++)
           {
             Tops.push(CurrentSeason.currentCast[i]);
           }
 
-        for(let i = 0; i<4; i++)
+        for(let i = 0; i<3; i++)
           {
             Bottoms.push(CurrentSeason.currentCast[CurrentSeason.currentCast.length-1-i]);
           }
@@ -9426,12 +9428,12 @@ function RankQueens(){
         }
         else
         {
-        for(let i = 0; i<4; i++)
+        for(let i = 0; i<3; i++)
           {
             Tops.push(CurrentSeason.currentCast[i]);
           }
 
-        for(let i = 0; i<4; i++)
+        for(let i = 0; i<3; i++)
           {
             Bottoms.push(CurrentSeason.currentCast[CurrentSeason.currentCast.length-1-i]);
           }
@@ -9473,7 +9475,7 @@ function RankQueens(){
         }
         else
         {
-          for(let i = 0; i<4; i++)
+          for(let i = 0; i<3; i++)
           {
             Tops.push(CurrentSeason.currentCast[i]);
           }
