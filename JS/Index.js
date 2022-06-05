@@ -8373,7 +8373,7 @@ function Placements() {
       if(Tops.length!=0)
       {
 
-        if(TopsQueens[0].perfomancescore < 8 && TopsQueens[1].perfomancescore < 8)
+        if(TopsQueens[0].perfomancescore < 9 && TopsQueens[1].perfomancescore < 9)
         {
           doublewin = true;
         }
