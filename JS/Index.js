@@ -7848,17 +7848,20 @@ function UntuckedEvent(INDIC)
         case 1:
           if(getRandomInt(0,100)>=50)
           {
+            if(CurrentSeason.lipsyncformat != "AS7" && BottomQueens.length!=0)
+            {
             Main.createImage(Safes[randfs].image);
             Main.createImage(Safes[randss].image);
             Main.createText(Safes[randfs].GetName()+" ask "+Safes[randss].GetName()+", who do they feel will be in the bottom.");
             Main.createText(Safes[randss].GetName()+" answers, that they feel that "+Bottoms[getRandomInt(0,Bottoms.length-1)].GetName()+", will be lipsyncing tonight.");
+            }
           }
           else
           {
             Main.createImage(Safes[randfs].image);
             Main.createImage(Safes[randss].image);
             Main.createText(Safes[randfs].GetName()+" ask "+Safes[randss].GetName()+", who do they feel will win tonight.");
-            Main.createText(Safes[randss].GetName()+" answers, that they feel that "+Bottoms[getRandomInt(0,Bottoms.length-1)].GetName()+", has a great chance of winning tonight's challenge.");
+            Main.createText(Safes[randss].GetName()+" answers, that they feel that "+Tops[getRandomInt(0,Tops.length-1)].GetName()+", has a great chance of winning tonight's challenge.");
           }
           break;
         case 2:
@@ -7981,10 +7984,13 @@ function UntuckedEvent(INDIC)
         case 1:
           if(getRandomInt(0,100)>=50)
           {
+            if(CurrentSeason.lipsyncformat != "AS7" && BottomQueens.length!=0)
+            {
             Main.createImage(CurrentSeason.currentCast[randfs].image);
             Main.createImage(CurrentSeason.currentCast[randss].image);
             Main.createText(CurrentSeason.currentCast[randfs].GetName()+" ask "+CurrentSeason.currentCast[randss].GetName()+", who do they feel will be lipsyncing tonight.");
             Main.createText(CurrentSeason.currentCast[randss].GetName()+" answers, that they feel that "+Bottoms[getRandomInt(0,Bottoms.length-1)].GetName()+", will be lipsyncing tonight.");
+            }
           }
           else
           {
@@ -8061,8 +8067,8 @@ function UntuckedPart1() {
         }
     }
     Main.createText(safestext+" all grab a drink, and sit down together, waiting for the other queens.","Bold");
-  }
   UntuckedEvent(true);
+  }
   Main.createButton("Proceed", "Critiques()");
 }
 
