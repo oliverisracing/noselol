@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from valdishere.github.io/DR-Simulator/customqueens.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 10 Jun 2022 16:39:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <link rel="preconnect" href="../../fonts.googleapis.com/index.html">
+<link rel="preconnect" href="../../fonts.gstatic.com/index.html" crossorigin>
+<script type="text/javascript" src="https://objects.githubusercontent.com/github-production-release-asset-2e65be/2056312/f36ebf6c-a036-11e4-812f-a59e12ce741d?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20220610%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20220610T163951Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=ee51ab16296fb30d364da5a18959c650730dd2d58b473cb2841920729e19b268&amp;X-Amz-SignedHeaders=host&amp;actor_id=0&amp;key_id=0&amp;repo_id=2056312&amp;response-content-disposition=attachment%3B%20filename%3Dhtml2canvas.js&amp;response-content-type=application%2Foctet-stream"></script>
+<link href="../../fonts.googleapis.com/css2c305.css?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link id="style" href="CSS/Style.css" rel="stylesheet">
+    <link rel="icon" href="IMAGES/icon.html">
+    <script type="text/javascript" src="JS/Index.js"></script>
+    <title>Valestal's Drag Race Simulator</title>
+</head>
+<div class="topnav">
+    <a href="index.html">Home</a>
+    <a class="" href="customcast.html">Customs Casts</a>
+    <a class="active" href="customqueens.html">Customs Queens</a>
+    <a href="predefcast.html">Predefineds Casts</a>
+    <a  href="valpredref.html">Val's Predefined Casts</a>
+    <a href="queensstats.html">Queens Stats</a>
+    <a class="right" href="license.html">Licenses</a>
+    <a class="right" href="settings.html">Settings</a>
+  </div>
+<body>
+    <br>
+    <div class="MainTitle"  >
+        <h1>Valestal's Drag Race Simulator</h1>
+    </div>
+        <br>
+        <div class="MainArea">
+            <div id="first">
+
+            </div>
+            <br>
+            <input type ="text" id="name" placeholder="Name of the queen" style="height: 35px; width: 60%; color: linear-gradient(180deg, rgba(194,40,255,1) 0%, rgba(255,155,215,1) 100%);">
+            <br>
+            <br>
+            <input type ="number" id="acting" max="15" min="0" placeholder="Acting Stat (0-15)" style="height: 30px; width: 50%; color: linear-gradient(180deg, rgba(194,40,255,1) 0%, rgba(255,155,215,1) 100%);">
+            <br>
+            <br>
+            <input type ="number" id="improv" max="15" min="0" placeholder="Improv Stat (0-15)" style="height: 30px; width: 50%; color: linear-gradient(180deg, rgba(194,40,255,1) 0%, rgba(255,155,215,1) 100%);">
+            <br>
+            <br>
+            <input type ="number" id="comedy" max="15" min="0" placeholder="Comedy Stat (0-15)" style="height: 30px; width: 50%; color: linear-gradient(180deg, rgba(194,40,255,1) 0%, rgba(255,155,215,1) 100%);">
+            <br>
+            <br>
+            <input type ="number" id="dance" max="15" min="0" placeholder="Dance Stat (0-15)" style="height: 30px; width: 50%; color: linear-gradient(180deg, rgba(194,40,255,1) 0%, rgba(255,155,215,1) 100%);">
+            <br>
+            <br>
+            <input type ="number" id="design" max="15" min="0" placeholder="Design Stat (0-15)" style="height: 30px; width: 50%; color: linear-gradient(180deg, rgba(194,40,255,1) 0%, rgba(255,155,215,1) 100%);">
+            <br>
+            <br>
+            <input type ="number" id="runway" max="15" min="0" placeholder="Runway Stat (0-15)" style="height: 30px; width: 50%; color: linear-gradient(180deg, rgba(194,40,255,1) 0%, rgba(255,155,215,1) 100%);">
+            <br>
+            <br>
+            <input type ="number" id="lipsync" max="15" min="0" placeholder="Lipsync Stat (0-15)" style="height: 30px; width: 50%; color: linear-gradient(180deg, rgba(194,40,255,1) 0%, rgba(255,155,215,1) 100%);">
+            <br>
+            <br>
+            <input type ="number" id="branding" max="15" min="0" placeholder="Branding Stat (0-15)" style="height: 30px; width: 50%; color: linear-gradient(180deg, rgba(194,40,255,1) 0%, rgba(255,155,215,1) 100%);">
+            <br>
+            <br>
+            <input type ="number" id="charisma" max="15" min="0" placeholder="Charisma Stat (0-15)" style="height: 30px; width: 50%; color: linear-gradient(180deg, rgba(194,40,255,1) 0%, rgba(255,155,215,1) 100%);">
+            <br>
+            <br>
+            <input type ="number" id="kindness" max="5" min="0" placeholder="Kindness Stat (0-5)" style="height: 30px; width: 50%; color: linear-gradient(180deg, rgba(194,40,255,1) 0%, rgba(255,155,215,1) 100%);">
+            <br>
+            <br>
+            <input type ="number" id="shadyness" max="5" min="0" placeholder="Shadyness Stat (0-5)" style="height: 30px; width: 50%; color: linear-gradient(180deg, rgba(194,40,255,1) 0%, rgba(255,155,215,1) 100%);">
+            <br>
+            <br>
+            <input type ="text" id="image" placeholder="Image of the queen" style="height: 35px; width: 60%; color: linear-gradient(180deg, rgba(194,40,255,1) 0%, rgba(255,155,215,1) 100%);">
+            <br>
+            <br>
+            <input type ="text" id="promo" placeholder="Promo of the queen" style="height: 35px; width: 60%; color: linear-gradient(180deg, rgba(194,40,255,1) 0%, rgba(255,155,215,1) 100%);">
+            <br>
+            <br>
+            <input type ="text" id="ogseason" placeholder="Original season of the queen" style="height: 35px; width: 60%; color: linear-gradient(180deg, rgba(194,40,255,1) 0%, rgba(255,155,215,1) 100%);">
+            <br>
+            <br>
+            <button class="button MainButton" id="adbtn" onclick="AddToCustomQueen()">Add to custom queens</button>
+            <br>
+            <br>
+            <hr>
+            <br>
+            <select id="ct">
+            </select>
+            <span>
+
+            </span>
+            
+            <button class="button MainButton" id="ctbtn" onclick="RemoveFromCustomQueen()">Remove from custom queens</button>
+
+           
+            <br>
+            <br>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+    </body>
+    
+
+<!-- Mirrored from valdishere.github.io/DR-Simulator/customqueens.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 10 Jun 2022 16:39:55 GMT -->
+</html>
+<script>
+    LoadCasts(false);
+</script>
