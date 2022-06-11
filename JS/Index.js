@@ -154,16 +154,16 @@ class Relation {
 
   constructor(FirstQ, SecondQ)
   {
-    this.points = 0
-    this.status = "Neutral"
+    this.points = 0;
+    this.status = "Neutral";
     this.fqueen = FirstQ;
-    this.squeen = SecondQ;
+    this.squeen = SecondQ;;
     this.color = "#F5EBF5";
   }
 
   SetRelation(points)
   {
-    this.points += points;
+    this.points = this.points + parseInt(points);
   }
 
   GetRelation()
@@ -337,10 +337,12 @@ class Queen {
 
   ChangeRelation(Queen,points)
   {
+    let finalpoint = points;
+    finalpoint = finalpoint - (Queen.shadyness - Queen.kindness) ;
     for (let index = 0; index < this.relationsships.length; index++) {
       if(this.relationsships[index].squeen === Queen)
       {
-        this.relationsships[index].SetRelation((points-Queen.shadyness+Queen.kindness));
+        this.relationsships[index].SetRelation(finalpoint);
       }
     }
   }
@@ -470,7 +472,7 @@ if(loadqueens==null)
   loadqueens = [];
 
 for (let index = 0; index < loadqueens.length; index++) {
-  customqueens.push(new Queen(loadqueens[index][0],loadqueens[index][1],loadqueens[index][2],loadqueens[index][3],loadqueens[index][4],loadqueens[index][5],loadqueens[index][6],loadqueens[index][7],loadqueens[index][8],loadqueens[index][9],loadqueens[index][10],loadqueens[index][11],loadqueens[index][12],loadqueens[index][13],loadqueens[index][14],true));
+  customqueens.push(new Queen(loadqueens[index][0],parseInt(loadqueens[index][1]),parseInt(loadqueens[index][2]),parseInt(loadqueens[index][3]),parseInt(loadqueens[index][4]),parseInt(loadqueens[index][5]),parseInt(loadqueens[index][6]),parseInt(loadqueens[index][7]),parseInt(loadqueens[index][8]),parseInt(loadqueens[index][9]),parseInt(loadqueens[index][10]),parseInt(loadqueens[index][11]),loadqueens[index][12],loadqueens[index][13],loadqueens[index][14],true));
 }
 
 class Host{
@@ -8116,6 +8118,9 @@ function UntuckedPart2() {
   {
     CurrentSeason.currentCast[0].favoritism += 4;
     CurrentSeason.currentCast[2].favoritism += -4;
+    for (let index = 0; index < CurrentSeason.currentCast.length; index++) {
+      CurrentSeason.currentCast[index].ppe += 4;
+    }
     Main.createButton("Proceed", "Finale()");
   }
   else
@@ -8516,6 +8521,7 @@ function Finale()
           while(top4.length<4 && tie==false && softlock<CurrentSeason.currentCast.length)
           {
             temp = [];
+
             for (let index = 0; index < CurrentSeason.currentCast.length; index++) {
               if(((CurrentSeason.currentCast[0].stars)-removestar)==CurrentSeason.currentCast[index].stars)
               {
@@ -8534,8 +8540,11 @@ function Finale()
               }
               Steps++;
             }
+
             else
+
             {
+
               if(temp.length==4 && top4.length==0)
               {
                 for (let index = 0; index < temp.length; index++) {
@@ -8543,6 +8552,7 @@ function Finale()
                 }
                 Steps = 3;
               }
+
               else
               {
                 if(4 - top4.length >= temp.length)
@@ -8562,10 +8572,12 @@ function Finale()
                   tie = true;
                   Steps++;
                 }
+
               }
             }
             softlock++;
           }
+
           if(top4.length<4)
           {
             let queentext = "";
@@ -8597,6 +8609,7 @@ function Finale()
               Main.createText(queentext+", you have to choose "+(4-top4.length)+" queens to make it to the finale.","Bold");
             }
           }
+
           else if(top4.length>4)
           {
             let queentext = "";
@@ -8615,8 +8628,10 @@ function Finale()
               Main.create(CurrentSeason.host.indrag,"yellow")
               Main.createText("By the powers invested in me, I will decide the top 4.","Bold");
           }
+
           else
           {
+
             let queentext = "";
             let losersqueen = ""
             for (let index = 0; index < top4.length; index++) {
@@ -8937,11 +8952,11 @@ function Placements() {
     for (let i = 0; i < Tops.length; i++) {
       if(Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "WIN" || Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "DOUBLEWIN")
       {
-        Tops[i].finalscore += 7;
+        Tops[i].finalscore += 15;
       }
       else if(Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "BOTTOM")
       {
-        Tops[i].finalscore += -7;
+        Tops[i].finalscore += -15;
       }
     }
 
@@ -8966,7 +8981,7 @@ function Placements() {
           }
           else
           {
-            doublewin=false;
+            doublewin = false;
           }
         }
     }
@@ -8985,7 +9000,6 @@ function Placements() {
         BottomQueens.push(Bottoms[2]);
       }
     }
-
       organized = 1;
     }
     
@@ -9011,7 +9025,7 @@ function Placements() {
         {
             if(TopsQueens.indexOf(Tops[randomtop]) != -1)
             {
-                if(Tops[randomtop].GetName() == TopsQueens[0].GetName() && CurrentChallenge.winner == false)
+                if(( Tops[randomtop] === TopsQueens[0]|| (Tops[randomtop] === TopsQueens[1] && doublewin == true)) && CurrentChallenge.winner == false)
                 {
                   Main.createImage(Tops[randomtop].image,"#1741ff");
                   Main.createText(Tops[randomtop].GetName()+", CONDRAGULATIONS! You're the winner of this week main challenge.","Bold");
@@ -9033,16 +9047,7 @@ function Placements() {
                 }
                 else
                 {
-                  if(CurrentChallenge.winner == true && doublewin == false)
-                  {
-                    Main.createImage(Tops[randomtop].image,"#17d4ff");
-                    Main.createText(Tops[randomtop].GetName()+", great job this week. You are safe.","");
-                    Tops[randomtop].trackrecord.push("HIGH");
-                    Tops[randomtop].ppe += 4;
-                    Tops[randomtop].favoritism += 1;
-                    Tops[randomtop].highs++;
-                  }
-                  else if(CurrentChallenge.winner == true && doublewin == true)
+                  if( (CurrentChallenge.winner == true && doublewin == true) && (TopsQueens[1] === Tops[randomtop]|| TopsQueens[0] === Tops[randomtop]))
                   {
                     Main.createImage(Tops[randomtop].image,"#1741ff");
                     Main.createText(Tops[randomtop].GetName()+", CONDRAGULATIONS! You're the other winner of this week main challenge.","Bold");
@@ -10538,14 +10543,14 @@ function AddToCast(){
     let code = getnumber.substring(1);
     if(cord == "D")
     {
-    if(CustomCast.indexOf(DragRaceQueens[getnumber])==-1)
+      if(CustomCast.indexOf(DragRaceQueens[code])==-1)
         CustomCast.push(DragRaceQueens[code]);
     else
       window.alert("This queen is already in the cast!");
     }
     else
     {
-      if(CustomCast.indexOf(customqueens[getnumber])==-1)
+      if(CustomCast.indexOf(customqueens[code])==-1)
         CustomCast.push(customqueens[code]);
       else
         window.alert("This queen is already in the cast!");
@@ -10575,7 +10580,7 @@ function UpdateCustomCast(){
 }
 
 function RemoveFromCast(){
-  let getnumber = document.getElementById("ct").value;
+  let getnumber = document.getElementById("cq").value;
   if(getnumber!=undefined)
   {
     CustomCast.splice(getnumber,1);
