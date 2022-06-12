@@ -16,7 +16,6 @@ let done = false;
 
 let doublewin = false;
 let firstwinner = false;
-let threewayls = false;
 
 let SlayedChallenge = [];
 let GreatChallenge = [];
@@ -8990,7 +8989,6 @@ function Placements() {
       let hightext = "";
       doublewin = false;
       firstwinner = false;
-      threewayls = false;
 
     for (let i = 0; i < Tops.length; i++) {
       if(Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "WIN" || Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "DOUBLEWIN")
@@ -9005,11 +9003,6 @@ function Placements() {
 
     Tops.sort((a, b) => a.finalscore - b.finalscore);
     Bottoms.sort((a, b) => b.finalscore - a.finalscore);
-
-    if( (Bottoms[0] != undefined && Bottoms[1] != undefined && Bottoms[2] != undefined ) && Bottoms[0].perfomancescore > 35 && Bottoms[1].perfomancescore > 35  && Bottoms[2].perfomancescore > 35 && CurrentSeason.currentCast.length >=10)
-    {
-      threewayls = true;
-    }
 
     if(TopsQueens.length==0)
     {
@@ -9031,7 +9024,6 @@ function Placements() {
 
     if(BottomQueens.length==0)
     {
-      if(threewayls==false)
       {
         BottomQueens.push(Bottoms[0]);
         BottomQueens.push(Bottoms[1]);
