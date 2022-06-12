@@ -9006,7 +9006,7 @@ function Placements() {
     Tops.sort((a, b) => a.finalscore - b.finalscore);
     Bottoms.sort((a, b) => b.finalscore - a.finalscore);
 
-      if( (Bottoms[0] != undefined && Bottoms[1] != undefined && Bottoms[2] != undefined ) && Bottoms[0].perfomancescore > 35 && Bottoms[1].perfomancescore > 35  && Bottoms[2].perfomancescore > 35 && CurrentSeason.currentCast.length >=11)
+    if( (Bottoms[0] != undefined && Bottoms[1] != undefined && Bottoms[2] != undefined ) && Bottoms[0].perfomancescore > 35 && Bottoms[1].perfomancescore > 35  && Bottoms[2].perfomancescore > 35 && CurrentSeason.currentCast.length >=10)
     {
       threewayls = true;
     }
@@ -9018,7 +9018,7 @@ function Placements() {
       {
       TopsQueens.push(Tops[1]);
 
-        if(TopsQueens[0].perfomancescore < 9 && TopsQueens[1].perfomancescore < 9)
+        if(TopsQueens[0].perfomancescore < 10 && TopsQueens[1].perfomancescore < 10)
           {
             doublewin = true;
           }
@@ -9394,7 +9394,8 @@ function Lipsync() {
         }
         if(BottomQueens.length == 2)
         {
-          if((BottomQueens[0].oglipsyncscore <= 2) && (BottomQueens[1].oglipsyncscore <= 2) && CurrentSeason.currentCast.length<2  && CurrentSeason.doubleSashay == false)
+          BottomQueens.sort((a, b) => b.lipsyncscore - a.lipsyncscore);
+          if((BottomQueens[0].oglipsyncscore <= 2) && (BottomQueens[1].oglipsyncscore <= 2) && CurrentSeason.currentCast.length>6  && CurrentSeason.doubleSashay == false)
           {
             Main.createBigText("Sashay away...");
             Main.createImage(BottomQueens[0].image, "#fa2525");
@@ -9405,7 +9406,6 @@ function Lipsync() {
           else
           {
           Main.createBigText("Shantay you stay...");
-          BottomQueens.sort((a, b) => b.lipsyncscore - a.lipsyncscore);
           Main.createImage(BottomQueens[0].image, "#ff8a8a");
           Main.createText(BottomQueens[0].GetName()+", shantay you stay.", 'Bold');
           BottomQueens[0].trackrecord.push("BOTTOM");
@@ -9415,7 +9415,7 @@ function Lipsync() {
         else
         {
           BottomQueens.sort((a, b) => b.lipsyncscore - a.lipsyncscore);
-          if((BottomQueens[0].oglipsyncscore <= 2) && (BottomQueens[1].oglipsyncscore <= 2) && (BottomQueens[2].oglipsyncscore <= 2) && CurrentSeason.currentCast.length<6 && CurrentSeason.doubleSashay == false)
+          if((BottomQueens[0].oglipsyncscore <= 2) && (BottomQueens[1].oglipsyncscore <= 2) && (BottomQueens[2].oglipsyncscore <= 2) && CurrentSeason.currentCast.length>6 && CurrentSeason.doubleSashay == false)
           {
           Main.createImage(BottomQueens[0].image, "#ff8a8a");
           Main.createImage(BottomQueens[1].image, "#ff8a8a");
@@ -9447,7 +9447,7 @@ function Lipsync() {
       case 7:
         if(BottomQueens.length==2)
         {
-          if((BottomQueens[0].oglipsyncscore >= 10) && (BottomQueens[1].oglipsyncscore >= 10) && CurrentSeason.doubleShantay == false && CurrentSeason.currentCast.length<6)
+          if((BottomQueens[0].oglipsyncscore >= 10) && (BottomQueens[1].oglipsyncscore >= 10) && CurrentSeason.doubleShantay == false && CurrentSeason.currentCast.length>6)
           {
             Main.createBigText("Shantay you also stay!");
             Main.createImage(BottomQueens[1].image, "#ff8a8a");
@@ -9457,7 +9457,7 @@ function Lipsync() {
             BottomQueens[1].ppe += 1;
             CurrentSeason.doubleShantay = true;
           }
-          else if((BottomQueens[0].oglipsyncscore <= 3) && (BottomQueens[1].oglipsyncscore <=3)  && CurrentSeason.currentCast.length<6)
+          else if((BottomQueens[0].oglipsyncscore <= 2) && (BottomQueens[1].oglipsyncscore <=2)  && CurrentSeason.currentCast.length>6 && CurrentSeason.doubleSashay == false)
           {
             Main.createImageBW(BottomQueens[0].image, "#fa2525");
             Main.createImageBW(BottomQueens[1].image, "#fa2525");
@@ -9508,12 +9508,12 @@ function Lipsync() {
         }
         else
         {
-          if((BottomQueens[0].oglipsyncscore <= 2) && (BottomQueens[1].oglipsyncscore <= 2) && (BottomQueens[2].oglipsyncscore <= 2) && CurrentSeason.currentCast.length<6 && CurrentSeason.doubleSashay == false)
+          if((BottomQueens[0].oglipsyncscore <= 2) && (BottomQueens[1].oglipsyncscore <= 2) && (BottomQueens[2].oglipsyncscore <= 2) && CurrentSeason.currentCast.length>6 && CurrentSeason.doubleSashay == false)
           {
             Main.createImageBW(BottomQueens[0].image, "#fa2525");
             Main.createImageBW(BottomQueens[1].image, "#fa2525");
             Main.createImageBW(BottomQueens[2].image, "#fa2525");
-            Main.createText(BottomQueens[0].GetName()+", "+BottomQueens[1].GetName()+" and "+BottomQueens[2]+", my dear queens.", 'Bold');
+            Main.createText(BottomQueens[0].GetName()+", "+BottomQueens[1].GetName()+" and "+BottomQueens[2].GetName()+", my dear queens.", 'Bold');
             Main.createText("I must ask you both to sashay away...", 'Bold');
 
             BottomQueens[0].trackrecord.push("ELIMINATED");
