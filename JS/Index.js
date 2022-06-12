@@ -1,4 +1,4 @@
-//#region Initialisers//#region Initialisers
+//#region Initialisers
 let CurrentSeason;
 let CurrentChallenge;
 let CurrentEpisode;
@@ -9006,7 +9006,7 @@ function Placements() {
     Tops.sort((a, b) => a.finalscore - b.finalscore);
     Bottoms.sort((a, b) => b.finalscore - a.finalscore);
 
-      if( (Bottoms[0] != undefined && Bottoms[1] != undefined && Bottoms[2] != undefined ) && Bottoms[0].perfomancescore > 35 && Bottoms[1].perfomancescore > 35  && Bottoms[2].perfomancescore > 35 && CurrentSeason.currentCast.length >=8)
+      if( (Bottoms[0] != undefined && Bottoms[1] != undefined && Bottoms[2] != undefined ) && Bottoms[0].perfomancescore > 35 && Bottoms[1].perfomancescore > 35  && Bottoms[2].perfomancescore > 35 && CurrentSeason.currentCast.length >=11)
     {
       threewayls = true;
     }
