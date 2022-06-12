@@ -1,4 +1,4 @@
-//#region Initialisers
+//#region Initialisers//#region Initialisers
 let CurrentSeason;
 let CurrentChallenge;
 let CurrentEpisode;
@@ -9006,7 +9006,7 @@ function Placements() {
     Tops.sort((a, b) => a.finalscore - b.finalscore);
     Bottoms.sort((a, b) => b.finalscore - a.finalscore);
 
-      if( (Bottoms[0] != undefined && Bottoms[1] != undefined && Bottoms[2] != undefined ) && Bottoms[0].perfomancescore > 35 && Bottoms[1].perfomancescore > 35  && Bottoms[2].perfomancescore > 35 && CurrentSeason.currentCast.length >=6)
+      if( (Bottoms[0] != undefined && Bottoms[1] != undefined && Bottoms[2] != undefined ) && Bottoms[0].perfomancescore > 35 && Bottoms[1].perfomancescore > 35  && Bottoms[2].perfomancescore > 35 && CurrentSeason.currentCast.length >=8)
     {
       threewayls = true;
     }
@@ -9018,7 +9018,7 @@ function Placements() {
       {
       TopsQueens.push(Tops[1]);
 
-        if(TopsQueens[0].perfomancescore < 8 && TopsQueens[1].perfomancescore < 8)
+        if(TopsQueens[0].perfomancescore < 9 && TopsQueens[1].perfomancescore < 9)
           {
             doublewin = true;
           }
@@ -9394,7 +9394,7 @@ function Lipsync() {
         }
         if(BottomQueens.length == 2)
         {
-          if((BottomQueens[0].oglipsyncscore <= 4) && (BottomQueens[1].oglipsyncscore <= 4) && CurrentSeason.currentCast.length<6  && CurrentSeason.doubleSashay == false)
+          if((BottomQueens[0].oglipsyncscore <= 2) && (BottomQueens[1].oglipsyncscore <= 2) && CurrentSeason.currentCast.length<2  && CurrentSeason.doubleSashay == false)
           {
             Main.createBigText("Sashay away...");
             Main.createImage(BottomQueens[0].image, "#fa2525");
@@ -9415,7 +9415,7 @@ function Lipsync() {
         else
         {
           BottomQueens.sort((a, b) => b.lipsyncscore - a.lipsyncscore);
-          if((BottomQueens[0].oglipsyncscore <= 4) && (BottomQueens[1].oglipsyncscore <= 4) && (BottomQueens[2].oglipsyncscore <= 4) && CurrentSeason.currentCast.length<6 && CurrentSeason.doubleSashay == false)
+          if((BottomQueens[0].oglipsyncscore <= 2) && (BottomQueens[1].oglipsyncscore <= 2) && (BottomQueens[2].oglipsyncscore <= 2) && CurrentSeason.currentCast.length<6 && CurrentSeason.doubleSashay == false)
           {
           Main.createImage(BottomQueens[0].image, "#ff8a8a");
           Main.createImage(BottomQueens[1].image, "#ff8a8a");
@@ -9508,7 +9508,7 @@ function Lipsync() {
         }
         else
         {
-          if((BottomQueens[0].oglipsyncscore <= 4) && (BottomQueens[1].oglipsyncscore <= 4) && (BottomQueens[2].oglipsyncscore <= 4) && CurrentSeason.currentCast.length<6 && CurrentSeason.doubleSashay == false)
+          if((BottomQueens[0].oglipsyncscore <= 2) && (BottomQueens[1].oglipsyncscore <= 2) && (BottomQueens[2].oglipsyncscore <= 2) && CurrentSeason.currentCast.length<6 && CurrentSeason.doubleSashay == false)
           {
             Main.createImageBW(BottomQueens[0].image, "#fa2525");
             Main.createImageBW(BottomQueens[1].image, "#fa2525");
@@ -9554,7 +9554,7 @@ function Lipsync() {
             CurrentSeason.eliminatedCast.unshift(BottomQueens[2]);
             CurrentSeason.doubleSashay = true;
           }
-          else if(BottomQueens[1].lipsyncscore <= 7 && CurrentSeason.currentCast.length>6)
+          else if(BottomQueens[1].lipsyncscore <= 2 && CurrentSeason.currentCast.length>6)
           {
             Main.createImageBW(BottomQueens[1].image, "#fa2525");
             Main.createImageBW(BottomQueens[2].image, "#fa2525");
