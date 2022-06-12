@@ -9390,7 +9390,7 @@ function Lipsync() {
         if(BottomQueens.length == 2)
         {
           BottomQueens.sort((a, b) => b.lipsyncscore - a.lipsyncscore);
-          if((BottomQueens[0].oglipsyncscore <= 2) && (BottomQueens[1].oglipsyncscore <= 2) && CurrentSeason.currentCast.length>6  && CurrentSeason.doubleSashay == false)
+          if((BottomQueens[0].oglipsyncscore <= 2) && (BottomQueens[1].oglipsyncscore <= 2) && CurrentSeason.currentCast.length>16  && CurrentSeason.doubleSashay == false)
           {
             Main.createBigText("Sashay away...");
             Main.createImage(BottomQueens[0].image, "#fa2525");
