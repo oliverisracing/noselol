@@ -16,6 +16,7 @@ let done = false;
 
 let doublewin = false;
 let firstwinner = false;
+let threewayls = false;
 
 let SlayedChallenge = [];
 let GreatChallenge = [];
@@ -8989,6 +8990,7 @@ function Placements() {
       let hightext = "";
       doublewin = false;
       firstwinner = false;
+      threewayls = false;
 
     for (let i = 0; i < Tops.length; i++) {
       if(Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "WIN" || Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "DOUBLEWIN")
@@ -9024,6 +9026,7 @@ function Placements() {
 
     if(BottomQueens.length==0)
     {
+      if(threewayls==false)
       {
         BottomQueens.push(Bottoms[0]);
         BottomQueens.push(Bottoms[1]);
