@@ -7287,6 +7287,24 @@ let yvieas7 = new Queen("Yvie Oddly", 12, 11, 10, 15, 12, 12, 14, 15, 13, 4, 2, 
 
 let AS7 = shuffle([jaidaas7, jinkxas7, monetas7, rajaas7, sheaas7, vivas7, trinityas7, yvieas7]);
 
+// acting, improv, comedy, dance, design, runway, lipsync, branding, charisma, kindness, shadyness
+let aurora = new Queen("Aurora Wonders", 6, 6, 6, 7, 2, 7, 7, 1, 1, 3, 1, "Aurora", "Aurora", "LMD1", false);
+let cpher = new Queen("Cpher", 7, 5, 10, 13, 7, 14, 9, "Cpher", "Cpher", 8, 9, 4, 1, "LMD1", false);
+let elektravandergeld = new Queen("Elektra Vandergeld", 7, 8, 11, 11, 8, 11, 11, 8, 9, 3, 3, "ElektraV", "ElektraV", "LMD1", false);
+let georgiana = new Queen("Georgiana", 7, 7, 8, 10, 10, 11, 9, 12, 11, 4, 3, "Georgiana", "Georgiana", "LMD1", false);
+let irisxc = new Queen("Irisxc", 11, 9, 7, 5, 5, 7, 9, 5, 7, 3, 1, "IrisXC", "IrisXC", "LMD1", false);
+let lacarrera = new Queen("La carrera mami", 5, 3, 8, 6, 9, 8, 7, 7, 4, 2, 2, "LaCarrera", "LaCarrera", "LMD1", false);
+let leexafox = new Queen("Leexa Fox", 7, 8, 9, 9, 10, 10, 8, 8, 8, 3, 3, "LeexaFox", "LeexaFox", "LMD1", false);
+let lupita = new Queen("Lupita Kush", 6, 7, 7, 6, 7, 9, 9, 5, 4, 3, 3, "Lupita", "Lupita", "LMD1", false);
+let morralisa = new Queen("La Morra Lisa", 6, 7, 6, 5, 5, 7, 7, 7, 6, 4, 3, "MorraLisa", "MorraLisa", "LMD1", false);
+let papercut = new Queen("Paper Cut", 9, 8, 7, 13, 7, 10, 7, 10, 10, 4, 1, "PaperCut", "PaperCut", "LMD1", false);
+let rebelmork = new Queen("Rebel Mork", 7, 7, 9, 11, 9, 11, 8, 13, 11, 3, 1, "RebelMork", "RebelMork", "LMD1", false);
+let sirena = new Queen("Sirena", 8, 8, 9, 11, 7, 11, 9, 10, 9, 5, 1, "Sirena", "Sirena", "LMD1", false);
+let tiresias = new Queen("Tiresias", 7, 6, 7, 6, 6, 8, 9, 4, 5, 4, 1, "Tiresias", "Tiresias", "LMD1", false);
+let veracruz = new Queen("Veracruz", 9, 9, 9, 10, 12, 12, 7, 10, 9, 1, 1, "Veracruz", "Veracruz", "LMD1", false);
+
+let LMD1 = [aurora, cpher, elektravandergeld, georgiana, irisxc, lacarrera, leexafox, lupita, morralisa, papercut, rebelmork, sirena, tiresias, veracruz];
+
 let rupaulhost = new Host("Rupaul","RuIn","RuOut");
 
 let anastarzia = new Queen("Anastarzia Anaquway", 7, 6, 8, 7, 9, 8, 6, 8, 10, 5, 0, "Anastarzia", "Anastarzia", "CA1", false);
@@ -7520,6 +7538,7 @@ let DragRaceQueens = [
   jaida, crystalm, gigi, jackie, heidi, widow, jan, brita, aiden, nicky, rock, dahlia, sherry,
   denali, eliott, gottmik, joey, kahmora, kandy, lalari, liv, rose, symone, tamisha, tina, utica,
   alyssah, angeria, bosco, daya, deja, jasminek, jorgeous, junej, kerri, kornbread, camden, maddym, orion, willow,
+  aurora, cpher, elektravandergeld, georgiana, irisxc, lacarrera, leexafox, lupita, morralisa, papercut, rebelmork, sirena, tiresias, veracruz,
 
   viv, blus1, cheryls1, crystal, divina, gothy, scaredy, sum, vinegar, bagas1,
   lawrence,bimini,tayce,ellie,awhora,sister,tia,joe, veronicas2, ginny, asstina, cherry,
