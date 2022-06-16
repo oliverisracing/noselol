@@ -7289,7 +7289,7 @@ let AS7 = shuffle([jaidaas7, jinkxas7, monetas7, rajaas7, sheaas7, vivas7, trini
 
 // acting, improv, comedy, dance, design, runway, lipsync, branding, charisma, kindness, shadyness
 let aurora = new Queen("Aurora Wonders", 6, 6, 6, 7, 2, 7, 7, 1, 1, 3, 1, "Aurora", "Aurora", "LMD1", false);
-let cpher = new Queen("Cpher", 7, 5, 10, 13, 7, 14, 9, "Cpher", "Cpher", 8, 9, 4, 1, "LMD1", false);
+let cpher = new Queen("Cpher", 7, 5, 10, 13, 7, 14, 9, 8, 9, 4, 1, "Cpher", "Cpher", "LMD1", false);
 let elektravandergeld = new Queen("Elektra Vandergeld", 7, 8, 11, 11, 8, 11, 11, 8, 9, 3, 3, "ElektraV", "ElektraV", "LMD1", false);
 let georgiana = new Queen("Georgiana", 7, 7, 8, 10, 10, 11, 9, 12, 11, 4, 3, "Georgiana", "Georgiana", "LMD1", false);
 let irisxc = new Queen("Irisxc", 11, 9, 7, 5, 5, 7, 9, 5, 7, 3, 1, "IrisXC", "IrisXC", "LMD1", false);
