@@ -1,4 +1,4 @@
-/#region Initialisers
+//#region Initialisers
 let CurrentSeason;
 let CurrentChallenge;
 let CurrentEpisode;
