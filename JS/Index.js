@@ -1,4 +1,4 @@
-//#region Initialisers
+/#region Initialisers
 let CurrentSeason;
 let CurrentChallenge;
 let CurrentEpisode;
@@ -8571,7 +8571,7 @@ function Finale()
           let tie=false;
           let removestar = 0;
           let softlock = 0;
-          while(top4.length<4 && tie==false && softlock<CurrentSeason.currentCast.length)
+          while(top4.length<4 && tie==false && softlock<CurrentSeason.currentCast.length+10)
           {
             temp = [];
 
@@ -9025,6 +9025,11 @@ function Placements() {
     Tops.sort((a, b) => a.finalscore - b.finalscore);
     Bottoms.sort((a, b) => b.finalscore - a.finalscore);
 
+    if( (Bottoms[0] != undefined && Bottoms[1] != undefined && Bottoms[2] != undefined ) && Bottoms[0].perfomancescore > 40 && Bottoms[1].perfomancescore > 40  && Bottoms[2].perfomancescore > 40 && CurrentSeason.currentCast.length >=6)
+    {
+      threewayls = true;
+    }
+
     if(TopsQueens.length==0)
     {
       TopsQueens.push(Tops[0]);
@@ -9416,6 +9421,8 @@ function Lipsync() {
             Main.createImage(BottomQueens[1].image, "#fa2525");
             Main.createText(BottomQueens[0].GetName()+" and "+BottomQueens[1].GetName()+".", 'Bold');
             Main.createBigText("None of you impressed me tonight.");
+            BottomQueens[0].trackrecord.push("ELIMINATED");
+            BottomQueens[1].trackrecord.push("ELIMINATED");
           }
           else
           {
@@ -9437,7 +9444,7 @@ function Lipsync() {
           Main.createText(BottomQueens[0].GetName()+", "+BottomQueens[1].GetName()+" and "+BottomQueens[2].GetName()+".", 'Bold');
           Main.createText("You three failed to impress me.", 'Bold');
           }
-          else if((BottomQueens[1].lipsyncscore <= 7))
+          else if((BottomQueens[1].lipsyncscore <= 7) && CurrentSeason.currentCast.length>6)
           {
             console.log("2")
         Main.createImage(BottomQueens[0].image, "#ff8a8a");
@@ -9461,7 +9468,7 @@ function Lipsync() {
       case 7:
         if(BottomQueens.length==2)
         {
-          if((BottomQueens[0].oglipsyncscore >= 10) && (BottomQueens[1].oglipsyncscore >= 10) && CurrentSeason.doubleShantay == false && CurrentSeason.currentCast.length>6)
+          if((BottomQueens[0].oglipsyncscore >= 9) && (BottomQueens[1].oglipsyncscore >= 9) && CurrentSeason.doubleShantay == false && CurrentSeason.currentCast.length>6)
           {
             Main.createBigText("Shantay you also stay!");
             Main.createImage(BottomQueens[1].image, "#ff8a8a");
@@ -9477,7 +9484,8 @@ function Lipsync() {
             Main.createImageBW(BottomQueens[1].image, "#fa2525");
             Main.createText(BottomQueens[0].GetName()+" and "+BottomQueens[1].GetName()+", my dear queens.", 'Bold');
             Main.createText("I must ask you both to sashay away...", 'Bold');
-            BottomQueens[0].trackrecord.push("ELIMINATED");
+
+
             if(CurrentSeason.eliminatedCast.length==0)
             {
               BottomQueens[0].placement= CurrentSeason.fullCast.length-CurrentSeason.eliminatedCast.length;
@@ -9486,7 +9494,7 @@ function Lipsync() {
             {
               BottomQueens[0].placement= CurrentSeason.fullCast.length-CurrentSeason.eliminatedCast.length;
             }
-            BottomQueens[1].trackrecord.push("ELIMINATED");
+
             if(CurrentSeason.eliminatedCast.length==0)
             {
               BottomQueens[1].placement= CurrentSeason.fullCast.length-CurrentSeason.eliminatedCast.length;
@@ -9495,14 +9503,17 @@ function Lipsync() {
             {
               BottomQueens[1].placement= CurrentSeason.fullCast.length-CurrentSeason.eliminatedCast.length;
             }
+
             CurrentSeason.currentCast.splice(CurrentSeason.currentCast.indexOf(BottomQueens[0]),1);
             CurrentSeason.eliminatedCast.unshift(BottomQueens[0]);
             CurrentSeason.currentCast.splice(CurrentSeason.currentCast.indexOf(BottomQueens[1]),1);
             CurrentSeason.eliminatedCast.unshift(BottomQueens[1]);
+
             CurrentSeason.doubleSashay = true;
           }
           else
           {
+
             Main.createBigText("Sashay away...");
             Main.createImageBW(BottomQueens[1].image, "#fa2525");
             Main.createText(BottomQueens[1].GetName()+", my dear queen.", 'Bold');
@@ -9518,6 +9529,7 @@ function Lipsync() {
             }
             CurrentSeason.currentCast.splice(CurrentSeason.currentCast.indexOf(BottomQueens[1]),1);
             CurrentSeason.eliminatedCast.unshift(BottomQueens[1]);
+
           }
         }
         else
@@ -10096,6 +10108,114 @@ function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min +1)) + min;
+}
+
+function ChangeActingValue(){
+  let ac = document.getElementById("acting").value;
+  let ch = document.getElementById("cAting");
+  ch.innerHTML = "Acting Stat<small> (Current : "+ac+" ) </small>";
+}
+
+function ChangeImprovValue(){
+  let ac = document.getElementById("improv").value;
+  let ch = document.getElementById("cImprov");
+  ch.innerHTML = "Improv Stat<small> (Current : "+ac+" ) </small>";
+}
+
+function ChangeComedyValue(){
+  let ac = document.getElementById("comedy").value;
+  let ch = document.getElementById("cComedy");
+  ch.innerHTML = "Comedy Stat<small> (Current : "+ac+" ) </small>";
+}
+
+function ChangeDanceValue(){
+  let ac = document.getElementById("dance").value;
+  let ch = document.getElementById("cDance");
+  ch.innerHTML = "Dance Stat<small> (Current : "+ac+" ) </small>";
+}
+
+function ChangeDesignValue(){
+  let ac = document.getElementById("design").value;
+  let ch = document.getElementById("cDesign");
+  ch.innerHTML = "Design Stat<small> (Current : "+ac+" ) </small>";
+}
+
+function ChangeRunwayValue(){
+  let ac = document.getElementById("runway").value;
+  let ch = document.getElementById("cRunway");
+  ch.innerHTML = "Runway Stat<small> (Current : "+ac+" ) </small>";
+}
+
+function ChangeLipsyncValue(){
+  let ac = document.getElementById("lipsync").value;
+  let ch = document.getElementById("cLipsync");
+  ch.innerHTML = "Lipsync Stat<small> (Current : "+ac+" ) </small>";
+}
+
+function ChangeBrandingValue(){
+  let ac = document.getElementById("branding").value;
+  let ch = document.getElementById("cBranding");
+  ch.innerHTML = "Branding Stat<small> (Current : "+ac+" ) </small>";
+}
+
+function ChangeCharismaValue(){
+  let ac = document.getElementById("charisma").value;
+  let ch = document.getElementById("cCharisma");
+  ch.innerHTML = "Charisma Stat<small> (Current : "+ac+" ) </small>";
+}
+
+function ChangeKindnessValue(){
+  let ac = document.getElementById("kindness").value;
+  let ch = document.getElementById("cKindness");
+  ch.innerHTML = "Kindness Stat<small> (Current : "+ac+" ) </small>";
+}
+
+function ChangeShadynessValue(){
+  let ac = document.getElementById("shadyness").value;
+  let ch = document.getElementById("cShadyness");
+  ch.innerHTML = "Shadyness Stat<small> (Current : "+ac+" ) </small>";
+}
+
+function RandomizeStats(){
+  let acting = document.getElementById("acting");
+  let improv = document.getElementById("improv");
+  let comedy = document.getElementById("comedy");
+  let dance = document.getElementById("dance");
+  let design = document.getElementById("design");
+
+  let runway = document.getElementById("runway");
+  let lipsync = document.getElementById("lipsync");
+  let branding = document.getElementById("branding");
+  let charisma = document.getElementById("charisma");
+  let kindness = document.getElementById("kindness");
+  let shadyness = document.getElementById("shadyness");
+
+  
+
+  acting.value = getRandomInt(1,15);
+  improv.value = getRandomInt(1,15);
+  comedy.value = getRandomInt(1,15);
+  dance.value = getRandomInt(1,15);
+  design.value = getRandomInt(1,15);
+  runway.value = getRandomInt(1,15);
+  lipsync.value = getRandomInt(1,15);
+  branding.value = getRandomInt(1,15);
+  charisma.value = getRandomInt(1,15);
+  kindness.value = getRandomInt(0,5);
+  shadyness.value = getRandomInt(0,5);
+
+  ChangeActingValue();
+  ChangeImprovValue();
+  ChangeComedyValue();
+  ChangeDanceValue();
+  ChangeDesignValue();
+
+  ChangeRunwayValue();
+  ChangeLipsyncValue();
+  ChangeBrandingValue();
+  ChangeCharismaValue();
+  ChangeKindnessValue();
+  ChangeShadynessValue();
 }
 
 function Intro()
