@@ -9025,10 +9025,6 @@ function Placements() {
     Tops.sort((a, b) => a.finalscore - b.finalscore);
     Bottoms.sort((a, b) => b.finalscore - a.finalscore);
 
-    if( (Bottoms[0] != undefined && Bottoms[1] != undefined && Bottoms[2] != undefined ) && Bottoms[0].perfomancescore > 40 && Bottoms[1].perfomancescore > 40  && Bottoms[2].perfomancescore > 40 && CurrentSeason.currentCast.length >=6)
-    {
-      threewayls = true;
-    }
 
     if(TopsQueens.length==0)
     {
