@@ -9190,7 +9190,7 @@ function Placements() {
     for (let i = 0; i < Tops.length; i++) {
       if(Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "WIN" || Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "TOP2")
       {
-        Tops[i].finalscore += 7;
+        Tops[i].finalscore += 10;
       }
     }
 
@@ -9464,7 +9464,7 @@ function Lipsync() {
       case 7:
         if(BottomQueens.length==2)
         {
-          if((BottomQueens[0].oglipsyncscore >= 9) && (BottomQueens[1].oglipsyncscore >= 9) && CurrentSeason.doubleShantay == false && CurrentSeason.currentCast.length>6)
+          if((BottomQueens[0].oglipsyncscore >= 6) && (BottomQueens[1].oglipsyncscore >= 6) && CurrentSeason.doubleShantay == false && CurrentSeason.currentCast.length>6)
           {
             Main.createBigText("Shantay you also stay!");
             Main.createImage(BottomQueens[1].image, "#ff8a8a");
@@ -9474,7 +9474,7 @@ function Lipsync() {
             BottomQueens[1].ppe += 1;
             CurrentSeason.doubleShantay = true;
           }
-          else if((BottomQueens[0].oglipsyncscore <= 2) && (BottomQueens[1].oglipsyncscore <=2)  && CurrentSeason.currentCast.length>6 && CurrentSeason.doubleSashay == false)
+          else if((BottomQueens[0].oglipsyncscore <= 2) && (BottomQueens[1].oglipsyncscore <= 2) && CurrentSeason.currentCast.length>16  && CurrentSeason.doubleSashay == false)
           {
             Main.createImageBW(BottomQueens[0].image, "#fa2525");
             Main.createImageBW(BottomQueens[1].image, "#fa2525");
@@ -9576,7 +9576,7 @@ function Lipsync() {
             CurrentSeason.eliminatedCast.unshift(BottomQueens[2]);
             CurrentSeason.doubleSashay = true;
           }
-          else if(BottomQueens[1].lipsyncscore <= 2 && CurrentSeason.currentCast.length>6)
+          else if(BottomQueens[1].lipsyncscore <= 2 && CurrentSeason.currentCast.length>16)
           {
             Main.createImageBW(BottomQueens[1].image, "#fa2525");
             Main.createImageBW(BottomQueens[2].image, "#fa2525");
