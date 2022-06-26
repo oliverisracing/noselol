@@ -10541,36 +10541,6 @@ function GenerateChallenge()
         }
         Main.createLine();
       }
-      if(CurrentChallenge.type=="RUSICAL")
-      {
-        for(let i = 0; i < CurrentSeason.currentCast.length; i++)
-        {
-          if(CurrentSeason.currentCast[i].miniwinner == true && CurrentChallenge.roles[CurrentChallenge.chosen].length!=0)
-          {
-            
-            Main.createImage(CurrentSeason.currentCast[i].image,'blue');
-            Main.createText(CurrentSeason.currentCast[i].GetName()+" as the winner of this week mini-challenge! You get to assign the roles of the rusical to the other queens.")
-            Main.createLine();
-          }
-        }
-        shuffle(CurrentSeason.currentCast);
-        for(let i = 0; i < CurrentSeason.currentCast.length; i++)
-        {
-          if(CurrentChallenge.roles[CurrentChallenge.chosen].length!=0)
-          {
-            let randomrole = getRandomInt(0,CurrentChallenge.roles[CurrentChallenge.chosen].length-1);
-            Main.createImage(CurrentSeason.currentCast[i].image,'black');
-            Main.createText(CurrentSeason.currentCast[i].GetName()+" as been assigned to the role of : \""+CurrentChallenge.roles[CurrentChallenge.chosen][randomrole]+"\".");
-            CurrentSeason.currentCast.rusicalrole = CurrentChallenge.roles[CurrentChallenge.chosen][randomrole];
-            CurrentChallenge.roles[CurrentChallenge.chosen].splice(randomrole,1);
-            if(CurrentChallenge.roles[CurrentChallenge.chosen].length==0)
-        {
-          Main.createLine();
-          }
-          }
-        }
-        
-      }
       CurrentChallenge.rankPerfomances();
       CurrentChallenge.createPerformances();
 
@@ -10667,6 +10637,7 @@ function GetPromoTable()
       if(shouldactivateepisode == true)
       {
         Main.createButton("Proceed","Intro()");
+        shouldactivateepisode = false;
       }
       else
       {
@@ -11416,13 +11387,6 @@ function TrackRecords()
   }
 
   MainScreen.createButton("Download", "convertToImage()");
-  if(CurrentSeason.episodes.length==1 && CurrentSeason.premiereformat!="NORMAL")
-  {
-    for (let index = 0; index < firstprem.length; index++) {
-      firstprem[index].trackrecord.push('');
-    }
-    CurrentSeason.currentCast = secondprem;
-  }
 }
 
 function convertToImage() {
@@ -11699,12 +11663,9 @@ function CreateEntrances()
             entrancepos++;
           }
         }
-
-  
-
     if(entrancepos==secondprem.length)
   {
-      shouldactivateepisode = true;
+    
     Main.createButton("Proceed","GetPromoTable()");
 
   }
