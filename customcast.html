@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from valdishere.github.io/DR-Simulator/customcast.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 10 Jun 2022 16:39:55 GMT -->
+<!-- Mirrored from valdishere.github.io/6f280fd6241a870ae06d601cc91e4b1ba1955370/customcast.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 26 Jun 2022 18:34:29 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
     <link rel="preconnect" href="../../fonts.googleapis.com/index.html">
 <link rel="preconnect" href="../../fonts.gstatic.com/index.html" crossorigin>
-<script type="text/javascript" src="https://objects.githubusercontent.com/github-production-release-asset-2e65be/2056312/f36ebf6c-a036-11e4-812f-a59e12ce741d?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20220610%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20220610T163951Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=ee51ab16296fb30d364da5a18959c650730dd2d58b473cb2841920729e19b268&amp;X-Amz-SignedHeaders=host&amp;actor_id=0&amp;key_id=0&amp;repo_id=2056312&amp;response-content-disposition=attachment%3B%20filename%3Dhtml2canvas.js&amp;response-content-type=application%2Foctet-stream"></script>
+<script type="text/javascript" src="../../objects.githubusercontent.com/github-production-release-asset-2e65be/2056312/html2canvas.min7f42.js"></script>
 <link href="../../fonts.googleapis.com/css2c305.css?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -47,6 +47,18 @@
             <br>
             <input type ="text" id="search" placeholder="Search..." style="height: 40px; width: 50%; color: linear-gradient(180deg, rgba(194,40,255,1) 0%, rgba(255,155,215,1) 100%);">
             <button class="button MainButton" onclick="SearchQueen()">Search</button>
+            <br>
+            <br>
+            <input type ="number" id="search" placeholder="Add a random number of queens..." style="height: 40px; width: 50%; color: linear-gradient(180deg, rgba(194,40,255,1) 0%, rgba(255,155,215,1) 100%);">
+            <button class="button MainButton" onclick="SearchQueen()">Add</button>
+            <br>
+            <br>
+                <input type="checkbox" id="drqueens" checked>
+                <label for="drqueens" style="font-size: large;">Add random drag race queens </label>
+                <input type="checkbox" id="ctqueens">
+                <label for="ctqueens" style="font-size: large;">Add random customs queens</label>
+                <br>
+                <br>
             <div id="clean">
 
             </div>
@@ -75,7 +87,7 @@
             <select id="premiere" style="width: 15%;">
                 <option value="0" selected disabled>-- Premiere Format --</option>
                 <option value="NORMAL">Normal</option>
-                <option value="S6">S6 (NWY)</option>
+                <option value="S6">S6</option>
                 <option value="S2">S12 (NWY)</option>
                 <option value="NORMAL">Porkchop (NWY)</option>
                 <option value="S14">S14 (NWY)</option>
@@ -83,7 +95,7 @@
             <select id="lipsync" style="width: 15%;" onchange="CheckAS7()">
                 <option value="0" selected disabled>-- Lipsync Format --</option>
                 <option value="LIFE">Regular</option>
-                <option value="LSFYL">Lipsync For Your Legacy (NWY) </option>
+                <option value="LSFYL">Lipsync For Your Legacy</option>
                 <option value="LSA">Lipsync Assassin (NWY) </option>
                 <option value="AS7">All Stars 7</option>
             </select>
@@ -124,10 +136,16 @@
         <br>
         <br>
     </body>
-    
+    <footer id="footer">
+        <div style="background-color: white; text-align: center; vertical-align: baseline; padding: 10px;">
+            <h3><a rel="license" href="../../creativecommons.org/licenses/by-nc-nd/3.0/index.html"></a>  This work is licensed under a <a rel="license" href="../../creativecommons.org/licenses/by-nc-nd/3.0/index.html">Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License</a>.</h3><br><img alt="Creative Commons License" style="border-width:0" src="../../licensebuttons.net/l/by-nc-nd/3.0/88x31.png" />
+        </div>
+    </footer>
 
-<!-- Mirrored from valdishere.github.io/DR-Simulator/customcast.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 10 Jun 2022 16:39:55 GMT -->
+<!-- Mirrored from valdishere.github.io/6f280fd6241a870ae06d601cc91e4b1ba1955370/customcast.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 26 Jun 2022 18:34:29 GMT -->
 </html>
 <script>
     LoadCasts();
+    CheckTheme();
 </script>
+
