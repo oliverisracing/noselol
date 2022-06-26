@@ -10620,7 +10620,7 @@ function GetPromoTable()
     {
       if(CurrentSeason.premiereformat!="NORMAL")
       {
-        if(CurrentSeason.episodes.length<=2)
+        if(CurrentSeason.episodes.length==2 && premstep == 4)
         {
           CurrentSeason.currentCast = [];
           for (let index = 0; index < firstprem.length; index++) {
@@ -11647,6 +11647,7 @@ function CreateEntrances()
     let Main = new Screen();
     Main.clean();
     if(entrancepos < secondprem.length)
+    shouldactivateepisode = true;
         {
           if(Steps == 0)
           {
@@ -11665,7 +11666,7 @@ function CreateEntrances()
         }
     if(entrancepos==secondprem.length)
   {
-    
+
     Main.createButton("Proceed","GetPromoTable()");
 
   }
