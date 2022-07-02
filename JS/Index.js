@@ -5,6 +5,8 @@ let CurrentEpisode;
 
 let premstep = 0;
 
+let songcharts = [];
+
 let shouldactivateepisode = false;
 
 let groupmaking = false;
@@ -619,7 +621,7 @@ class Screen {
   {
     image.setAttribute("id",ID)
   }
-  image.setAttribute("style", 'margin: 7px; width: 105px; height: 105px; border-radius: 20px; border: 3px solid; border-color: '+Color+';');
+  image.setAttribute("style", 'margin: 7px; width: 105px; height: 105px; border-radius: 20px; border: 4px solid; border-color: '+Color+';');
   this.MainScreen.appendChild(image); 
   }
 
@@ -9632,7 +9634,6 @@ function Finale()
 function Placements() {
   if(CurrentSeason.lipsyncformat == "LIFE")
   {
-
     if(organized==0)
     {
       let hightext = "";
@@ -9733,8 +9734,14 @@ function Placements() {
 
                   if(CurrentSeason.immunity == true)
                   {
+                    if(CurrentSeason.currentCast.length>8)
+                    {
+                      if((CurrentSeason.episodes.length > 2 && CurrentSeason.premiereformat != "NORMAL") && (CurrentSeason.premiereformat != "NORMAL" && CurrentSeason.episodes.length <= 7) || (CurrentSeason.premiereformat == "NORMAL" && CurrentSeason.episodes.length <= 5))
+                      {
                     Tops[randomtop].immune.push(CurrentSeason.episodes.length+1);
-                    Main.createText(Tops[randomtop].GetName()+", you also have won immunity for next week.","Bold");
+                          Main.createText(Tops[randomtop].GetName()+", you have won immunity for next week.","Bold");
+                      }
+                    }
                   }
 
                   CurrentChallenge.winner = true;
@@ -9749,11 +9756,16 @@ function Placements() {
                     Tops[randomtop].ppe += 5;
                     Tops[randomtop].favoritism += 4;
                     Tops[randomtop].wins++;
-
                     if(CurrentSeason.immunity == true)
                     {
+                      if(CurrentSeason.currentCast.length>8)
+                      {
+                        if((CurrentSeason.episodes.length > 2 && CurrentSeason.premiereformat != "NORMAL") && (CurrentSeason.premiereformat != "NORMAL" && episodes.length <= 7) || (CurrentSeason.premiereformat == "NORMAL" && episodes.length <= 5))
+                        {
                       Tops[randomtop].immune.push(CurrentSeason.episodes.length+1);
                       Main.createText(Tops[randomtop].GetName()+", you also have won immunity for next week.","Bold");
+                        }
+                      }
                     }
                   }
                   else
@@ -9963,6 +9975,79 @@ function Placements() {
     }
 
     
+    if(Steps==4)
+    {
+      Main.createButton("Proceed", "Lipsync()");
+      Steps = 0;
+    }
+    else
+    {
+      Main.createButton("Proceed", "Placements()");
+    }
+  }
+  else if(CurrentSeason.lipsyncformat == "LSFYL")
+  {
+    for (let i = 0; i < Tops.length; i++) {
+      if(Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "WIN" || Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "TOP2")
+      {
+        Tops[i].finalscore += 10;
+      }
+    }
+
+    Tops.sort((a, b) => a.finalscore - b.finalscore);
+    Main = new Screen();
+    Main.clean();
+    let hightext = "";
+
+    if(TopsQueens.length==0)
+    {
+      TopsQueens.push(Tops[0]);
+      TopsQueens.push(Tops[1]);
+    }
+
+    switch(Steps){
+      case 0:
+        Main.createText("The top two all stars of the week are...", "Bold");
+        Main.createImage("Images/Queens/Hidden.webp","depepskyblue");
+        Main.createImage("Images/Queens/Hidden.webp","depepskyblue");
+        Main.createText("");
+        Steps++;
+        break;
+      case 1:
+        Main.createText("The top two all stars of the week are...", "Bold");
+        Main.createImage(TopsQueens[0].image,"deepskyblue");
+        Main.createImage("Images/Queens/Hidden.webp","deepskyblue");
+        Main.createText(TopsQueens[0].GetName()+" and ...", "Bold");
+        Steps++;
+        break;
+       case 2:
+        Main.createText("The top two all stars of the week are...", "Bold");
+        Main.createImage(TopsQueens[0].image,"deepskyblue");
+        Main.createImage(TopsQueens[1].image,"deepskyblue");
+        Main.createText(TopsQueens[0].GetName()+" and "+TopsQueens[1].GetName()+" ! ", "Bold");
+        Steps++;
+        break;
+      case 3:
+        Main.createText("The top two all stars of the week are...", "Bold");
+        Main.createImage(TopsQueens[0].image,"deepskyblue");
+        Main.createImage(TopsQueens[1].image,"deepskyblue");
+        Main.createText(TopsQueens[0].GetName()+" and "+TopsQueens[1].GetName()+" ! ", "Bold");
+        Main.createText("Congratulations, you are both the top two of this week challenge.", "Bold");
+        Steps++;
+        break;
+      case 4:
+        if(Tops.length!=2)
+        {
+          Main.createText("The top two all stars of the week are...", "Bold");
+          Main.createImage(TopsQueens[0].image,"deepskyblue");
+          Main.createImage(TopsQueens[1].image,"deepskyblue");
+          Main.createText(TopsQueens[0].GetName()+" and "+TopsQueens[1].GetName()+" ! ", "Bold");
+          Main.createText("Congratulations, you are both the top two of this week challenge.", "Bold");
+        }
+        Steps++;
+        break;
+        
+      }
     if(Steps==4)
     {
       Main.createButton("Proceed", "Lipsync()");
@@ -10471,6 +10556,7 @@ function GenerateChallenge()
     case "Simple.css":
       document.body.style.backgroundColor = '#1a1a1a';
       break;
+
     default:
   document.body.style.backgroundImage = 'url("Images/Backgrounds/MS.png")';
       break;
@@ -10650,7 +10736,16 @@ function LaunchMiniChallenge()
 { 
   Main = new Screen();
   Main.createBigText("In the workroom...");
+  switch(localStorage.getItem("theme"))
+  {
+    case "Simple.css":
+      document.body.style.backgroundColor = '#1a1a1a';
+      break;
+
+    default:
   document.body.style.backgroundImage = 'url("Images/Backgrounds/Workroom.png")';
+      break;
+  }
   if(CurrentSeason.episodes.length == 1 && (CurrentSeason.lipsyncformat == "AS7"))
   {
     Main.clean();
@@ -10849,7 +10944,16 @@ function ChallengeAnnouncement(){
     CurrentSeason.currentCast[i].episodeson++;
   }
   Main.createBigText("She had already done had herses!");
-  document.body.style.backgroundImage = "url('Images/Backgrounds/RChallenge.png')";
+  switch(localStorage.getItem("theme"))
+  {
+    case "Simple.css":
+      document.body.style.backgroundColor = '#1a1a1a';
+      break;
+
+    default:
+      document.body.style.backgroundImage = 'url("Images/Backgrounds/RChallenge.png")';
+      break;
+  }
   Announcement = new Screen();
   Announcement.clean();
   if(CurrentSeason.lipsyncformat=="AS7")
@@ -11338,6 +11442,102 @@ function RankQueens(){
           {
             Tops.push(CurrentSeason.currentCast[i]);
           }
+
+          for(let i = 0; i<getRandomInt(3,5); i++)
+          {
+            Bottoms.push(CurrentSeason.currentCast[CurrentSeason.currentCast.length-1-i]);
+          }
+
+          if(CurrentSeason.immunity == true)
+          {
+            for(let i = 0; i<Bottoms.length; i++)
+            {
+              let getsafe = 1;
+              if(Bottoms[i].immune.indexOf(CurrentSeason.episodes.length)!=-1)
+              {
+                Bottoms.splice(i,1);
+                Bottoms.push(CurrentSeason.currentCast[ (CurrentSeason.currentCast.length-Bottoms.length-1)-getsafe ]);
+                getsafe++;
+              }
+            }
+          }
+      }
+      else
+      {
+        if(CurrentSeason.currentCast.length==7)
+        {
+            Tops.push(CurrentSeason.currentCast[0]);
+            Tops.push(CurrentSeason.currentCast[1]);
+            Tops.push(CurrentSeason.currentCast[2]);
+
+                Safes.push(CurrentSeason.currentCast[3]);
+                CurrentSeason.currentCast[3].trackrecord.push("SAFE");
+                CurrentSeason.currentCast[3].ppe += 3;
+
+            Bottoms.push(CurrentSeason.currentCast[4]);
+            Bottoms.push(CurrentSeason.currentCast[5]);
+            Bottoms.push(CurrentSeason.currentCast[6]);
+
+            if(CurrentSeason.immunity == true)
+            {
+              for(let i = 0; i<Bottoms.length; i++)
+              {
+                let getsafe = 1;
+                if(Bottoms[i].immune.indexOf(CurrentSeason.episodes.length)!=-1)
+                {
+                  Safes.push(Bottoms[i]);
+                  Bottoms.splice(i,1);
+                  Bottoms.push(CurrentSeason.currentCast[ (CurrentSeason.currentCast.length-Bottoms.length-1)-getsafe ]);
+                  getsafe++;
+                  Bottoms.push(CurrentSeason.currentCast[3]);
+                }
+              }
+            }
+        }
+        else if(CurrentSeason.currentCast.length==6)
+        {
+            Tops.push(CurrentSeason.currentCast[0]);
+            Tops.push(CurrentSeason.currentCast[1]);
+            Tops.push(CurrentSeason.currentCast[2]);
+            Bottoms.push(CurrentSeason.currentCast[3]);
+            Bottoms.push(CurrentSeason.currentCast[4]);
+            Bottoms.push(CurrentSeason.currentCast[5]);
+
+        }
+        else if(CurrentSeason.currentCast.length==5)
+        {
+            Tops.push(CurrentSeason.currentCast[0]);
+            Tops.push(CurrentSeason.currentCast[1]);
+              if(CurrentSeason.currentCast[2].finalscore <= 10)
+              {
+                Tops.push(CurrentSeason.currentCast[2]);
+              }
+              else
+              {
+                Bottoms.push(CurrentSeason.currentCast[2]);
+              }
+            Bottoms.push(CurrentSeason.currentCast[3]);
+            Bottoms.push(CurrentSeason.currentCast[4]);
+        }
+        else if(CurrentSeason.currentCast.length==4)
+        {
+          Tops.push(CurrentSeason.currentCast[0]);
+            if(CurrentSeason.currentCast[1].finalscore <= 10)
+            {
+              Tops.push(CurrentSeason.currentCast[1]);
+            }
+            else
+            {
+              Bottoms.push(CurrentSeason.currentCast[1]);
+            }
+          Bottoms.push(CurrentSeason.currentCast[2]);
+          Bottoms.push(CurrentSeason.currentCast[3]);
+        }
+        else if(CurrentSeason.currentCast.length==3)
+        {
+          Tops.push(CurrentSeason.currentCast[0]);
+          Tops.push(CurrentSeason.currentCast[1]);
+          Tops.push(CurrentSeason.currentCast[2]);
         }
         else
         {
@@ -11345,16 +11545,43 @@ function RankQueens(){
           {
             Tops.push(CurrentSeason.currentCast[i]);
           }
-        }
 
-        for (let index = 0; index < CurrentSeason.currentCast.length; index++) {
-          Critiqued.push(CurrentSeason.currentCast[index]);
+          for(let i = 0; i<getRandomInt(3,4); i++)
+          {
+              Bottoms.push(CurrentSeason.currentCast[CurrentSeason.currentCast.length-1-i]);
+          }
+
+          if(CurrentSeason.immunity == true)
+          {
+            for(let i = 0; i<Bottoms.length; i++)
+            {
+              let getsafe = 1;
+              if(Bottoms[i].immune.indexOf(CurrentSeason.episodes.length)!=-1)
+              {
+                Bottoms.splice(i,1);
+                Bottoms.push(CurrentSeason.currentCast[ (CurrentSeason.currentCast.length-Bottoms.length-1)-getsafe ]);
+                getsafe++;
+              }
+            }
+          }
         }
-        shuffle(SlayedChallenge);
-        shuffle(GreatChallenge);
-        shuffle(GoodChallenge);
-        shuffle(BadChallenge);
-        shuffle(FloppedChallenge);
+      }
+      for(let i = 0; i<CurrentSeason.currentCast.length; i++)
+      {
+        if((Tops.indexOf(CurrentSeason.currentCast[i]) == -1 && Bottoms.indexOf(CurrentSeason.currentCast[i]) == -1))
+        {
+          if(Safes.indexOf(CurrentSeason.currentCast[i])==-1)
+          {
+            CurrentSeason.currentCast[i].trackrecord.push("SAFE");
+            CurrentSeason.currentCast[i].ppe += 3;
+            Safes.push(CurrentSeason.currentCast[i]);
+          }
+        }
+        else
+        {
+          Critiqued.push(CurrentSeason.currentCast[i]);
+        }
+        }
         break;
 
     }
@@ -12124,10 +12351,6 @@ function GetRandowRunway() {
     return(ret);
   }
 
-function GetSong(){
-  switch(CurrentSeason.country)
-  {
-    case "US":
       let songsus = [
         '"Supermodel" by RuPaul',
         '"We Break The Dawn" by Michelle Williams',
@@ -12376,12 +12599,7 @@ function GetSong(){
         '"Rumor Has It" by Adele',
         '"Greenlight" by Beyoncé'
       ];
-      let chosen = songsus[getRandomInt(0,songsus.length-1)];
-      songsus.splice(songsus.indexOf(chosen),1);
-      return(chosen);
-      break;
 
-    case "UK":
       let songsuk = [
         '"New Rules" by Dua Lipa',
         '"Venus" by Bananarama',
@@ -12421,12 +12639,7 @@ function GetSong(){
         '"The Reflex" by Duran Duran',
         '"Supernova" by Kylie Minogue'
       ];
-      let chosenuk = songsuk[getRandomInt(0,songsuk.length-1)];
-      songsuk.splice(songsuk.indexOf(chosenuk),1);
-      return(chosenuk);
-      break;
 
-    case "CANADA":
       let songscan = [
         '"I Really Like You" by Carly Rae Jepsen',
         '"If You Could Read My Mind" by Ultra Naté, Amber, and Jocelyn Enriquez',
@@ -12451,12 +12664,7 @@ function GetSong(){
         '"Call Me Mother" by RuPaul',
         '"It\'s All Coming Back to Me Now" by Celine Dion'
       ];
-      let chosencan = songscan[getRandomInt(0,songscan.length-1)];
-      songscan.splice(songscan.indexOf(chosencan),1);
-      return(chosencan);
-      break;
 
-    case "ESPANA":
       let songses = [
         '"Sobreviviré" by Mónica Naranjo',
         '"Veneno pa\' tu piel" by La Veneno',
@@ -12483,12 +12691,7 @@ function GetSong(){
         '"Bidi Bidi Bom Bom" by Selena',
         '"Can\'t Remember To Forget You" by Shakira (ft Shakira)'
       ];
-      let chosenes = songses[getRandomInt(0,songses.length-1)];
-      songses.splice(songses.indexOf(chosenes),1);
-      return(chosenes);
-      break;
 
-    case "ITALIA":
       let songsit = [
         '""Occhi di gatto" by Cristina D\'Avena',
         '"Comprami" by Viola Valentino',
@@ -12514,13 +12717,7 @@ function GetSong(){
         '"Roma Bangkok" by Baby K and Giusy Ferreri',
         '"Non Ti Scordar mai di" me by Giusi Ferreri'
       ];
-      let chosenit = songsit[getRandomInt(0,songsit.length-1)];
-      songsit.splice(songsit.indexOf(chosenit),1);
-      return(chosenit);
-      break;
 
-
-    case "THAILAND":
       let songth = [
         '"Born This Way" by Lady Gaga',
         '"I Don\'t Want Love Yet" by Marsha Vadhanapanich',
@@ -12541,12 +12738,7 @@ function GetSong(){
         '"This Is Me" by Keala Settle',
         '"Last Dance" by Selena'
       ];
-      let chosenth = songth[getRandomInt(0,songth.length-1)];
-      songth.splice(songth.indexOf(chosenth),1);
-      return(chosenth);
-      break;
 
-    case "AUSTRALIA":
       let songdu = [
         '"Tragedy" by Bee Gees',
         '"I\'m That Bitch" by RuPaul',
@@ -12557,12 +12749,7 @@ function GetSong(){
         '"Untouched" by The Veronicas',
         '"Physical" by Olivia Newton-John',
       ];
-      let chosendu = songdu[getRandomInt(0,songdu.length-1)];
-      songdu.splice(songdu.indexOf(chosendu),1);
-      return(chosendu);
-      break;
     
-    case "HOLLAND":
       let songho = [
         '"Express Yourself" by Madonna',
         '"Roar" by Katy Perry',
@@ -12581,12 +12768,8 @@ function GetSong(){
         '"Don\'t Stop Me Now" by Queen',
         '"This Is My Life" by Shirley Bassey'
       ];
-      let chosenho = songho[getRandomInt(0,songho.length-1)];
-      songho.splice(songho.indexOf(chosenho),1);
-      return(chosenho);
-      break;
 
-    case "FRANCE":
+
       let songfr = [
         '"Le sens de la vie" by TAL',
         '"Femme est la nuit" by Dalida ',
@@ -12607,6 +12790,69 @@ function GetSong(){
         '"Je Suis Malade" by Lara Fabian',
         '"Je T\'aime" by Lara Fabian'
       ];
+
+function GetSong(){
+  switch(CurrentSeason.country)
+  {
+    case "US":
+     
+      let chosen = songsus[getRandomInt(0,songsus.length-1)];
+      songsus.splice(songsus.indexOf(chosen),1);
+      return(chosen);
+      break;
+
+    case "UK":
+
+      let chosenuk = songsuk[getRandomInt(0,songsuk.length-1)];
+      songsuk.splice(songsuk.indexOf(chosenuk),1);
+      return(chosenuk);
+      break;
+
+    case "CANADA":
+
+      let chosencan = songscan[getRandomInt(0,songscan.length-1)];
+      songscan.splice(songscan.indexOf(chosencan),1);
+      return(chosencan);
+      break;
+
+    case "ESPANA":
+
+      let chosenes = songses[getRandomInt(0,songses.length-1)];
+      songses.splice(songses.indexOf(chosenes),1);
+      return(chosenes);
+      break;
+
+    case "ITALIA":
+
+      let chosenit = songsit[getRandomInt(0,songsit.length-1)];
+      songsit.splice(songsit.indexOf(chosenit),1);
+      return(chosenit);
+      break;
+
+
+    case "THAILAND":
+
+      let chosenth = songth[getRandomInt(0,songth.length-1)];
+      songth.splice(songth.indexOf(chosenth),1);
+      return(chosenth);
+      break;
+
+    case "AUSTRALIA":
+
+      let chosendu = songdu[getRandomInt(0,songdu.length-1)];
+      songdu.splice(songdu.indexOf(chosendu),1);
+      return(chosendu);
+      break;
+    
+    case "HOLLAND":
+
+      let chosenho = songho[getRandomInt(0,songho.length-1)];
+      songho.splice(songho.indexOf(chosenho),1);
+      return(chosenho);
+      break;
+
+    case "FRANCE":
+   
       let chosenfr = songfr[getRandomInt(0,songfr.length-1)];
       songfr.splice(songfr.indexOf(chosenfr),1);
       return(chosenfr);
@@ -12618,7 +12864,7 @@ function GetSong(){
     switch(queen.ogseason.substring(0,2))
     {
       default:
-        let songsus = [
+        let entus = [
           'Wooh, my God! Look at this! Wow, crazy, crazy, crazy!',
           'Hi!',
           'Hello, what\'s up?',
@@ -12690,12 +12936,12 @@ function GetSong(){
           'Maybe she’s born with it, maybe it’s body dysmorphia.',
           'Did somebody order a delivery? Because I’m about to take away the crown!'
         ];
-        let chosen = songsus[getRandomInt(0,songsus.length-1)];
+        let chosen = entus[getRandomInt(0,entus.length-1)];
         return(chosen);
         break;
   
       case "ES":
-        let songses = [
+        let entes = [
           '¿Alguien ha pedido una cebra a domicilio?',
           'No soy perra, no soy gata. Soy una estrella y eso te mata.',
           'Hola, chicas. No me toquéis el chichi, que todavía no me lo han puesto.',
@@ -12710,12 +12956,12 @@ function GetSong(){
           'Vaya cuadro.',
           '¿Tenéis un enchufe?'
         ];
-        let chosenes = songses[getRandomInt(0,songses.length-1)];
+        let chosenes = entes[getRandomInt(0,entes.length-1)];
         return(chosenes);
         break;
   
       case "IT":
-        let songsit = [
+        let entit = [
           'La stallona piemontese è approdata negli studi, stronzette.',
           'LET\'S GOOOOOOOOOOOOOO... sì.',
           'Scusate, ma chi sono queste? Non avevate detto che ero sola? Vabbè. Potete scaricare i miei bauli allora.',
@@ -12725,12 +12971,12 @@ function GetSong(){
           'The queen of Italia, has arrived.',
           'Occhi di gatto, ecco fatto!',
         ];
-        let chosenit = songsit[getRandomInt(0,songsit.length-1)];
+        let chosenit = entit[getRandomInt(0,entit.length-1)];
         return(chosenit);
         break;
       
       case "HO":
-        let songho = [
+        let entho = [
           'Buongiorno, principesse. The queen has arrived.',
           'I\'ve got some tricks up my sleeve.',
           'If eyes linger any longer, I\'ll have to charge rent.',
@@ -12744,7 +12990,7 @@ function GetSong(){
           'Je dacht toch niet dat ik het feestje echt aan mij voorbij liet gaan?',
           'The OG fish is back!',
         ];
-        let chosenho = songho[getRandomInt(0,songho.length-1)];
+        let chosenho = entho[getRandomInt(0,entho.length-1)];
         return(chosenho);
         break;
     }
@@ -12760,5 +13006,61 @@ function RemoveFromCustomQueen(){
   var clean = document.getElementById("ct");
   clean.innerHTML = "";
   LoadCasts();
+}
+
+function AddRandomCast(){
+  let whotoadd = 0;
+  let nbmsctadded = 0;
+  let numtoadd = document.getElementById("rdnnum").value;
+  let drq = document.getElementById("drqueens");
+  let ctq = document.getElementById("ctqueens");
+  console.log(drq.checked);
+  for (let index = 0; index < numtoadd; index++) {
+    if(drq.checked == true && ctq.checked == true)
+    {
+      if(getRandomInt(0,100)>50 && (nbmsctadded < customqueens.length))
+      {
+        whotoadd = getRandomInt(0,customqueens.length-1);
+        while(CustomCast.indexOf(customqueens[whotoadd])!=-1)
+        {
+          whotoadd = getRandomInt(0,customqueens.length-1);
+        }
+        CustomCast.push(customqueens[whotoadd])
+        nbmsctadded++;
+      }
+      else
+      {
+        whotoadd = getRandomInt(0,DragRaceQueens.length-1);
+        while(CustomCast.indexOf(DragRaceQueens[whotoadd])!=-1)
+        {
+          whotoadd = getRandomInt(0,DragRaceQueens.length-1);
+        }
+        CustomCast.push(DragRaceQueens[whotoadd]);
+      }
+    }
+    else if(drq.checked == true)
+    {
+      whotoadd = getRandomInt(0,DragRaceQueens.length-1);
+        while(CustomCast.indexOf(DragRaceQueens[whotoadd])!=-1)
+        {
+          whotoadd = getRandomInt(0,DragRaceQueens.length-1);
+        }
+        CustomCast.push(DragRaceQueens[whotoadd]);
+    }
+    else if(ctq.checked == true)
+    {
+      if((nbmsctadded < customqueens.length))
+      {
+        whotoadd = getRandomInt(0,customqueens.length-1);
+        while(CustomCast.indexOf(customqueens[whotoadd])!=-1)
+        {
+          whotoadd = getRandomInt(0,customqueens.length-1);
+        }
+        CustomCast.push(customqueens[whotoadd])
+        nbmsctadded++;
+      }
+    }
+  }
+  UpdateCustomCast();
 }
 //#endregion
