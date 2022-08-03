@@ -4,6 +4,7 @@ let CurrentChallenge;
 let CurrentEpisode;
 
 let villain = false;
+let hero = false;
 
 let songschosen = "";
 let premreform = false;
@@ -127,7 +128,7 @@ class Animal{
       this.kindness = Kindness;
       this.shadyness = Shadyness;
 
-      if(this.iscustom==false)
+      if(IsCustom==false)
       {
         this.image = "Images/Queens/Animals/"+Image+".webp";
       }
@@ -208,11 +209,14 @@ class Season {
     this.snatchgame = 0;
 
     this.immunity = false;
+    this.animals = false;
   }
 
   checkTwists(Twists){
     if(Twists.indexOf("Immunities")!= -1)
       this.immunity = true;
+    if(Twists.indexOf("Animals")!= -1)
+      this.animals = true;
   }
 
   getFullCast()
@@ -574,7 +578,7 @@ class Queen {
 
   GetTalentShow()
   {
-    this.perfomancescore = this.GetScore(65,85,this.acting+this.improv+this.comedy+this.dance+this.lipsync+this.charisma+this.branding+this.design);
+    this.perfomancescore = this.GetScore(85,100,this.acting+this.improv+this.comedy+this.dance+this.lipsync+this.charisma+this.branding+this.design);
     if(this.animal != "")
     {
       this.perfomancescore -= this.animal.acting;
@@ -1366,6 +1370,10 @@ class Screen {
 
       qname.innerHTML = CurrentSeason.currentCast[q].GetName();
 
+      if(CurrentSeason.animals == true){
+        qname.innerHTML += "<br><small>("+CurrentSeason.currentCast[q].animal.name+")</small>";
+      }
+
       qname.setAttribute("class","trq");
 
       qname.setAttribute("style","height : 50px;");
@@ -1526,6 +1534,10 @@ class Screen {
       let qname = document.createElement("td");
 
       qname.innerHTML = CurrentSeason.eliminatedCast[q].GetName();
+
+      if(CurrentSeason.animals == true){
+        qname.innerHTML += "<br><small>("+CurrentSeason.eliminatedCast[q].animal.name+")</small>";
+      }
 
       qname.setAttribute("class","trq");
 
@@ -1723,7 +1735,7 @@ class Screen {
       this.MainScreen.append(br);
     }
     
-    /*immunity = document.createElement("input")
+    immunity = document.createElement("input")
     immunity.setAttribute("type","checkbox");
     immunity.setAttribute("id","animal");
     lbl = document.createElement("label");
@@ -1731,7 +1743,7 @@ class Screen {
     lbl.innerHTML = " Enable Animals"
     lbl.setAttribute("style","font-weight: bold; font-size: 20px;");
     this.MainScreen.append(immunity);
-    this.MainScreen.append(lbl);*/
+    this.MainScreen.append(lbl);
   }
 
   createPromoTable(){
@@ -8502,6 +8514,18 @@ let anubis = new Queen("Anubis Finch", 10, 11, 8, 7, 9, 7, 9, 10, 8, 4, 1, 'Anub
 
 let UK3 = shuffle([krystal, ella, kitty, vanity, scarletth, choriza, river, charity, veronicas3, victorias, elektraf, anubis]);
 
+let bagauk = new Queen("Baga Chipz", 11, 10, 14, 7, 6, 7, 9, 12, 13, 4, 1, "Baga", "Baga", "UKVSTW", false);
+let bluuk = new Queen("Blu Hydrangea", 10, 11, 13, 9, 8, 14, 12, 11, 10, 4, 3, "Blu", "Blu", "UKVSTW", false);
+let cheryluk = new Queen("Cheryl Hole", 11, 12, 9, 8, 7, 8, 9, 10, 9, 5, 1, "Cheryl", "Cheryl", "UKVSTW", false);
+let janeyuk = new Queen("Janey Jacké", 10, 11, 8, 15, 13, 10, 11, 9, 12, 5, 0, "Janey", "Janey", "UKVSTW", false); 
+let jimbouk = new Queen("Jimbo", 14, 13, 12, 7, 13, 12, 4, 10, 11, 1, 5, "Jimbo","Jimbo", "UKVSTW", false);
+let jujubee = new Queen("Jujubee", 9, 11, 12, 9, 6, 7, 13, 11, 14, 4, 0, "Jujubee", "Jujubee", "UKVSTW", false);
+let lemonuk = new Queen("Lemon", 10, 8, 9, 13, 9, 14, 13, 10, 12, 3, 2, "Lemon", "Lemon", "UKVSTW", false);
+let mouk = new Queen("Mo Heart", 12, 12, 13, 11, 13, 15, 9, 10, 13, 5, 1, "Mo", "Mo", "UKVSTW", false);
+let panginauk = new Queen("Pangina Heals", 13, 14, 6, 14, 15, 15, 14, 13, 10, 4, 2, "Pangina", "Pangina", "UKVSTW",false);
+
+let UKVSTW = shuffle([bagauk, bluuk, cheryluk, janeyuk, jimbouk, jujubee, lemonuk, mouk, panginauk]);
+
 let envy = new Queen("Envy Peru", 12,11,11,12,8,15,12,12,10,3,2,"Envy", "Envy", "HO1", false);
 let janeys1 = new Queen("Janey Jacké", 9,9,9,12,10,12,12,8,10,3,4, "Janey", "Janey", "HO1", false);
 let mamaq = new Queen("Ma'Ma Queen", 10,10,9,6,12,12,7,8,10,5,1, "Mama", "Mama", "HO1", false);
@@ -8641,14 +8665,22 @@ let FR1 = shuffle([elips, kam, bertha, briochée, dame, kahena, lolita, lova, pa
 
 let nickyhost = new Host("Nicky Doll", 'NickyIn', "NickyOut");
 
-let dog = new Animal("Dog", 5, -5, 0, 0, 5, -5, 0, 0, 0, 0, 0, "Dog", "Dog", "AN", false);
-let cat = new Animal("Cat");
-let parrot = new Animal("Parrot");
-let hamster = new Animal("Hamster");
-let axolot = new Animal("Axolot");
-let animals = [
-  dog,
-]
+let dog = new Animal("Dog", 0, -5, -5, 5, 0, 0, 5, 0, 0, 0, 0, "Dog", false);
+let cat = new Animal("Cat", 0, 5, -5, 0, 0, 5, -5, 0, 0, 0, 0, "Cat", false);
+let parrot = new Animal("Parrot", 5, 0, 0, 0, -5, 0, 5, 0, 5, 0, 0, "Parrot", false);
+let hamster = new Animal("Hamster", -5, 0, 0, 5, 5, -5, 0, 0, 0, 0,0,"Hamster",false);
+let axolot = new Animal("Axolotl", 0, 0, 0, 5, 0, 0, -5, 5, -5, 0, 0, "Axolotl", false);
+let blob = new Animal("Blob Fish", 0, 0, 5, -5, 0, 5, -5, 0, 0, 0, 0, "Blobfish", false);
+let sug = new Animal("Sugar Glider", 5, 0, 0, 0, 0, 5, -5, 0, -5, 0, 0, "Sugar", false);
+let capy = new Animal("Capybara", 5, -5, 0, 0, 0, 0, 0, 5, -5, 0, 0, "Capy", false);
+let alpaca = new Animal("Alpaca", 0, 0, 0, 0, 5, 5, -5, -5, 0, 0, 0, "Alpaca", false);
+let koala = new Animal("Koala", 0, 0, 5, 0, -5, 0, 5, 0, -5, 0, 0, "Koala", false);
+let sea = new Animal("Sea Cucumber", 0, 0, -5, 5, 0, 0, 5, -5, 0, 0, 0, "Sea", false);
+let snake = new Animal("Snake", 5, -5,0 ,0, 0, 0, 0, 5, -5, 0, 0, "Snake", false);
+
+let animals = shuffle([dog, cat, parrot, hamster, axolot, blob, sug, capy, alpaca, koala, sea, snake]);
+
+let goldenserena = new Queen("Golden Serena Chacha", 15, 15, 15, 15, 15, 15, 15, 15, 15, 5, 0, "GSerena", "GSerena", "AS6", false);
 
 let DragRaceQueens = [
 
@@ -8676,9 +8708,11 @@ let DragRaceQueens = [
   vanessa, puny, vivaldi, keta, countess, ivy, masisi, reggy, juicy,
 
   adoreas2, alaskaas2, alyssaeas2, cocoas2, detoxas2, gingeras2, katyaas2, jaremyas2, roxxxyas2, tatias2,
-  ajaas3, bebeas3,delaas3,chichias3,kennedyas3,milkas3,morganas3,shangelaas3, thorgy,
+  ajaas3, bebeas3,delaas3,chichias3,kennedyas3,milkas3,morganas3,shangelaas3, thorgy, trixieas3,
   farrahas4, giagas4, jasmineas4, latriceas4, manilaas4, monetas4, moas4, naomias4, tttas4, valentinas4,
   jaidaas7, jinkxas7, monetas7, rajaas7, sheaas7, vivas7, trinityas7, yvieas7,
+
+  bagauk, bluuk, cheryluk, janeyuk, jimbouk, jujubee, lemonuk, mouk, panginauk,
 
   anastarzia,boa,ilona,jimbo,juice,kiara,kyne,lemon,priyanka,rita,scarlettbobo,tynomi,
   icesis, kendall, eve, giam, pythia, adriana, kimoraa, synthia, suki, oceane, beth, stephanie,
@@ -8693,8 +8727,9 @@ let DragRaceQueens = [
 
   ava ,divinity ,elecktra, enorma, farida, ivana, leriche, luquisha,
 
-  elips, kam, bertha, briochée, dame, kahena, lolita, lova, paloma, soa
+  elips, kam, bertha, briochée, dame, kahena, lolita, lova, paloma, soa,
 
+  goldenserena
 ].sort((a, b) => a.GetName().localeCompare(b.GetName()));
 
 //#endregion
@@ -9246,7 +9281,7 @@ function UntuckedPart1() {
 function Critiques() {
   Main = new Screen();
   Main.clean();
-  if(CurrentSeason.lipsyncformat == "LSFYL")
+  if(CurrentSeason.lipsyncformat == "LSFYL" && (CurrentChallenge instanceof FinalChallenge == false))
   {
     Main.createButton("Proceed", "Placements()");
   }
@@ -9428,14 +9463,6 @@ function Finale()
           CurrentSeason.currentCast.sort((a, b) => b.finalescore - a.finalescore);
           if(CurrentSeason.currentCast[0].finalescore > 30 && CurrentSeason.currentCast[1].finalescore > 30)
           {
-            Main.createImage(CurrentSeason.currentCast[0].image,"#ffb300");
-            Main.createImage(CurrentSeason.currentCast[1].image,"#ffb300");
-            Main.createText(CurrentSeason.currentCast[0].GetName() + " and "+CurrentSeason.currentCast[1].GetName()+", CONDRAGULATIONS!", "Bold");
-            Main.createText("You are both winners!","Bold");
-            CurrentSeason.currentCast[0].trackrecord.push("WINNER");
-            CurrentSeason.currentCast[0].placement = 1;
-            CurrentSeason.currentCast[1].trackrecord.push("WINNER");
-            CurrentSeason.currentCast[1].placement = 1;
             if(CurrentSeason.currentCast.length==3)
             {
               CurrentSeason.currentCast[2].placement = 3;
@@ -9450,18 +9477,18 @@ function Finale()
               let ls = new LipsyncSong([CurrentSeason.currentCast[0],CurrentSeason.currentCast[1]], songschosen, CurrentSeason.episodes.length, 'btm', []);
               CurrentSeason.lipsyncs.push(ls);
             }
+            Main.createImage(CurrentSeason.currentCast[0].image,"#ffb300");
+            Main.createImage(CurrentSeason.currentCast[1].image,"#ffb300");
+            Main.createText(CurrentSeason.currentCast[0].GetName() + " and "+CurrentSeason.currentCast[1].GetName()+", CONDRAGULATIONS!", "Bold");
+            Main.createText("You are both winners!","Bold");
+            CurrentSeason.currentCast[0].trackrecord.push("WINNER");
+            CurrentSeason.currentCast[0].placement = 1;
+            CurrentSeason.currentCast[1].trackrecord.push("WINNER");
+            CurrentSeason.currentCast[1].placement = 1;
+            
           }
           else
           {
-            Main.createImage(CurrentSeason.currentCast[0].image,"#ffb300");
-            Main.createText(CurrentSeason.currentCast[0].GetName()+", CONDRAGULATIONS!","Bold");
-            Main.createText("You are the winner of "+CurrentSeason.seasonname+"!","Bold");
-            CurrentSeason.currentCast[0].trackrecord.push("WINNER");
-            CurrentSeason.currentCast[0].placement = 1;
-            CurrentSeason.currentCast[1].placement = 2;
-            CurrentSeason.currentCast[1].trackrecord.push('RUNNER UP');
-            CurrentSeason.eliminatedCast.unshift(CurrentSeason.currentCast[1]);
-            CurrentSeason.currentCast.splice(1,1);
             if(CurrentSeason.currentCast.length==3)
             {
               CurrentSeason.eliminatedCast.unshift(CurrentSeason.currentCast[2]);
@@ -9476,6 +9503,16 @@ function Finale()
               let ls = new LipsyncSong([CurrentSeason.currentCast[0],CurrentSeason.currentCast[1]], songschosen, CurrentSeason.episodes.length, 'btm', [CurrentSeason.currentCast[1]]);
               CurrentSeason.lipsyncs.push(ls);
             }
+            Main.createImage(CurrentSeason.currentCast[0].image,"#ffb300");
+            Main.createText(CurrentSeason.currentCast[0].GetName()+", CONDRAGULATIONS!","Bold");
+            Main.createText("You are the winner of "+CurrentSeason.seasonname+"!","Bold");
+            CurrentSeason.currentCast[0].trackrecord.push("WINNER");
+            CurrentSeason.currentCast[0].placement = 1;
+            CurrentSeason.currentCast[1].placement = 2;
+            CurrentSeason.currentCast[1].trackrecord.push('RUNNER UP');
+            CurrentSeason.eliminatedCast.unshift(CurrentSeason.currentCast[1]);
+            CurrentSeason.currentCast.splice(1,1);
+            
           }
           Steps++;
           break;
@@ -9589,7 +9626,8 @@ function Finale()
         Steps++;
         break;
       case 7:
-        Main.createText("The lipsync song is : "+GetSong()+".","Bold");
+        songschosen = GetSong();
+        Main.createText("The lipsync song is : "+songschosen+".","Bold");
         for (let index = 0; index < lsc1.length; index++) {
           Main.createImage(lsc1[index].image,"springgreen"); 
 
@@ -9636,7 +9674,8 @@ function Finale()
         Steps++;
         break;
       case 12:
-        Main.createText("The lipsync song is : "+GetSong()+".","Bold");
+        songschosen = GetSong();
+        Main.createText("The lipsync song is : "+songschosen+".","Bold");
         for (let index = 0; index < lsc2.length; index++) {
           Main.createImage(lsc2[index].image,"springgreen"); 
 
@@ -9683,7 +9722,8 @@ function Finale()
         Steps++;
         break;
       case 17:
-        Main.createText("The lipsync song is : "+GetSong()+".","Bold");
+        songschosen = GetSong();
+        Main.createText("The lipsync song is : "+songschosen+".","Bold");
         for (let index = 0; index < Tops.length; index++) {
           Main.createImage(Tops[index].image,"springgreen"); 
 
@@ -9707,7 +9747,7 @@ function Finale()
         Main.createImage(Tops[0].image,'yellow');
         Main.createText(Tops[0].GetName()+", YOU ARE THE WINNER OF "+CurrentSeason.seasonname+".","Bold");
         let ls3 = new LipsyncSong([Tops[0],Tops[1]], songschosen, CurrentSeason.episodes.length, 'btm', [Tops[1]]);
-        CurrentSeason.lipsyncs.push(ls2);
+        CurrentSeason.lipsyncs.push(ls3);
         Tops[0].trackrecord.push('WINNER');
         Tops[0].placement = 1;
         Tops[1].trackrecord.push('L3RD');
@@ -10563,18 +10603,18 @@ function Placements() {
       {
         if(i < 2)
         {
-          BottomQueens.push(Bottoms[Bottoms.length-1-i]);
+          BottomQueens.push(Bottoms[i]);
         }
         else
         {
-          if(Bottoms[Bottoms.length-1-i].finalscore >= 30)
+          if(Bottoms[i].finalscore >= 30)
           {
-            BottomQueens.push(Bottoms[Bottoms.length-1-i]);
+            BottomQueens.push(Bottoms[i]);
           }
           else
           {
-            Bottoms[Bottoms.length-1-i].trackrecord.push("LOW");
-            Bottoms[Bottoms.length-1-i].ppe += 2;
+            Bottoms[i].trackrecord.push("LOW");
+            Bottoms[i].ppe += 2;
           }
         }
       }
@@ -10608,7 +10648,17 @@ function Placements() {
         Main.createImage(TopsQueens[1].image,"deepskyblue");
         Main.createText(TopsQueens[0].GetName()+" and "+TopsQueens[1].GetName()+" ! ", "Bold");
         Main.createText("Congratulations, you are both the top two of this week challenge.", "Bold");
-        Steps++;
+        if(TopsQueens.length == Tops.length)
+        {
+          if(BottomQueens.length == Bottoms.length)
+          {
+            Steps = 6;
+          }
+          else
+            Steps = 5;
+        }
+        else
+          Steps++;
         break;
       case 4:
         let topsnames = "";
@@ -10621,13 +10671,14 @@ function Placements() {
               if(index != Tops.length-1)
               {
                 
-                if(index != Tops.length-2)
+                if(index != Tops.length-2 && index != Tops.length-1)
                 {
                   topsnames += ", ";
                 }
                 else
                 {
-                  topsnames += " and ";
+                  if(index != Tops.length-1)
+                    topsnames += " and ";
                 }
               }
             }
@@ -10650,13 +10701,14 @@ function Placements() {
             Main.createImage(Bottoms[index].image,"lightpink");
             {
               lownames += Bottoms[index].GetName();
-              if(index != Bottoms.length-2)
+              if(index != Bottoms.length-2 && index != Bottoms.length-1)
               {
                 lownames += ", ";
               }
               else
               {
-                lownames += " and ";
+                if(index != Bottoms.length-1)
+                  lownames += " and ";
               }
             }
           }
@@ -10671,13 +10723,14 @@ function Placements() {
         for (let index = 0; index < BottomQueens.length; index++) {
             Main.createImage(BottomQueens[index].image,"tomato");
             btmnames += BottomQueens[index].GetName();
-              if(index != BottomQueens.length-2)
+              if(index != BottomQueens.length-2 && index != BottomQueens.length-1)
               {
                 btmnames += ", ";
               }
               else
               {
-                btmnames += " and ";
+                if(index != BottomQueens.length-1)
+                  btmnames += " and ";
               }
             
           }
@@ -10710,6 +10763,8 @@ function Lipsync() {
     let points = 0;
     let cv = 0;
     let q;
+    let h;
+    let cvs = 0;
     for (let index = 0; index < CurrentSeason.currentCast.length; index++) {
       points = 0;
       for (let re = 0; re < CurrentSeason.currentCast[index].relationsships.length; re++) {
@@ -10721,6 +10776,12 @@ function Lipsync() {
         q = CurrentSeason.currentCast[index];
         cv = points;
       }
+
+      if(hero == false && points >= 20 && points > cv)
+      {
+        h = CurrentSeason.currentCast[index];
+        cvs = points;
+      }
     }
   
     if(q!=null)
@@ -10728,6 +10789,14 @@ function Lipsync() {
       villain = true;
       CurrentSeason.currentCast[index].storylines.push("VI");
       let storyline = new StoryLine([q],"Relations Related", "This queen is getting considered as the villain of the season.", CurrentSeason.episodes.length, "Not finished yet.");
+      CurrentSeason.storylines.push(storyline);
+    }
+
+    if(h!=null)
+    {
+      hero = true;
+      CurrentSeason.currentCast[index].storylines.push("HE");
+      let storyline = new StoryLine([q],"Relations Related", "This queen is getting considered as the hero of the season.", CurrentSeason.episodes.length, "Not finished yet.");
       CurrentSeason.storylines.push(storyline);
     }
 
@@ -10741,12 +10810,22 @@ function Lipsync() {
       }
     }
 
-    if(CurrentSeason.currentCast[index].wins > 0 && points < 10 && points > -10 && CurrentSeason.episodes.length>2)
+    if(CurrentSeason.currentCast[index].wins > 0 && points < 2 && points > -2 && CurrentSeason.episodes.length > 2)
     {
-      if(CurrentSeason.currentCast[index].storylines.indexOf("FQ") == -1)
+      if(CurrentSeason.currentCast[index].storylines.indexOf("UN") == -1)
       {
-        CurrentSeason.currentCast[index].storylines.push("FQ");
+        CurrentSeason.currentCast[index].storylines.push("UN");
         let ns = new StoryLine([CurrentSeason.currentCast[index]],"Competition Related","This queen doesn't have lots of relationships, while doing great. She is considered an underdog.", CurrentSeason.episodes.length, "Not finished yet.");
+        CurrentSeason.storylines.push(ns);
+      }
+    }
+
+    if(CurrentSeason.currentCast[index].wins == 0 &&  CurrentSeason.currentCast[index].bottoms > 2 && CurrentSeason.episodes.length > 2)
+    {
+      if(CurrentSeason.currentCast[index].storylines.indexOf("SAB") == -1)
+      {
+        CurrentSeason.currentCast[index].storylines.push("SAB");
+        let ns = new StoryLine([CurrentSeason.currentCast[index]],"Competition Related","This queen is really starting to struggle in the competition. She is starting to get in her head.", CurrentSeason.episodes.length, "Not finished yet.");
         CurrentSeason.storylines.push(ns);
       }
     }
@@ -11508,13 +11587,15 @@ function GenerateChallenge()
 
 function GetPromoTable()
   {
+
     let done;
     for (let index = 0; index < CurrentSeason.storylines; index++) {
       done = false;
       for (let i = 0; i < CurrentSeason.storylines[index].queens; i++) {
-        if(CurrentSeason.eliminatedCast.indexOf(CurrentSeason.storylines.queens) != -1)
+        if(CurrentSeason.eliminatedCast.indexOf(CurrentSeason.storylines.queens[i]) != -1)
           done = true;
       }
+      console.log(done);
       if(done=true && CurrentSeason.storylines[index].ended == "Not finished yet.")
       {
         CurrentSeason.storylines[index].ended = CurrentEpisode.episodes.length;
@@ -11918,7 +11999,7 @@ function ChallengeAnnouncement(){
   else if(CurrentSeason.episodes.length==0 && CurrentSeason.premiereformat=="NORMAL" && CurrentSeason.lipsyncformat=="LSFYL")
   {
     CurrentChallenge = new TalentShow();
-    CurrentEpisode = new Episode(CurrentChallenge.episodename[CurrentChallenge.chosen], "Talent Show");
+    CurrentEpisode = new Episode(CurrentChallenge.episodename, "Talent Show");
     CurrentSeason.episodes.push(CurrentEpisode);
     CurrentSeason.designchallenges++;
 
@@ -12722,21 +12803,34 @@ function RandomizeStats(){
 
 function CreateEntrances()
 {
+  
   if(CurrentSeason.episodes.length==0)
   {
     let twists = [];
     let getcheckimmu = document.getElementById("immu");
+    let getcheckanim = document.getElementById("animal");
 
     if(getcheckimmu != undefined && getcheckimmu.checked == true)
     {
       twists.push("Immunities");
     }
-      
+
+    if(getcheckanim != undefined && getcheckanim.checked == true)
+    {
+      twists.push("Animals");
+    }
 
     CurrentSeason.checkTwists(twists);
 
     let Main = new Screen();
     Main.clean();
+
+    for (let index = 0; index < CurrentSeason.fullCast.length; index++) {
+      if(CurrentSeason.fullCast[index].animal == "" && CurrentSeason.animals == true)
+      {
+        CurrentSeason.fullCast[index].animal = animals[getRandomInt(0,animals.length-1)]
+      }
+    }
     
     if(CurrentSeason.premiereformat!="NORMAL" && groupmaking == false)
     {
@@ -12763,14 +12857,27 @@ function CreateEntrances()
           if(Steps == 0)
           {
             Main.createImage("Images/Queens/Hidden.webp");
+            if(CurrentSeason.animals == true)
+            {
+              Main.createImage("Images/Queens/Hidden.webp");
+            }
             Main.createText(GetEntrance(firstprem[entrancepos]),'Bold');
             Main.createText('Entering the work-room : It is ...','Bold');
+           
             Steps++;
           }
           else
           {
             Main.createImage(firstprem[entrancepos].image);
+            if(CurrentSeason.animals == true)
+            {
+              Main.createImage(firstprem[entrancepos].animal.image);
+            }
             Main.createText('Entering the work-room : It is '+firstprem[entrancepos].GetName()+' !','Bold');
+            if(CurrentSeason.animals == true)
+            {
+              Main.createText('She\'s entering with a '+firstprem[entrancepos].animal.name+' ??','Bold');
+            }
             Steps = 0;
             entrancepos++;
           }
@@ -12783,14 +12890,28 @@ function CreateEntrances()
           if(Steps == 0)
           {
             Main.createImage("Images/Queens/Hidden.webp");
+            if(CurrentSeason.animals == true)
+            {
+              Main.createImage("Images/Queens/Hidden.webp");
+            }
             Main.createText(GetEntrance(CurrentSeason.fullCast[entrancepos]),'Bold');
+            
             Main.createText('Entering the work-room : It is ...','Bold');
             Steps++;
           }
           else
           {
             Main.createImage(CurrentSeason.fullCast[entrancepos].image);
+            if(CurrentSeason.animals == true)
+            {
+              Main.createImage(CurrentSeason.fullCast[entrancepos].animal.image);
+            }
             Main.createText('Entering the work-room : It is '+CurrentSeason.fullCast[entrancepos].GetName()+' !','Bold');
+            if(CurrentSeason.animals == true)
+            {
+              Main.createText('She\'s entering with a '+CurrentSeason.fullCast[entrancepos].animal.name+' ??','Bold');
+            }
+
             Steps = 0;
             entrancepos++;
           }
@@ -12822,14 +12943,27 @@ function CreateEntrances()
           if(Steps == 0)
           {
             Main.createImage("Images/Queens/Hidden.webp");
+            if(CurrentSeason.animals == true)
+            {
+              Main.createImage("Images/Queens/Hidden.webp");
+            }
             Main.createText(GetEntrance(secondprem[entrancepos]),'Bold');
             Main.createText('Entering the work-room : It is ...','Bold');
             Steps++;
           }
           else
           {
+            
             Main.createImage(secondprem[entrancepos].image);
+            if(CurrentSeason.animals == true)
+            {
+              Main.createImage(secondprem[entrancepos].animal.image);
+            }
             Main.createText('Entering the work-room : It is '+secondprem[entrancepos].GetName()+' !','Bold');
+            if(CurrentSeason.animals == true)
+            {
+              Main.createText('She\'s entering with a '+secondprem[entrancepos].animal.name+' ??','Bold');
+            }
             Steps = 0;
             entrancepos++;
           }
