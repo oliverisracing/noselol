@@ -8402,10 +8402,34 @@ let tttas4 = new Queen("Trinity The Tuck", 12, 13, 14, 11, 11, 14, 10, 8, 9, 4, 
 let valentinas4 = new Queen("Valentina", 10, 9, 8, 9, 12, 11, 15, 11, 13, 4, 3, "Valentina", "Valentina", "AS4", false);
 
 let AS4 = shuffle([farrahas4, giagas4, jasmineas4, latriceas4, manilaas4, monetas4, moas4, naomias4, tttas4, valentinas4]);
+let alexisas5 = new Queen("Alexis Mateo", 12, 11, 10, 10, 11, 8, 12, 10, 13, 4, 1, "Alexis", "Alexis", "AS5", false);
+let blairas5 = new Queen("Blair St. Clair", 9, 10, 7, 8, 13, 12, 9, 8, 13, 4, 3, "Blair","Blair", "AS5", false);
+let derrickas5 = new Queen("Derrick Barry", 10, 8, 12, 10, 5, 7, 10, 12, 14, 4, 4, "Derrick", "Derrick", "AS5", false);
+let indiaas5 = new Queen("India Ferrah", 7, 7, 7, 7, 7, 10, 12, 10, 9, 2, 4, "India", "India", "AS5", false);
+let jujubeeas5 = new Queen("Jujubee", 11, 10, 9, 11, 8, 13, 10, 10, 15, 4, 2, "Juju", "Juju", "AS5", false);
+let mariahas5 = new Queen("Mariah Paris Balenciaga", 9, 10, 7, 9, 7, 13, 11, 12, 13, 5, 0, "Mariah", "Mariah", 'AS5', false);
+let mayhemas5 = new Queen("Mayhem Miller", 10, 11, 12, 8, 9, 11, 13, 8, 13, 5, 1, "Mayhem", "Mayhem", "AS5", false);
+let mizas5 = new Queen("Miz Cracker", 12, 11, 14, 10, 9, 9, 7, 12, 13, 2, 4, "Cracker", "Cracker", "AS5", false);
+let onginaas5 = new Queen("Ongina", 8, 7, 9, 7, 10, 12, 6, 7, 12, 5, 0, "Ongina", "Ongina", "AS5", false);
+let sheaas5 = new Queen("Shea Coulée", 12, 11, 13, 14, 12, 13, 14, 10, 11, 4, 1, "Shea", "Shea", "AS5", false);
 
-let AS5;
+let AS5 = shuffle([alexisas5, blairas5, derrickas5, indiaas5, jujubeeas5, mariahas5, mayhemas5, mizas5, onginaas5, sheaas5]);
 
-let AS6;
+let akeriaas6 = new Queen("Akeria C. Davenport", 10, 11, 7, 9, 12, 15, 10, 8, 13, 5, 0, "Akeria", "Akeria", "AS6", false);
+let eurekaas6 = new Queen("Eureka!", 12, 11, 13, 12, 10, 9, 11, 8, 11, 4, 2, "Eureka", "Eureka", "AS6", false);
+let gingeras6 = new Queen("Ginger Minj", 13, 14, 15, 9, 8, 5, 13, 12, 14, 3, 1, "Ginger", "Ginger", "AS6", false);
+let janas6 = new Queen("Jan Sport", 8, 9, 8, 10, 12, 12, 4, 10, 9, 4, 2, "Jan", "Jan", "AS6", false);
+let jigglyas6 = new Queen("Jiggly Caliente", 10, 9, 11, 9, 5, 12, 10, 11, 12, 5, 1, "Jiggly", 'Jiggly', "AS6", false);
+let kylieas6 = new Queen("Kylie Sonique Love", 12, 11, 13, 12, 10, 13, 14, 9, 11, 5, 1, "Kylie", "Kylie", "AS6", false);
+let pandoraas6 = new Queen("Pandora Boxx", 11, 12, 9, 7, 6, 8, 7, 10, 11, 4, 1, "Pandora", "Pandore", "AS6", false);
+let rajahas6 = new Queen("Ra'Jah O'Hara", 12, 11, 13, 12, 11, 13, 15, 12, 13, 4, 2, "Rajah", 'Rajah', "AS6", false);
+let scarletas6 = new Queen("Scarlet Envy", 9, 11, 10, 8, 9, 13, 8, 12, 10, 4, 2, "Scarlet", "Scarlet" , "AS6", false);
+let serenaas6 = new Queen("Serena ChaCha", 9, 8, 9, 12, 10, 13, 8, 9, 10, 5, 1, "Serena", "Serena", "AS6", false);
+let silkyas6 = new Queen("Silky Nutmeg Ganache", 12, 11, 9, 10, 9, 8, 15, 10, 13, 4, 2, "Silky", "Silky", 'AS6', false);
+let trinityas6 = new Queen("Trinity K. Bonet", 12, 11, 8, 13, 12, 13, 10, 11, 12, 4, 2, "TKB", "TKB", "AS6", false);
+let yaraas6 = new Queen("Yara Sofia", 9, 10, 11, 13, 11, 12, 10, 11, 9, 4, 3, "Yara", "Yara", "AS6", false);
+
+let AS6 = shuffle([akeriaas6, eurekaas6, gingeras6, janas6, jigglyas6, kylieas6, pandoraas6, rajahas6, scarletas6, serenaas6, silkyas6, trinityas6, yaraas6]);
 
 let jaidaas7 = new Queen("Jaida Essence Hall", 10, 11, 10, 12, 12, 14, 12, 13, 12, 5, 0,"Jaida", "Jaida", "AS7", false);
 let jinkxas7 = new Queen("Jinkx Monsoon", 14, 12, 15, 10, 11, 11, 13, 12, 13, 4, 1, "Jinkx", "Jinkx", "AS7", false);
@@ -8582,33 +8606,33 @@ let ES2 = shuffle([marina, estrella, venedita, juriji, sethlas, diamante, onyx, 
 
 let supremmehost = new Host("Supremme De Luxe","SupremmeIn","SupremmeOut");
 
-let amadiva = new Queen("Amadiva", 7, 7, 7, 7, 7, 7, 7, 7, 7, 0, 0, "Amadiva", "Amadiva", "TH1",false);
-let année = new Queen("Année Maywong", 7, 7, 7, 7, 7, 7, 7, 7, 7, 0, 0, "Année", "Année", "TH1",false);
-let bella = new Queen("B Ella", 7, 7, 7, 7, 7, 7, 7, 7, 7, 0, 0, "BElla", "BElla", "TH1",false);
-let bbf = new Queen("Bunny Be Fly", 7, 7, 7, 7, 7, 7, 7, 7, 7, 0, 0, "BBF", "BBF", "TH1",false);
-let dearis = new Queen("Dearis Doll", 7, 7, 7, 7, 7, 7, 7, 7, 7, 0, 0, "Dearis", "Dearis", "TH1",false);
-let jaja = new Queen("JAJA", 7, 7, 7, 7, 7, 7, 7, 7, 7, 0, 0, "JAJA", "Jaja", "TH1",false);
-let meannie = new Queen("Meannie Minaj", 7, 7, 7, 7, 7, 7, 7, 7, 7, 0, 0, "Meannie", "Meannie", "TH1",false);
-let morrigan = new Queen("Morrigan", 7, 7, 7, 7, 7, 7, 7, 7, 7, 0, 0, "Morrigan", "Morrigan", "TH1",false);
-let natalia = new Queen("Natalia Pliacam", 7, 7, 7, 7, 7, 7, 7, 7, 7, 0, 0, "Natalia", "Natalia", "TH1",false);
-let petchra = new Queen("Petchra", 7, 7, 7, 7, 7, 7, 7, 7, 7, 0, 0, "Petchra", "Petchtra", "TH1",false);
+let amadiva = new Queen("Amadiva", 7,7,6,11,14,12,11,8,13,3,2, "Amadiva", "Amadiva", "TH1",false);
+let année = new Queen("Année Maywong", 10,10,10,13,15,15,14,7,12,4,3, "Année", "Année", "TH1",false);
+let bella = new Queen("B Ella", 9,9,9,10,9,8,10,10,6,2,5, "BElla", "BElla", "TH1",false);
+let bbf = new Queen("Bunny Be Fly", 6,6,6,7,15,14,7,6,10,4,4, "BBF", "BBF", "TH1",false);
+let dearis = new Queen("Dearis Doll", 8,8,13,10,10,11,13,12,13,5,3, "Dearis", "Dearis", "TH1",false);
+let jaja = new Queen("JAJA", 8,8,11,14,8,8,12,8,10,3,5, "JAJA", "Jaja", "TH1",false);
+let meannie = new Queen("Meannie Minaj", 7,6,8,8,8,8,7,9,12,4,3, "Meannie", "Meannie", "TH1",false);
+let morrigan = new Queen("Morrigan", 6,7,6,9,9,9,10,7,12,3,3, "Morrigan", "Morrigan", "TH1",false);
+let natalia = new Queen("Natalia Pliacam", 13,14,13,8,11,10,12,13,8,3,3, "Natalia", "Natalia", "TH1",false);
+let petchra = new Queen("Petchra", 7,6,8,11,8,8,11,7,10,3,5, "Petchra", "Petchtra", "TH1",false);
 
 let TH1 = shuffle([amadiva, année, bella, bbf, dearis, jaja, meannie, morrigan, natalia, petchra]);
 
-let angele = new Queen("Angele Anang", 7, 7, 7, 7, 7, 7, 7, 7, 7, 0, 0, "Angele", "Angele", "TH2",false);
-let bandit = new Queen("Bandit", 7, 7, 7, 7, 7, 7, 7, 7, 7, 0, 0, "Bandit", "Bandit", "TH2",false);
-let genie = new Queen("Genie", 7, 7, 7, 7, 7, 7, 7, 7, 7, 0, 0, "Genie", "Genie", "TH2",false);
-let gimhuay = new Queen("Miss Gimhuay", 7, 7, 7, 7, 7, 7, 7, 7, 7, 0, 0, "Gimhuay", "Gimhuay", "TH2",false);
-let kana = new Queen("Kana Warrior", 7, 7, 7, 7, 7, 7, 7, 7, 7, 0, 0, "Kana", "Kana", "TH2",false);
-let kandyz = new Queen("Kandy Zyanide", 7, 7, 7, 7, 7, 7, 7, 7, 7, 0, 0, "Kandy", "Kandy", "TH2",false);
-let katy = new Queen("Katy Killer", 7, 7, 7, 7, 7, 7, 7, 7, 7, 0, 0, "Katy", "Katy", "TH2",false);
-let mstranger = new Queen("M Stranger Fox", 7, 7, 7, 7, 7, 7, 7, 7, 7, 0, 0, "M", "M", "TH2",false);
-let maya = new Queen("Maya B'Haro", 7, 7, 7, 7, 7, 7, 7, 7, 7, 0, 0, "Maya", "Maya", "TH2",false);
-let mocha = new Queen("Mocha Diva", 7, 7, 7, 7, 7, 7, 7, 7, 7, 0, 0, "Mocha", "Mocha", "TH2",false);
-let silvers = new Queen("Silver Sonic", 7, 7, 7, 7, 7, 7, 7, 7, 7, 0, 0, "SilverSonic", "SilverSonic", "TH2",false);
-let srimala = new Queen("Srimala", 7, 7, 7, 7, 7, 7, 7, 7, 7, 0, 0, "Srimala", "Srimala", "TH2",false);
-let tormai = new Queen("Tormai", 7, 7, 7, 7, 7, 7, 7, 7, 7, 0, 0, "Tormai", "Tormai", "TH2",false);
-let vanda = new Queen("Vanda Miss Joaquim", 7, 7, 7, 7, 7, 7, 7, 7, 7, 0, 0, "Vanda", "Vanda", "TH2",false);
+let angele = new Queen("Angele Anang", 11,11,11,10,13,15,15,8,13,5,3, "Angele", "Angele", "TH2",false);
+let bandit = new Queen("Bandit",12,8,10,13,8,13,12,9,7,2,4, "Bandit", "Bandit", "TH2",false);
+let genie = new Queen("Genie", 11,10,10,8,6,13,7,10,7,2,5, "Genie", "Genie", "TH2",false);
+let gimhuay = new Queen("Miss Gimhuay", 10,10,9,8,12,15,8,8,13,4,4, "Gimhuay", "Gimhuay", "TH2",false);
+let kana = new Queen("Kana Warrior", 6,7,7,10,9,12,15,10,8,3,4, "Kana", "Kana", "TH2",false);
+let kandyz = new Queen("Kandy Zyanide", 7,10,7,15,12,13,10,8,13,5,4, "Kandy", "Kandy", "TH2",false);
+let katy = new Queen("Katy Killer", 7,7,7,8,8,6,7,10,9,2,2, "Katy", "Katy", "TH2",false);
+let mstranger = new Queen("M Stranger Fox", 6,6,6,8,9,8,10,6,12,5,3, "M", "M", "TH2",false);
+let maya = new Queen("Maya B'Haro", 6,6,7,8,10,11,8,7,11,5,1, "Maya", "Maya", "TH2",false);
+let mocha = new Queen("Mocha Diva", 12,12,8,10,10,6,8,10,6,1,5, "Mocha", "Mocha", "TH2",false);
+let silvers = new Queen("Silver Sonic", 5,5,5,6,8,9,6,6,10,5,3, "SilverSonic", "SilverSonic", "TH2",false);
+let srimala = new Queen("Srimala",8,4,6,8,7,11,15,8,15,3,3, "Srimala", "Srimala", "TH2",false);
+let tormai = new Queen("Tormai",8,9,7,8,5,10,10,7,10,5,5, "Tormai", "Tormai", "TH2",false);
+let vanda = new Queen("Vanda Miss Joaquim", 12,7,7,13,7,11,15,7,12,5,2, "Vanda", "Vanda", "TH2",false);
 
 let TH2 = shuffle([angele, bandit, genie, gimhuay, kana, kandyz, katy, mstranger, maya, mocha, silvers, srimala, tormai, vanda]);
 
@@ -8650,16 +8674,16 @@ let jayedith = new Queen("Jayedith", 12, 11, 7, 4, 8, 10, 9, 15, 12, 4, 5, "Jay"
 
 let FL1 = shuffle([yassified,yassifiedjan,keep,abbylee,beyo,izzy,o,jayedith]);
 
-let elips = new Queen("Elips",7 ,7, 7, 7, 7, 7, 7, 7, 7, 2, 2, "Elips","Elips","FR1",false);
-let kam = new Queen("Kam Hugh", 7, 7, 7, 7, 7, 7, 7, 7, 7, 2, 2, "Kam","Kam", "FR1",false);
-let bertha = new Queen("La Big Bertha", 7,7,7,7,7,7,7,7,7,2,2, "Bertha", "Bertha", "FR1", false);
-let briochée = new Queen("La Briochée", 7, 7, 7, 7, 7, 7, 7, 7, 7, 2, 2, "Briochée", "Briochée", "FR1", false);
-let dame = new Queen("La Grande Dame", 7, 7, 7, 7, 7, 7, 7, 7, 7, 2, 2, "Dame", "Dame", "FR1", false);
-let kahena = new Queen("La Kahena", 7, 7, 7, 7, 7, 7, 7, 7, 7, 2, 2, "Kahena", "Kahena", "FR1", false);
-let lolita = new Queen("Lolita Banana", 7, 7, 7, 7, 7, 7, 7, 7, 7, 2, 2, "Lolita", "Lolita", "FR1", false);
-let lova = new Queen("Lova Ladiva", 7, 7, 7, 7, 7, 7, 7, 7, 7, 2, 2, "Lova", "Lova", "FR1", false);
-let paloma = new Queen("Paloma", 7, 7, 7, 7, 7, 7, 7, 7, 7, 2, 2, "Paloma", "Paloma", "FR1", false);
-let soa = new Queen("Soa De Muse", 7, 7, 7, 7, 7, 7, 7, 7, 7, 2, 2, "Soa", "Soa","FR1", false);
+let elips = new Queen("Elips", 9, 8, 12, 9, 11, 8, 8, 9, 8, 5, 1, "Elips","Elips","FR1",false);
+let kam = new Queen("Kam Hugh", 8, 9, 7, 10, 13, 15, 8, 10, 9, 4, 1, "Kam","Kam", "FR1",false);
+let bertha = new Queen("La Big Bertha", 12, 11, 10, 8, 7, 9, 13, 12, 11, 5, 2, "Bertha", "Bertha", "FR1", false);
+let briochée = new Queen("La Briochée", 11, 8, 9, 7, 7, 13, 12, 11, 13, 5, 1, "Briochée", "Briochée", "FR1", false);
+let dame = new Queen("La Grande Dame", 9, 10, 11, 10, 13, 14, 8, 9, 8, 4, 1, "Dame", "Dame", "FR1", false);
+let kahena = new Queen("La Kahena", 8, 9, 7, 8, 10, 7, 9, 12, 11, 4, 2, "Kahena", "Kahena", "FR1", false);
+let lolita = new Queen("Lolita Banana", 12, 13, 12, 14, 8, 10, 12, 13, 10, 5, 2, "Lolita", "Lolita", "FR1", false);
+let lova = new Queen("Lova Ladiva", 11, 10, 9, 11, 7, 8, 9, 7, 9, 5, 3, "Lova", "Lova", "FR1", false);
+let paloma = new Queen("Paloma", 13, 12, 14, 8, 11, 12, 11, 12, 10, 5, 2, "Paloma", "Paloma", "FR1", false);
+let soa = new Queen("Soa De Muse", 11, 12, 14, 10, 8, 9, 14, 11, 15, 5, 2, "Soa", "Soa","FR1", false);
 
 let FR1 = shuffle([elips, kam, bertha, briochée, dame, kahena, lolita, lova, paloma, soa]);
 
@@ -8710,6 +8734,8 @@ let DragRaceQueens = [
   adoreas2, alaskaas2, alyssaeas2, cocoas2, detoxas2, gingeras2, katyaas2, jaremyas2, roxxxyas2, tatias2,
   ajaas3, bebeas3,delaas3,chichias3,kennedyas3,milkas3,morganas3,shangelaas3, thorgy, trixieas3,
   farrahas4, giagas4, jasmineas4, latriceas4, manilaas4, monetas4, moas4, naomias4, tttas4, valentinas4,
+  alexisas5, blairas5, derrickas5, indiaas5, jujubeeas5, mariahas5, mayhemas5, mizas5, onginaas5, sheaas5,
+  akeriaas6, eurekaas6, gingeras6, janas6, jigglyas6, kylieas6, pandoraas6, rajahas6, scarletas6, serenaas6, silkyas6, trinityas6, yaraas6,
   jaidaas7, jinkxas7, monetas7, rajaas7, sheaas7, vivas7, trinityas7, yvieas7,
 
   bagauk, bluuk, cheryluk, janeyuk, jimbouk, jujubee, lemonuk, mouk, panginauk,
@@ -9325,14 +9351,29 @@ function UntuckedPart2() {
     Main.createText(safestext+" all grab a drink, and sit down together.","Bold");
   }
   UntuckedEvent(false);
-  if((CurrentSeason.currentCast.length == 3 && (CurrentSeason.finaleformat == "TOP3" || CurrentSeason.finaleformat == "TOP3NE")) || (CurrentSeason.currentCast.length==4 && (CurrentSeason.finaleformat=="LSFTC")))
+
+  if((CurrentSeason.currentCast.length == 3 && (CurrentSeason.finaleformat == "TOP3" || CurrentSeason.finaleformat == "TOP3NE")) || (CurrentSeason.currentCast.length==4 && (CurrentSeason.finaleformat=="LSFTC")) && ( (CurrentSeason.premiereformat != "NORMAL" && CurrentSeason.episodes.length > 2) || (CurrentSeason.premiereformat == "NORMAL")))
   {
-    CurrentSeason.currentCast[0].favoritism += 4;
-    CurrentSeason.currentCast[2].favoritism += -4;
-    for (let index = 0; index < CurrentSeason.currentCast.length; index++) {
-      CurrentSeason.currentCast[index].ppe += 4;
+    if((CurrentSeason.premiereformat != "NORMAL" && CurrentSeason.episodes.length > 2))
+    {
+      if(CurrentSeason.lipsyncformat == "LSFYL")
+      {
+        Main.createButton("Proceed", "Lipsync()");
+      }
+      else
+      {
+        Main.createButton("Proceed", "Placements()");
+      } 
     }
-    Main.createButton("Proceed", "Finale()");
+    else
+    {
+      CurrentSeason.currentCast[0].favoritism += 3;
+      CurrentSeason.currentCast[2].favoritism += -3;
+      for (let index = 0; index < CurrentSeason.currentCast.length; index++) {
+        CurrentSeason.currentCast[index].ppe += 4;
+      }
+      Main.createButton("Proceed", "Finale()");
+    }
   }
   else
   {
@@ -9403,7 +9444,23 @@ function Finale()
           break;
           
         case 3:
-          let missc = getRandomInt(0,CurrentSeason.eliminatedCast.length-1);
+          let misscpoints = 0;
+          let missc;
+          let points;
+          for (let index = 0; index < CurrentSeason.eliminatedCast.length; index++) {
+            points = 0;
+
+            for (let re = 0; re < CurrentSeason.eliminatedCast[index].relationsships.length; re++) {
+              points += CurrentSeason.eliminatedCast[index].relationsships[re].GetRelation();
+            }
+      
+            if(misscpoints <= points)
+            {
+              missc = CurrentSeason.eliminatedCast[index];
+              misscpoints = points;
+            }
+          }
+
           for (let q = 0; q < CurrentSeason.eliminatedCast.length; q++) {
             if(q == missc)
             {
@@ -9582,7 +9639,23 @@ function Finale()
             Main.createImage(CurrentSeason.currentCast[i].image,"springgreen");
           }
 
-          let missc = getRandomInt(0,CurrentSeason.eliminatedCast.length-1);
+          let misscpoints = 0;
+          let missc;
+          let points;
+          for (let index = 0; index < CurrentSeason.eliminatedCast.length; index++) {
+            points = 0;
+
+            for (let re = 0; re < CurrentSeason.eliminatedCast[index].relationsships.length; re++) {
+              points += CurrentSeason.eliminatedCast[index].relationsships[re].GetRelation();
+            }
+      
+            if(misscpoints <= points)
+            {
+              missc = CurrentSeason.eliminatedCast[index];
+              misscpoints = points;
+            }
+          }
+
           for (let q = 0; q < CurrentSeason.eliminatedCast.length; q++) {
             if(q == missc)
             {
@@ -10243,7 +10316,7 @@ function Placements() {
       {
       TopsQueens.push(Tops[1]);
 
-        if(TopsQueens[0].perfomancescore < 10 && TopsQueens[1].perfomancescore < 10)
+        if(TopsQueens[0].perfomancescore < 8 && TopsQueens[1].perfomancescore < 8)
           {
             doublewin = true;
           }
@@ -10648,6 +10721,8 @@ function Placements() {
         Main.createImage(TopsQueens[1].image,"deepskyblue");
         Main.createText(TopsQueens[0].GetName()+" and "+TopsQueens[1].GetName()+" ! ", "Bold");
         Main.createText("Congratulations, you are both the top two of this week challenge.", "Bold");
+        TopsQueens[0].favoritism += 3;
+        TopsQueens[1].favoritism += 3;
         if(TopsQueens.length == Tops.length)
         {
           if(BottomQueens.length == Bottoms.length)
@@ -10666,6 +10741,7 @@ function Placements() {
           if(TopsQueens.indexOf(Tops[index]) == -1)
           {
           Main.createImage(Tops[index].image,"#17d4ff");
+          Tops[index].favoritism += 1;
             {
               topsnames += Tops[index].GetName();
               if(index != Tops.length-1)
@@ -10699,6 +10775,7 @@ function Placements() {
           if(BottomQueens.indexOf(Bottoms[index]) == -1)
           {
             Main.createImage(Bottoms[index].image,"lightpink");
+            Bottoms[index].favoritism += -1;
             {
               lownames += Bottoms[index].GetName();
               if(index != Bottoms.length-2 && index != Bottoms.length-1)
@@ -10723,6 +10800,7 @@ function Placements() {
         for (let index = 0; index < BottomQueens.length; index++) {
             Main.createImage(BottomQueens[index].image,"tomato");
             btmnames += BottomQueens[index].GetName();
+            BottomQueens[index].favoritism += -3;
               if(index != BottomQueens.length-2 && index != BottomQueens.length-1)
               {
                 btmnames += ", ";
@@ -11836,7 +11914,12 @@ function Intro()
 }
 
 function GenerateRusicalRoles(){
-
+      let miniwinner;
+      let mainroles = [[],[],[]];
+      let sideroles = [[],[],[]];
+      let forgetroles = [[],[],[]];
+      let numberofroles = [0,0,0];
+      let chosenrole;
       Main = new Screen();
       Main.clean();
       for(let i = 0; i < CurrentSeason.currentCast.length; i++)
@@ -11846,23 +11929,99 @@ function GenerateRusicalRoles(){
             Main.createImage(CurrentSeason.currentCast[i].image,'blue');
             Main.createText(CurrentSeason.currentCast[i].GetName()+" as the winner of this week mini-challenge! You get to assign the roles of the rusical to the other queens.")
             Main.createLine();
+            miniwinner = CurrentSeason.currentCast[i];
           }
       }
       shuffle(CurrentSeason.currentCast);
+
+      for(let i = 0 ; i < CurrentChallenge.roles[CurrentChallenge.chosen].length ; i++)
+      {
+        if(CurrentChallenge.roles[CurrentChallenge.chosen][i].type == "Main")
+        {
+          switch(CurrentChallenge.roles[CurrentChallenge.chosen][i].difficulty){
+            case "Hard":
+              mainroles[0].push(CurrentChallenge.roles[CurrentChallenge.chosen][i]);
+              break;
+            case "Medium":
+              mainroles[1].push(CurrentChallenge.roles[CurrentChallenge.chosen][i]);
+              break;
+            case "Easy":
+              mainroles[2].push(CurrentChallenge.roles[CurrentChallenge.chosen][i]);
+              break;
+          }
+          numberofroles[0]++;
+        }
+
+        if(CurrentChallenge.roles[CurrentChallenge.chosen][i].type == "Side")
+        {
+          switch(CurrentChallenge.roles[CurrentChallenge.chosen][i].difficulty){
+            case "Hard":
+              sideroles[0].push(CurrentChallenge.roles[CurrentChallenge.chosen][i]);
+              break;
+            case "Medium":
+              sideroles[1].push(CurrentChallenge.roles[CurrentChallenge.chosen][i]);
+              break;
+            case "Easy":
+              sideroles[2].push(CurrentChallenge.roles[CurrentChallenge.chosen][i]);
+              break;
+          }
+          numberofroles[1]++;
+        }
+
+        if(CurrentChallenge.roles[CurrentChallenge.chosen][i].type == "Forgettable")
+        {
+          switch(CurrentChallenge.roles[CurrentChallenge.chosen][i].difficulty){
+            case "Hard":
+              forgetroles[0].push(CurrentChallenge.roles[CurrentChallenge.chosen][i]);
+              break;
+            case "Medium":
+              forgetroles[1].push(CurrentChallenge.roles[CurrentChallenge.chosen][i]);
+              break;
+            case "Easy":
+              forgetroles[2].push(CurrentChallenge.roles[CurrentChallenge.chosen][i]);
+              break;       
+          }
+          numberofroles[2]++;
+        }
+      }
       for(let i = 0; i < CurrentSeason.currentCast.length; i++)
       {
-        if(CurrentChallenge.roles[CurrentChallenge.chosen].length!=0)
-        {
-          let randomrole = getRandomInt(0,CurrentChallenge.roles[CurrentChallenge.chosen].length-1);
-          Main.createImage(CurrentSeason.currentCast[i].image,'black');
-          Main.createText(CurrentSeason.currentCast[i].GetName()+" as been assigned to the role of : \""+CurrentChallenge.roles[CurrentChallenge.chosen][randomrole]+"\".");
-          CurrentSeason.currentCast.rusicalrole = CurrentChallenge.roles[CurrentChallenge.chosen][randomrole];
-          CurrentChallenge.roles[CurrentChallenge.chosen].splice(randomrole,1);
-          if(CurrentChallenge.roles[CurrentChallenge.chosen].length==0)
+          /*if(numberofroles[2] > 0 && getRandomInt(0,50) > 10)
           {
-            Main.createLine();
-          }
-        }
+            if(mainroles[2].length != 0)
+            {
+              chosenrole = mainroles[2][getRandomInt(0,mainroles[2].length-1)];
+              Main.createImage(CurrentSeason.currentCast[i].image,'black');
+              Main.createText(CurrentSeason.currentCast[i].GetName()+", notice that the role of \""+chosenrole.name+"\" looks quite easy to do and is a main role.");
+              Main.createText(CurrentSeason.currentCast[i].GetName()+", ask "+miniwinner.GetName()+", if they can get the role.");
+              Main.createText(miniwinner.GetName()+" agrees and give them the role of : \""+chosenrole.name+"\".");
+              CurrentSeason.currentCast[i].rusicalrole = chosenrole;
+              mainroles[2].splice(mainroles[2].indexOf(chosenrole));
+              numberofroles[0]--;
+            }
+            else if(mainroles[1].length != 0 && ((CurrentSeason.currentCast[i].charisma + CurrentSeason.currentCast[i].acting + CurrentSeason.currentCast[i].dance) > 20))
+            {
+              chosenrole = mainroles[1][getRandomInt(0,mainroles[1].length-1)];
+              Main.createImage(CurrentSeason.currentCast[i].image,'black');
+              Main.createText(CurrentSeason.currentCast[i].GetName()+", notice that the role of \""+chosenrole.name+"\"  is a main role. The role is pretty challenging, but they are sure in their ability.");
+              Main.createText(CurrentSeason.currentCast[i].GetName()+", ask "+miniwinner.GetName()+", if they can get the role.");
+              Main.createText(miniwinner.GetName()+" agrees and give them the role of : \""+chosenrole.name+"\".");
+              CurrentSeason.currentCast[i].rusicalrole = chosenrole;
+              mainroles[1].splice(mainroles[1].indexOf(chosenrole));
+              numberofroles[0]--;
+            }
+            else if(mainroles[0].length != 0 && ((CurrentSeason.currentCast[i].charisma + CurrentSeason.currentCast[i].acting + CurrentSeason.currentCast[i].dance) > 30))
+            {
+              chosenrole = mainroles[1][getRandomInt(0,mainroles[1].length-1)];
+              Main.createImage(CurrentSeason.currentCast[i].image,'black');
+              Main.createText(CurrentSeason.currentCast[i].GetName()+", notice that the role of \""+chosenrole.name+"\"  is a main role. The role is extremely challenging. They really want to shine and think they can do it with this role.");
+              Main.createText(CurrentSeason.currentCast[i].GetName()+", ask "+miniwinner.GetName()+", if they can get the role.");
+              Main.createText(miniwinner.GetName()+" agrees and give them the role of : \""+chosenrole.name+"\".");
+              CurrentSeason.currentCast[i].rusicalrole = chosenrole;
+              mainroles[0].splice(mainroles[1].indexOf(chosenrole));
+              numberofroles[0]--;
+            }
+          }*/  
       }
       Main.createButton("Proceed","GenerateChallenge()");
 
@@ -12445,28 +12604,14 @@ function RankQueens(){
         {
             Tops.push(CurrentSeason.currentCast[0]);
             Tops.push(CurrentSeason.currentCast[1]);
-              if(CurrentSeason.currentCast[2].finalscore <= 10)
-              {
-                Tops.push(CurrentSeason.currentCast[2]);
-              }
-              else
-              {
-                Bottoms.push(CurrentSeason.currentCast[2]);
-              }
+            Bottoms.push(CurrentSeason.currentCast[2]);
             Bottoms.push(CurrentSeason.currentCast[3]);
             Bottoms.push(CurrentSeason.currentCast[4]);
         }
         else if(CurrentSeason.currentCast.length==4)
         {
           Tops.push(CurrentSeason.currentCast[0]);
-            if(CurrentSeason.currentCast[1].finalscore <= 10)
-            {
-              Tops.push(CurrentSeason.currentCast[1]);
-            }
-            else
-            {
-              Bottoms.push(CurrentSeason.currentCast[1]);
-            }
+          Tops.push(CurrentSeason.currentCast[1]);
           Bottoms.push(CurrentSeason.currentCast[2]);
           Bottoms.push(CurrentSeason.currentCast[3]);
         }
