@@ -10338,7 +10338,7 @@ function Placements() {
       {
       TopsQueens.push(Tops[1]);
 
-        if(TopsQueens[0].perfomancescore < 8 && TopsQueens[1].perfomancescore < 8)
+        if(TopsQueens[0].perfomancescore < 7 && TopsQueens[1].perfomancescore < 7)
           {
             doublewin = true;
           }
@@ -10702,7 +10702,7 @@ function Placements() {
         }
         else
         {
-          if(Bottoms[i].finalscore >= 30)
+          if(Bottoms[i].finalscore >= 15)
           {
             BottomQueens.push(Bottoms[i]);
           }
@@ -11004,7 +11004,7 @@ function Lipsync() {
         if(BottomQueens.length == 2)
         {
           BottomQueens.sort((a, b) => b.lipsyncscore - a.lipsyncscore);
-          if((BottomQueens[0].oglipsyncscore <= 2) && (BottomQueens[1].oglipsyncscore <= 2) && CurrentSeason.currentCast.length>16  && CurrentSeason.doubleSashay == false)
+          if((BottomQueens[0].oglipsyncscore <= 1) && (BottomQueens[1].oglipsyncscore <= 1) && CurrentSeason.currentCast.length>15  && CurrentSeason.doubleSashay == false)
           {
             Main.createBigText("Sashay away...");
             Main.createImage(BottomQueens[0].image, "#fa2525");
@@ -11028,7 +11028,7 @@ function Lipsync() {
         else
         {
           BottomQueens.sort((a, b) => b.lipsyncscore - a.lipsyncscore);
-          if((BottomQueens[0].oglipsyncscore <= 1) && (BottomQueens[1].oglipsyncscore <= 1) && (BottomQueens[2].oglipsyncscore <= 1) && CurrentSeason.currentCast.length>6 && CurrentSeason.doubleSashay == false)
+          if((BottomQueens[0].oglipsyncscore <= 1) && (BottomQueens[1].oglipsyncscore <= 1) && (BottomQueens[2].oglipsyncscore <= 1) && CurrentSeason.currentCast.length>15 && CurrentSeason.doubleSashay == false)
           {
             Main.createImage(BottomQueens[0].image, "#ff8a8a");
             Main.createImage(BottomQueens[1].image, "#ff8a8a");
@@ -11075,7 +11075,7 @@ function Lipsync() {
             let ls = new LipsyncSong([BottomQueens[0],BottomQueens[1]], songschosen, CurrentSeason.episodes.length, 'btm', "NONE");
             CurrentSeason.lipsyncs.push(ls);
           }
-          else if((BottomQueens[0].oglipsyncscore <= 1) && (BottomQueens[1].oglipsyncscore <= 1) && CurrentSeason.currentCast.length>6  && CurrentSeason.doubleSashay == false)
+          else if((BottomQueens[0].oglipsyncscore <= 1) && (BottomQueens[1].oglipsyncscore <= 1) && CurrentSeason.currentCast.length>15  && CurrentSeason.doubleSashay == false)
           {
             Main.createImageBW(BottomQueens[0].image, "#fa2525");
             Main.createImageBW(BottomQueens[1].image, "#fa2525");
@@ -11136,7 +11136,7 @@ function Lipsync() {
         }
         else
         {
-          if((BottomQueens[0].oglipsyncscore <= 1) && (BottomQueens[1].oglipsyncscore <= 1) && (BottomQueens[2].oglipsyncscore <= 1) && CurrentSeason.currentCast.length>6 && CurrentSeason.doubleSashay == false)
+          if((BottomQueens[0].oglipsyncscore <= 1) && (BottomQueens[1].oglipsyncscore <= 1) && (BottomQueens[2].oglipsyncscore <= 1) && CurrentSeason.currentCast.length>15 && CurrentSeason.doubleSashay == false)
           {
             Main.createImageBW(BottomQueens[0].image, "#fa2525");
             Main.createImageBW(BottomQueens[1].image, "#fa2525");
@@ -12397,12 +12397,12 @@ function RankQueens(){
       case "LIFE":
       if(CurrentSeason.currentCast.length>=14)
       {
-        for(let i = 0; i<3; i++)
+        for(let i = 0; i<getRandomInt(3,5); i++)
           {
             Tops.push(CurrentSeason.currentCast[i]);
           }
 
-        for(let i = 0; i<3; i++)
+          for(let i = 0; i<getRandomInt(3,5); i++)
           {
             Bottoms.push(CurrentSeason.currentCast[CurrentSeason.currentCast.length-1-i]);
           }
@@ -12488,12 +12488,12 @@ function RankQueens(){
         }
         else
         {
-        for(let i = 0; i<3; i++)
+          for(let i = 0; i<getRandomInt(3,4); i++)
           {
             Tops.push(CurrentSeason.currentCast[i]);
           }
 
-        for(let i = 0; i<3; i++)
+          for(let i = 0; i<getRandomInt(3,4); i++)
           {
               Bottoms.push(CurrentSeason.currentCast[CurrentSeason.currentCast.length-1-i]);
           }
@@ -12645,12 +12645,12 @@ function RankQueens(){
         }
         else
         {
-          for(let i = 0; i<3; i++)
+          for(let i = 0; i<getRandomInt(3,4); i++)
           {
             Tops.push(CurrentSeason.currentCast[i]);
           }
 
-          for(let i = 0; i<getRandomInt(3,4); i++)
+          for(let i = 0; i<(3,4); i++)
           {
               Bottoms.push(CurrentSeason.currentCast[CurrentSeason.currentCast.length-1-i]);
           }
