@@ -10321,11 +10321,11 @@ function Placements() {
       for (let i = 0; i < Tops.length; i++) {
         if(Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "WIN" || Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "DOUBLEWIN")
         {
-          Tops[i].finalscore += 15;
+          Tops[i].finalscore += 8;
         }
         else if(Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "BOTTOM")
         {
-          Tops[i].finalscore += -15;
+          Tops[i].finalscore += -8;
         }
       }
 
@@ -10521,7 +10521,7 @@ function Placements() {
     for (let i = 0; i < Tops.length; i++) {
       if(Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "WIN" || Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "TOP2")
       {
-        Tops[i].finalscore += 10;
+        Tops[i].finalscore += 8;
       }
     }
 
@@ -10667,7 +10667,7 @@ function Placements() {
     for (let i = 0; i < Tops.length; i++) {
       if(Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "WIN" || Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "TOP2")
       {
-        Tops[i].finalscore += 10;
+        Tops[i].finalscore += 8;
       }
     }
 
