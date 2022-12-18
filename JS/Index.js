@@ -8377,7 +8377,7 @@ let poppy = new Queen("Princess Poppy", 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1, "Prince
 let robin = new Queen("Robin Fierce", 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1, "RobinFierce", "RobinFierce", "US15", false);
 let salina = new Queen("Salina EsTitties", 7, 7, 5, 5, 7, 7, 7, 6, 6, 5, 1, "SalinaEsTitties", "SalinaEsTitties", "US15", false);
 let sashaColby = new Queen("Sasha Colby", 15, 11, 10, 11, 13, 13, 12, 11, 10, 5, 1, "SashaColby", "SashaColby", "US15", false);
-let spice = new Queen("Spice", 9, 9, 6, 10, 14, 15, 10, 8, 10, 5, 1, "Spice", "Spice", "US15", false);
+let spice = new Queen("Spice", 7, 7, 6, 8, 14, 15, 8, 8, 9, 5, 1, "Spice", "Spice", "US15", false);
 let sugar = new Queen("Sugar", 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1, "Sugar", "Sugar", "US15", false);
 
 let US15 = shuffle([amethyst, anetra, auraMayari, irene, jax, loosey, luxx, malaysia, marcia, mistress, poppy, robin, salina, sashaColby, spice, sugar]);
