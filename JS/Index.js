@@ -1,4 +1,4 @@
-//#region Initialisers
+
 let CurrentSeason;
 let CurrentChallenge;
 let CurrentEpisode;
@@ -10338,11 +10338,11 @@ function Placements() {
       for (let i = 0; i < Tops.length; i++) {
         if(Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "WIN" || Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "DOUBLEWIN")
         {
-          Tops[i].finalscore += 13;
+          Tops[i].finalscore += 11;
         }
         else if(Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "BOTTOM")
         {
-          Tops[i].finalscore += -8;
+          Tops[i].finalscore += -9;
         }
       }
 
@@ -10357,7 +10357,7 @@ function Placements() {
       {
       TopsQueens.push(Tops[1]);
 
-        if(TopsQueens[0].perfomancescore < 7 && TopsQueens[1].perfomancescore < 7)
+        if(TopsQueens[0].perfomancescore < 6 && TopsQueens[1].perfomancescore < 6)
           {
             doublewin = true;
           }
@@ -12416,12 +12416,12 @@ function RankQueens(){
       case "LIFE":
       if(CurrentSeason.currentCast.length>=14)
       {
-        for(let i = 0; i<getRandomInt(3,5); i++)
+        for(let i = 0; i<getRandomInt(3,4); i++)
           {
             Tops.push(CurrentSeason.currentCast[i]);
           }
 
-          for(let i = 0; i<getRandomInt(3,5); i++)
+          for(let i = 0; i<getRandomInt(3,4); i++)
           {
             Bottoms.push(CurrentSeason.currentCast[CurrentSeason.currentCast.length-1-i]);
           }
