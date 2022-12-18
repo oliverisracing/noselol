@@ -10396,14 +10396,14 @@ function Placements() {
                   {
                     Tops[randomtop].trackrecord.push("WIN");
                     Tops[randomtop].ppe += 5;
-                    Tops[randomtop].favoritism += 4;
+                    Tops[randomtop].favoritism += 3;
                     Tops[randomtop].wins++;
                   }
                   else
                   {
                     Tops[randomtop].trackrecord.push("DOUBLEWIN");
                     Tops[randomtop].ppe += 5;
-                    Tops[randomtop].favoritism += 4;
+                    Tops[randomtop].favoritism += 3;
                     Tops[randomtop].wins++;
                   }
 
@@ -10429,7 +10429,7 @@ function Placements() {
                     Main.createText(Tops[randomtop].GetName()+", CONDRAGULATIONS! You're the other winner of this week main challenge.","Bold");
                     Tops[randomtop].trackrecord.push("DOUBLEWIN");
                     Tops[randomtop].ppe += 5;
-                    Tops[randomtop].favoritism += 4;
+                    Tops[randomtop].favoritism += 3;
                     Tops[randomtop].wins++;
                     if(CurrentSeason.immunity == true)
                     {
