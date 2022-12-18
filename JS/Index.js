@@ -8561,6 +8561,22 @@ let anubis = new Queen("Anubis Finch", 10, 11, 8, 7, 9, 7, 9, 10, 8, 4, 1, 'Anub
 
 let UK3 = shuffle([krystal, ella, kitty, vanity, scarletth, choriza, river, charity, veronicas3, victorias, elektraf, anubis]);
 
+DRUK4
+// acting, improv, comedy, dance, design, runway, lipsync, branding, charisma, kindness, shadyness
+let baby = new Queen("Baby", 6, 6, 9, 13, 9, 9, 14, 7, 9, 5, 5, 'Baby', 'Baby', 'UK4', false );
+let black = new Queen("Black Peppa", 6, 4, 8, 9, 6, 13, 14, 7, 8, 5, 1, 'BlackPeppa', 'BlackPeppa', 'UK4', false );
+let cheddar = new Queen("Cheddar Gorgeous", 12, 10, 10, 8, 13, 14, 8, 12, 9, 5, 1, 'Cheddar', 'Cheddar', 'UK4', false );
+let copper = new Queen("Copper Topp", 5, 4, 9, 7, 6, 7, 8, 7, 6, 4, 1, 'Copper', 'Copper', 'UK4', false );
+let dakota = new Queen("Dakota Schiffer", 6, 9, 9, 9, 10, 11, 10, 8, 9, 4, 1, 'Dakota', 'Dakota'UK4', false );
+let danny = new Queen("Danny Beard", 12, 10, 11, 6, 8, 12, 9, 10, 7, 4, 1, 'DannyBeard', 'DannyBeard', 'UK4', false );
+let jonbers = new Queen("Jonbers Blonde", 5, 10, 8, 7, 9, 9, 9, 7, 6, 3, 1, 'Jonbers', 'Jonbers', 'UK4', false );
+let just = new Queen("Just May", 4, 4, 4, 4, 4, 4, 4, 3, 4, 3, 3, 'JustMay', 'JustMay', 'UK4', false );
+let leFil = new Queen("Le Fil", 6, 5, 8, 9, 5, 12, 8, 5, 6, 3, 1, 'LeFil', 'LeFil', 'UK4', false );
+let pixie = new Queen("Pixie Polite", 7, 5, 9, 5, 6, 5, 9, 9, 6, 1, 3, 'Pixie', 'Pixie', 'UK4', false );
+let sminty = new Queen("Sminty Drop", 5, 6, 5, 8, 9, 14, 8, 6, 9, 4, 1, 'Sminty', 'Sminty', 'UK4', false );
+let starlet = new Queen("Starlet", 4, 4, 4, 4, 4, 13, 5, 3, 3, 2, 1, 'Starlet', 'Starlet', 'UK4', false );
+let UK4 = shuffle([baby, black, cheddar, copper, dakota, danny, jonbers, just, leFil, pixie, sminty, starlet]);
+
 let bagauk = new Queen("Baga Chipz", 11, 10, 14, 7, 6, 7, 9, 12, 13, 4, 1, "Baga", "Baga", "UKVSTW", false);
 let bluuk = new Queen("Blu Hydrangea", 10, 11, 13, 9, 8, 14, 12, 11, 10, 4, 3, "Blu", "Blu", "UKVSTW", false);
 let cheryluk = new Queen("Cheryl Hole", 11, 12, 9, 8, 7, 8, 9, 10, 9, 5, 1, "Cheryl", "Cheryl", "UKVSTW", false);
@@ -8751,6 +8767,7 @@ let DragRaceQueens = [
   viv, blus1, cheryls1, crystal, divina, gothy, scaredy, sum, vinegar, bagas1,
   lawrence,bimini,tayce,ellie,awhora,sister,tia,joe, veronicas2, ginny, asstina, cherry,
   krystal, ella, kitty, vanity, scarletth, choriza, river, charity, veronicas3, victorias, elektraf, anubis,
+  baby, black, cheddar, copper, dakota, danny, jonbers, just, leFil, pixie, sminty, starlet,
 
   envy, janeys1, mamaq, abbyomg, chelsea, sederginne, madamem, megan, patty, roem,
   vanessa, puny, vivaldi, keta, countess, ivy, masisi, reggy, juicy,
@@ -10321,7 +10338,7 @@ function Placements() {
       for (let i = 0; i < Tops.length; i++) {
         if(Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "WIN" || Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "DOUBLEWIN")
         {
-          Tops[i].finalscore += 8;
+          Tops[i].finalscore += 13;
         }
         else if(Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "BOTTOM")
         {
