@@ -8361,6 +8361,27 @@ let willow = new Queen("Willow Pill", 10, 11, 11, 8, 14, 10, 12, 12, 13, 5, 1, "
 
 let US14 = shuffle([alyssah, angeria, bosco, daya, deja, jasminek, jorgeous, junej, kerri, kornbread, camden, maddym, orion, willow]);
 
+// acting, improv, comedy, dance, design, runway, lipsync, branding, charisma, kindness, shadyness
+//SEASON 15
+let amethyst = new Queen("Amethyst", 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 1, "Amethyst", "Amethyst", "US15", false);
+let anetra = new Queen("Anetra", 8, 9, 9, 10, 9, 12, 12, 10, 11, 5, 5, "Anetra", "Anetra", "US15", false);
+let auraMayari = new Queen("Aura Mayari", 6, 6, 6, 9, 6, 8, 7, 10, 10, 5, 1, "AuraMayari", "AuraMayari", "US15", false);
+let irene = new Queen("Irene Dubois", 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1, "IreneDubois", "IreneDubois", "US15", false);
+let jax = new Queen("Jax", 6, 6, 6, 6, 6, 6, 14, 6, 6, 5, 1, "Jax", "Jax", "US15", false);
+let loosey = new Queen("Loosey LaDuca", 11, 10, 12, 7, 6, 8, 8, 11, 8, 5, 1, "Loosey", "Loosey", "US15", false);
+let luxx = new Queen("Luxx Noir London", 9, 11, 12, 10, 6, 9, 14, 10, 5, 5,  "LuxxNoirLondon", "LuxxNoirLondon", "US15", false);
+let malaysia = new Queen("Malaysia Babydoll Foxx", 7, 7, 7, 7, 7, 7, 7, "MalaysiaBabydollFoxx", "MalaysiaBabydollFoxx", "US15", false);
+let marcia = new Queen("Marcia Marcia Marcia", 10, 8, 8, 6, 10, 11, 6, 9, 10, 4, 1, "MarciaMarciaMarcia", "MarciaMarciaMarcia", "US15", false);
+let mistress = new Queen("Mistress Isabelle Brooks", 10, 10, 10, 7, 11, 10, 10, 9, 9, 5, 1, "MistressIsabelleBrooks", "MistressIsabelleBrooks", "US15", false);
+let poppy = new Queen("Princess Poppy", 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1, "PrincessPoppy", "PrincessPoppy", "US15", false);
+let robin = new Queen("Robin Fierce", 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1, "RobinFierce", "RobinFierce", "US15", false);
+let salina = new Queen("Salina EsTitties", 7, 7, 5, 5, 7, 7, 7, 6, 6, 5, 1, "SalinaEsTitties", "SalinaEsTitties", "US15", false);
+let sashaColby = new Queen("Sasha Colby", 15, 11, 10, 11, 13, 13, 12, 11, 10, 5, 1, "SashaColby", "SashaColby", "US15", false);
+let spice = new Queen("Spice", 9, 9, 6, 10, 14, 15, 10, 8, 10, 5, 1, "Spice", "Spice", "US15", false);
+let sugar = new Queen("Sugar", 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1, "Sugar", "Sugar", "US15", false);
+
+let us_season15 = [amethyst, anetra, auraMayari, irene, jax, loosey, luxx, malaysia, marcia, mistress, poppy, robin, salina, sashaColby, spice, sugar];
+
 let AS1;
 
 let adoreas2 = new Queen("Adore Delano", 9, 10, 11, 7, 6, 11, 9, 10, 15, 4, 1, "Adore", "Adore", "AS2", false)
@@ -8722,6 +8743,7 @@ let DragRaceQueens = [
   jaida, crystalm, gigi, jackie, heidi, widow, jan, brita, aiden, nicky, rock, dahlia, sherry,
   denali, eliott, gottmik, joey, kahmora, kandy, lalari, liv, rose, symone, tamisha, tina, utica,
   alyssah, angeria, bosco, daya, deja, jasminek, jorgeous, junej, kerri, kornbread, camden, maddym, orion, willow,
+  amethyst, anetra, auraMayari, irene, jax, loosey, luxx, malaysia, marcia, mistress, poppy, robin, salina, sashaColby, spice, sugar,
   aurora, cpher, elektravandergeld, georgiana, irisxc, lacarrera, leexafox, lupita, morralisa, papercut, rebelmork, sirena, tiresias, veracruz,
 
   viv, blus1, cheryls1, crystal, divina, gothy, scaredy, sum, vinegar, bagas1,
