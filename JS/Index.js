@@ -12300,7 +12300,7 @@ function ChallengeAnnouncement(){
         CurrentSeason.episodes.push(CurrentEpisode);
         CurrentSeason.makeoverchallenges++;
       }
-      else if(getRandomInt(0,100)>=65 && CurrentSeason.balls <2)
+      else if(getRandomInt(0,100)>=65 && CurrentSeason.balls <1)
       {
         CurrentChallenge = new Ball();
         CurrentEpisode = new Episode(CurrentChallenge.balls[CurrentChallenge.chosen][0], "Ball");
