@@ -8158,9 +8158,10 @@ let sahara = new Queen("Sahara Davenport", 8, 6, 8, 14, 5, 8, 14, 10, 9, 5, 0, "
 let shangela = new Queen("Shangela", 8, 6, 8, 7, 2, 5, 5, 10, 12, 2, 2, "Shangela", "Shangela", "US2", false);
 let kylies2 = new Queen("Kylie Sonique Love", 8, 7, 5, 8, 10, 10, 13, 8, 10, 4, 0, "Sonique", "Sonique", "US2", false);
 let tatis2 = new Queen("Tatianna", 8, 10, 12, 8, 5, 8, 9, 5, 14, 3, 3, "Tatianna", "Tatianna", "US2", false);
+let ravens2 = new Queen("Raven", 7, 11, 9, 7, 13, 13, 10, 14, 10, 3, 3, "Raven", "Raven", "US2", false);
 let james = new Queen("James Ross", 14, 10, 12, 6, 12, 10, 14, 12, 8, 1, 4, "James", "James", "US2", false);
 
-let US2 = shuffle([jessicaw, jujus2, morganmcs2, mystique, npb, pandoras2, sahara, shangela, kylies2, tatis2, james]);
+let US2 = shuffle([jessicaw, jujus2, morganmcs2, mystique, npb, pandoras2, sahara, shangela, kylies2, tatis2, ravens2, james]);
 
 // acting, improv, comedy, dance, design, runway, lipsync, branding, charisma, kindness, shadyness
 let alexiss3 = new Queen("Alexis Mateo",10,14,12,9,9,8,13,13,14,5,4,"Alexis","Alexis","US3",false);
@@ -8187,11 +8188,12 @@ let lashauwn = new Queen("Lashauwn Beyond",6,4,7,6,12,11,8,6,7,1,5,"Lashauwn","L
 let latrice = new Queen("Latrice Royale",12,5,9,12,5,6,14,6,15,5,1,"Latrice","Latrice","US4",false);
 let madamel = new Queen("Madame LaQueer",4,7,7,11,7,8,7,6,7,3,1,"Madame","Madame","US4",false);
 let milan = new Queen("Milan",5,4,6,11,5,7,12,7,8,4,1,"Milan","Milan","US4",false);
-let jaremy = new Queen("Jaremy Carey",10,5,10,6,12,12,11,12,5,1,5,'Jaremy',"Jaremy","US4",false);
+let jaremy = new Queen("Jaremy Carey",10,5,10,6,12,12,11,12,5,1,5,"Jaremy","Jaremy","US4",false);
+let sharon = new Queen("Sharon Needles",9,10,10,8,13,11,9,12,9,1,5,"SharonNeedles","SharonNeedles","US4",false);
 let princess = new Queen("The Princess",5,4,6,4,10,10,11,4,7,4,1,"Princess","Princess","US4",false);
 let willam = new Queen("Willam",10,12,12,10,11,10,7,4,7,1,5,"Willam","Willam","US4",false);
 
-let US4 = shuffle([alisa, chads4, dida, jiggly, kenya, lashauwn, latrice, madamel, milan, jaremy, princess, willam]);
+let US4 = shuffle([alisa, chads4, dida, jiggly, kenya, lashauwn, latrice, madamel, milan, jaremy, sharon, princess, willam]);
 // acting, improv, comedy, dance, design, runway, lipsync, branding, charisma, kindness, shadyness
 let alaska = new Queen("Alaska Thunderfuck 5000",11,12,11,6,10,12,6,13,9,1,5,"Alaska","Alaska","US5",false);
 let alyssae = new Queen("Alyssa Edwards",6,5,6,15,8,8,14,5,12,5,2,"Alyssa","Alyssa","US5",false);
@@ -8730,9 +8732,9 @@ let goldenserena = new Queen("Golden Serena Chacha", 15, 15, 15, 15, 15, 15, 15,
 let DragRaceQueens = [
 
   akashia, bebes1, jades, ninas1, onginas1, rebecca, shannels1, tammies1, victoriap,
-  jessicaw, jujus2, morganmcs2, mystique, npb, pandoras2, sahara, shangela, kylies2, tatis2, james,
+  jessicaw, jujus2, morganmcs2, mystique, npb, pandoras2, sahara, shangela, kylies2, tatis2, ravens2, james,
   alexiss3, carmenc, delta, indias3, manilas3, mariahs3, phoenix, rajas3, shangelas3, stacy, venus, yaras3,
-  alisa, chads4, dida, jiggly, kenya, lashauwn, latrice, madamel, milan, jaremy, princess, willam,
+  alisa, chads4, dida, jiggly, kenya, lashauwn, latrice, madamel, milan, jaremy, sharon, princess, willam,
   alaska, alyssae, coco, detox, honeym, jadej, ivyw, jinkxs5, serena, lineysha, monica, penny, roxxxy, vivienne,
   adore, april, ben, bianca, courtney, darienne, giag, joslyn, kelly, laganja, magnolia, milk, trinity, vivacious,
   ginger, jaidynn, jasmine, kandyh, katya, kennedy, max, fame, kasha, pearl, frisbee, tempest, trixie, violet,
