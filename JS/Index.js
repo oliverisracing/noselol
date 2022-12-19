@@ -1,4 +1,3 @@
-
 let CurrentSeason;
 let CurrentChallenge;
 let CurrentEpisode;
@@ -485,7 +484,7 @@ class Queen {
 
   GetMakeover()
   {
-    this.perfomancescore = this.GetScore(25,45,this.branding+this.runway);
+    this.perfomancescore = this.GetScore(25,40,this.branding+this.runway);
     if(this.animal != "")
     {
       this.perfomancescore -= this.animal.branding;
@@ -495,7 +494,7 @@ class Queen {
 
   GetCommercial()
   {
-    this.perfomancescore = this.GetScore(45,65,this.branding+this.charisma+this.acting+this.improv);
+    this.perfomancescore = this.GetScore(45,60,this.branding+this.charisma+this.acting+this.improv);
     if(this.animal != "")
     {
       this.perfomancescore -= this.animal.branding;
@@ -507,7 +506,7 @@ class Queen {
 
   GetImprov()
   {
-    this.perfomancescore = this.GetScore(15,45,this.improv);
+    this.perfomancescore = this.GetScore(15,40,this.improv);
     if(this.animal != "")
     {
       this.perfomancescore -= this.animal.improv;
@@ -517,7 +516,7 @@ class Queen {
 
   GetStandUp()
   {
-    this.perfomancescore = this.GetScore(25,55,this.comedy+this.charisma);
+    this.perfomancescore = this.GetScore(25,50,this.comedy+this.charisma);
     if(this.animal != "")
     {
       this.perfomancescore -= this.animal.comedy;
@@ -527,7 +526,7 @@ class Queen {
 
   GetActing()
   {
-    this.perfomancescore = this.GetScore(15,45,this.acting);
+    this.perfomancescore = this.GetScore(15,40,this.acting);
     if(this.animal != "")
     {
       this.perfomancescore -= this.animal.acting;
@@ -536,7 +535,7 @@ class Queen {
 
   GetDancing()
   {
-    this.perfomancescore = this.GetScore(15,45,this.dance);
+    this.perfomancescore = this.GetScore(15,40,this.dance);
     if(this.animal != "")
     {
       this.perfomancescore -= this.animal.dance;
@@ -545,7 +544,7 @@ class Queen {
 
   GetSnatchGame()
   {
-    this.perfomancescore = this.GetScore(35,65,this.comedy+this.acting+this.improv);
+    this.perfomancescore = this.GetScore(35,60,this.comedy+this.acting+this.improv);
     if(this.animal != "")
     {
       this.perfomancescore -= this.animal.comedy;
@@ -556,7 +555,7 @@ class Queen {
 
   GetRusical()
   {
-    this.perfomancescore = this.GetScore(35,55,this.dance+this.charisma+this.acting);
+    this.perfomancescore = this.GetScore(35,50,this.dance+this.charisma+this.acting);
     if(this.animal != "")
     {
       this.perfomancescore -= this.animal.dance;
@@ -567,7 +566,7 @@ class Queen {
 
   GetRumix()
   {
-    this.perfomancescore = this.GetScore(35,65,this.charisma+this.dance+this.branding);
+    this.perfomancescore = this.GetScore(35,60,this.charisma+this.dance+this.branding);
     if(this.animal != "")
     {
       this.perfomancescore -= this.animal.charisma;
@@ -578,7 +577,7 @@ class Queen {
 
   GetTalentShow()
   {
-    this.perfomancescore = this.GetScore(85,100,this.acting+this.improv+this.comedy+this.dance+this.lipsync+this.charisma+this.branding+this.design);
+    this.perfomancescore = this.GetScore(85,95,this.acting+this.improv+this.comedy+this.dance+this.lipsync+this.charisma+this.branding+this.design);
     if(this.animal != "")
     {
       this.perfomancescore -= this.animal.acting;
@@ -594,7 +593,7 @@ class Queen {
 
   GetMusicV()
   {
-    this.perfomancescore = this.GetScore(15,45,this.dance);
+    this.perfomancescore = this.GetScore(15,40,this.dance);
     if(this.animal != "")
     {
       this.perfomancescore -= this.animal.dance;
@@ -627,7 +626,7 @@ class Queen {
     this.ballseclook = this.GetScore(0, this.runway+2);
     this.ballseclook = this.ballseclook+(this.runway*0.3);
 
-    this.ballthilook = this.GetScore(15,35,this.design);
+    this.ballthilook = this.GetScore(15,30,this.design);
 
     if(this.animal != "")
     {
@@ -643,7 +642,7 @@ class Queen {
   {
     if(getRandomInt(0,1)==0 && this.miniwinner == true)
     {
-      this.perfomancescore = this.GetScore(15,45,this.design+bonus);
+      this.perfomancescore = this.GetScore(15,40,this.design+bonus);
       if(this.animal != "")
       {
         this.perfomancescore -= this.animal.design;
@@ -652,7 +651,7 @@ class Queen {
     }
     else
     {
-      this.perfomancescore = this.GetScore(15,45,this.design);
+      this.perfomancescore = this.GetScore(15,40,this.design);
       if(this.animal != "")
       {
         this.perfomancescore -= this.animal.design;
@@ -1480,7 +1479,7 @@ class Screen {
           
           case "DOUBLEWIN":
             trtr.innerHTML = "WIN";
-            trtr.setAttribute("style","background: royalblue; font-weight: bold; color: white;");
+            trtr.setAttribute("style","background: darkblue; font-weight: bold; color: white;");
             break;
 
           default:
@@ -1654,7 +1653,7 @@ class Screen {
           
           case "DOUBLEWIN":
             trtr.innerHTML = "WIN";
-            trtr.setAttribute("style","background: royalblue; font-weight: bold; color: white;");
+            trtr.setAttribute("style","background: darkblue; font-weight: bold; color: white;");
             break;
 
           default:
@@ -8296,9 +8295,9 @@ let yuhua = new Queen("Yuhua Hamasaki",7,6,6,6,8,10,6,5,10,5,3,"Yuhua", "Yuhua",
 let US10 = shuffle([aquaria, asia, blair, dusty, eurekas10, kalorie, kameron, mayhem, miz, monet, monique, vixen, vanessas10, yuhua]);
 // acting, improv, comedy, dance, design, runway, lipsync, branding, charisma, kindness, shadyness
 let yvie = new Queen("Yvie Oddly",12,7,7,14,10,13,15,11,12,3,3,"Yvie", "Yvie", "US11", false);
-let brooke = new Queen("Brooke Lynn Hytes", 8,10,7,13,15,15,15,7,11,5,1, "Brooke", "Brooke", "US11", false);
-let akeria = new Queen("A'keria Chanel Davenport",7,11,8,12,11,11,11,9,10,4,3,"Akeria", "Akeria", "US11", false);
-let silky = new Queen("Silky Nutmeg Ganache", 9,15,13,14,6,9,6,13,10,2,4, "Silky", "Silky", "US11", false);
+let brooke = new Queen("Brooke Lynn Hytes", 8,10,7,15,15,15,15,9,11,5,1, "Brooke", "Brooke", "US11", false);
+let akeria = new Queen("A'keria Chanel Davenport",7,13,8,12,11,11,11,10,10,4,3,"Akeria", "Akeria", "US11", false);
+let silky = new Queen("Silky Nutmeg Ganache", 9,15,13,14,8,9,6,13,10,2,4, "Silky", "Silky", "US11", false);
 let vanjies11 = new Queen("Vanessa Vanjie Matteo",9,5,9,5,7,8,13,13,15,5,1,"Vanessa","Vanessa", "US11", false);
 let ninawest = new Queen("Nina West", 10,9,10,6,6,8,7,13,14,5,1, "Nina", "Nina", "US11", false);
 let shuga = new Queen("Shuga Cain",6,8,8,7,6,8,9,10,10,5,1,"Shuga", "Shuga", "US11", false);
@@ -8332,14 +8331,14 @@ let US12 = shuffle([jaida, crystalm, gigi, jackie, heidi, widow, jan, brita, aid
 // acting, improv, comedy, dance, design, runway, lipsync, branding, charisma, kindness, shadyness
 let denali = new Queen("Denali Foxx", 5, 10, 9, 14, 8, 10, 15, 11, 6, 4, 1, "Denali", "Denali", "US13", false);
 let eliott = new Queen("Elliott with 2 Ts", 6, 5, 5, 9, 8, 8, 12, 8, 7, 0, 2, "Eliott", "Eliott", "US13", false);
-let gottmik = new Queen("Gottmik", 9, 14, 11, 3, 12, 15, 6, 9, 12, 4, 0, "Gottmik", "Gottmik", "US13", false);
+let gottmik = new Queen("Gottmik", 9, 11, 11, 4, 12, 15, 6, 9, 12, 4, 0, "Gottmik", "Gottmik", "US13", false);
 let joey = new Queen("Joey Jay", 6, 7, 7, 7, 5, 5, 8, 12, 10, 4, 1, "Joey", "Joey", "US13", false);
 let kahmora = new Queen("Kahmora Hall", 5, 6, 5, 6, 8, 15, 5, 8, 12, 3, 1, "Kahmora", "Kahmora", "US13", false);
 let kandy = new Queen("Kandy Muse", 8, 11, 10, 7, 6, 10, 15, 13, 14, 2, 5, "Kandy", "Kandy", "US13", false);
 let lalari = new Queen("LaLa Ri", 6, 6, 6, 9, 1, 4, 15, 10, 13, 4, 1, "Lala", "Lalari", "US13", false);
-let liv = new Queen("Liv Lux Miyake-Mugler", 8, 11, 9, 11, 8, 14, 10, 7, 11, 5, 0, "Liv", "Liv", "US13", false);
-let rose = new Queen("Rosé", 12, 11, 11, 11, 10, 9, 3, 14, 6, 3, 0, "Rose", "Rose", "US13", false);
-let symone = new Queen("Symone", 14, 10, 8, 6, 8, 15, 13, 15, 15, 4, 0, "Symone", "Symone", "US13", false);
+let liv = new Queen("Liv Lux Miyake-Mugler", 8, 11, 9, 11, 8, 12, 10, 7, 11, 5, 0, "Liv", "Liv", "US13", false);
+let rose = new Queen("Rosé", 12, 11, 11, 11, 10, 10, 6, 14, 10, 3, 0, "Rose", "Rose", "US13", false);
+let symone = new Queen("Symone", 14, 10, 6, 9, 8, 15, 13, 15, 15, 4, 0, "Symone", "Symone", "US13", false);
 let tamisha = new Queen("Tamisha Iman", 6, 4, 4, 3, 3, 6, 10, 8, 15, 2, 1, "Tamisha", "Tamisha", 'US13', false);
 let tina = new Queen("Tina Burner", 8, 8, 7, 7, 5, 5, 7, 12, 9, 3, 2, "TIna", "Tina", "US13", false);
 let utica = new Queen("Utica Queen", 8, 7, 6, 12, 15, 15, 14, 10, 10, 4, 1, "Utica", "Utica", "US13", false);
@@ -8365,8 +8364,8 @@ let US14 = shuffle([alyssah, angeria, bosco, daya, deja, jasminek, jorgeous, jun
 
 // acting, improv, comedy, dance, design, runway, lipsync, branding, charisma, kindness, shadyness
 //SEASON 15
-let amethyst = new Queen("Amethyst", 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 1, "Amethyst", "Amethyst", "US15", false);
-let anetra = new Queen("Anetra", 8, 9, 9, 10, 9, 12, 12, 10, 11, 5, 5, "Anetra", "Anetra", "US15", false);
+let amethyst = new Queen("Amethyst", 4, 4, 5, 4, 6, 6, 6, 6, 6, 5, 1, "Amethyst", "Amethyst", "US15", false);
+let anetra = new Queen("Anetra", 8, 9, 9, 10, 9, 12, 12, 13, 11, 5, 5, "Anetra", "Anetra", "US15", false);
 let auraMayari = new Queen("Aura Mayari", 6, 6, 6, 9, 6, 8, 7, 10, 10, 5, 1, "AuraMayari", "AuraMayari", "US15", false);
 let irene = new Queen("Irene Dubois", 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1, "IreneDubois", "IreneDubois", "US15", false);
 let jax = new Queen("Jax", 6, 6, 6, 6, 6, 6, 14, 6, 6, 5, 1, "Jax", "Jax", "US15", false);
@@ -8375,12 +8374,12 @@ let luxx = new Queen("Luxx Noir London", 8, 10, 13, 10, 6, 9, 14, 8, 9, 5, 1, "L
 let malaysia = new Queen("Malaysia Babydoll Foxx", 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1, "Malaysia", "Malaysia", "US15", false);
 let marcia = new Queen("Marcia Marcia Marcia", 10, 8, 8, 6, 10, 11, 6, 9, 10, 4, 1, "MarciaMarciaMarcia", "MarciaMarciaMarcia", "US15", false);
 let mistress = new Queen("Mistress Isabelle Brooks", 10, 10, 10, 7, 11, 10, 10, 9, 9, 5, 1, "MistressIsabelleBrooks", "MistressIsabelleBrooks", "US15", false);
-let poppy = new Queen("Princess Poppy", 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1, "PrincessPoppy", "PrincessPoppy", "US15", false);
+let poppy = new Queen("Princess Poppy", 3, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1, "PrincessPoppy", "PrincessPoppy", "US15", false);
 let robin = new Queen("Robin Fierce", 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1, "RobinFierce", "RobinFierce", "US15", false);
-let salina = new Queen("Salina EsTitties", 7, 7, 5, 5, 7, 7, 7, 6, 6, 5, 1, "SalinaEsTitties", "SalinaEsTitties", "US15", false);
-let sashaColby = new Queen("Sasha Colby", 15, 11, 10, 11, 13, 13, 12, 11, 10, 5, 1, "SashaColby", "SashaColby", "US15", false);
+let salina = new Queen("Salina EsTitties", 6, 6, 6, 6, 6, 6, 7, 6, 6, 5, 1, "SalinaEsTitties", "SalinaEsTitties", "US15", false);
+let sashaColby = new Queen("Sasha Colby", 14, 9, 8, 10, 9, 12, 12, 9, 10, 5, 1, "SashaColby", "SashaColby", "US15", false);
 let spice = new Queen("Spice", 7, 7, 6, 8, 14, 15, 8, 8, 9, 5, 1, "Spice", "Spice", "US15", false);
-let sugar = new Queen("Sugar", 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1, "Sugar", "Sugar", "US15", false);
+let sugar = new Queen("Sugar", 5, 4, 4, 5, 5, 5, 5, 5, 5, 5, 1, "Sugar", "Sugar", "US15", false);
 
 let US15 = shuffle([amethyst, anetra, auraMayari, irene, jax, loosey, luxx, malaysia, marcia, mistress, poppy, robin, salina, sashaColby, spice, sugar]);
 
@@ -10338,11 +10337,11 @@ function Placements() {
       for (let i = 0; i < Tops.length; i++) {
         if(Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "WIN" || Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "DOUBLEWIN")
         {
-          Tops[i].finalscore += 11;
+          Tops[i].finalscore += 15;
         }
         else if(Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "BOTTOM")
         {
-          Tops[i].finalscore += -9;
+          Tops[i].finalscore += -10;
         }
       }
 
@@ -10357,7 +10356,7 @@ function Placements() {
       {
       TopsQueens.push(Tops[1]);
 
-        if(TopsQueens[0].perfomancescore < 6 && TopsQueens[1].perfomancescore < 6)
+        if(TopsQueens[0].perfomancescore < 7 && TopsQueens[1].perfomancescore < 7)
           {
             doublewin = true;
           }
@@ -10538,7 +10537,7 @@ function Placements() {
     for (let i = 0; i < Tops.length; i++) {
       if(Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "WIN" || Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "TOP2")
       {
-        Tops[i].finalscore += 8;
+        Tops[i].finalscore += 10;
       }
     }
 
@@ -10684,7 +10683,7 @@ function Placements() {
     for (let i = 0; i < Tops.length; i++) {
       if(Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "WIN" || Tops[i].trackrecord[Tops[i].trackrecord.length-1] == "TOP2")
       {
-        Tops[i].finalscore += 8;
+        Tops[i].finalscore += 10;
       }
     }
 
@@ -12319,7 +12318,7 @@ function ChallengeAnnouncement(){
         CurrentSeason.episodes.push(CurrentEpisode);
         CurrentSeason.makeoverchallenges++;
       }
-      else if(getRandomInt(0,100)>=65 && CurrentSeason.balls <1)
+      else if(getRandomInt(0,100)>=50 && CurrentSeason.balls <1)
       {
         CurrentChallenge = new Ball();
         CurrentEpisode = new Episode(CurrentChallenge.balls[CurrentChallenge.chosen][0], "Ball");
@@ -12416,12 +12415,12 @@ function RankQueens(){
       case "LIFE":
       if(CurrentSeason.currentCast.length>=14)
       {
-        for(let i = 0; i<getRandomInt(3,4); i++)
+        for(let i = 0; i<3; i++)
           {
             Tops.push(CurrentSeason.currentCast[i]);
           }
 
-          for(let i = 0; i<getRandomInt(3,4); i++)
+        for(let i = 0; i<3; i++)
           {
             Bottoms.push(CurrentSeason.currentCast[CurrentSeason.currentCast.length-1-i]);
           }
@@ -12507,12 +12506,12 @@ function RankQueens(){
         }
         else
         {
-          for(let i = 0; i<getRandomInt(3,4); i++)
+        for(let i = 0; i<3; i++)
           {
             Tops.push(CurrentSeason.currentCast[i]);
           }
 
-          for(let i = 0; i<getRandomInt(3,4); i++)
+        for(let i = 0; i<3; i++)
           {
               Bottoms.push(CurrentSeason.currentCast[CurrentSeason.currentCast.length-1-i]);
           }
@@ -12664,12 +12663,12 @@ function RankQueens(){
         }
         else
         {
-          for(let i = 0; i<getRandomInt(3,4); i++)
+          for(let i = 0; i<3; i++)
           {
             Tops.push(CurrentSeason.currentCast[i]);
           }
 
-          for(let i = 0; i<(3,4); i++)
+          for(let i = 0; i<getRandomInt(3,4); i++)
           {
               Bottoms.push(CurrentSeason.currentCast[CurrentSeason.currentCast.length-1-i]);
           }
